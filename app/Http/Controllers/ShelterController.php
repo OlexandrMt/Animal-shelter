@@ -102,7 +102,7 @@ class ShelterController extends Controller
         $shelterinfo->status = true;
         $shelterinfo->save();
 
-       return view('shelterShow', ['shelter' => $shelterinfo]);
+       return view('shelters/show', ['shelter' => $shelterinfo]);
       //return  dd($request);
     }
 
