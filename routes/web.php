@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	 $loginBtnText = "LogIn";
+	 $loginClass = "login";
+	 
+	 if(Auth::user()){
+		 $loginBtnText = "LogOut";
+		 $loginClass = "logout";
+	 }
+    return view('welcome', [
+			"loginBtnText" => $loginBtnText,
+			"loginClass" => $loginClass
+		]);
 });
+require __DIR__.'/auth.php';
+
+
