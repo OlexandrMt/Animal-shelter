@@ -1,0 +1,20 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.img-round{
+  width: 140px;
+  height: 140px;
+  display: flex;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 100%
+}
+.img-round>img{
+  margin: auto;
+  width: 100% ;
+  transform: scale(1.5,1.5);
+}
+row row-cols-1 row-cols-md-3 mb-3 text-center{
+  width: 80%;
+}

@@ -1,3 +1,4 @@
+@if( !empty($shelter) )
 <form action="/shelters/ {{$shelter->id}}" method="post" enctype="multipart/form-data">
 
   <div>
@@ -37,3 +38,6 @@
     <input type="submit" value="Delete shelter">
   </div>
 </form>
+@else
+<h1>Page do not exist, or you have no right to edit it</h1>
+@endif

@@ -2,21 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Models\Shelter;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\ShelterRequest;
+use Illuminate\Database\Eloquent\Collection;
 
 class ShelterController extends Controller
 {
     /** Display a listing of the resource.
      * @return \Illuminate\Http\Response*/
 
+
+
     public function index()
     {
-      //$shelterinfo = DB::table('shelters')->get();
+
       $shelterinfo = Shelter::all();
+
+      /* BELONG TO
+      $shelterinfo = Shelter::find(3);
+      $shelterinfo = $shelterinfo->user()->get();
+      */
+
+      //dd($shelterinfo);
+
+      //$shelterinfo = Shelter::admin()->get();//scope
       return view('shelters/index', ['shelters' => $shelterinfo]);
     }
 
@@ -25,7 +39,13 @@ class ShelterController extends Controller
 
     public function create()
     {
-        return view('shelters/create');
+        // if(Auth::check()){
+        //   return view('shelters/create');
+        //   }
+        // else{
+        //   return redirect()->route('shelters.index')->withErrors(['You should be logged in to add new shelter']);
+        //   }
+            return view('shelters/create');
     }
 
     /**
@@ -42,18 +62,16 @@ class ShelterController extends Controller
       $shelterinfo->address = $request->input('address');
       $shelterinfo->mail = $request->input('mail');
       $shelterinfo->phone = $request->input('phone');
+
+      $shelterinfo->user_id = $request->user()->id;
+
       if( !empty($request->logo) ){
           $shelterinfo->logo = $request->logo->store('images/shalter_logos');
       }
       $shelterinfo->status = true;
       $shelterinfo->save();
 
-
-      /*$shelterinfo = Shelter::all();
-
-      return view('BLshelters', ['shelters' => $shelterinfo]);*/
-      return redirect()->route('shelters.index'); /*Редирект можно сделать не только по URI адрессу но и по имени роута(все имена
-      есть в таблице php artisan route:list)*/
+      return redirect()->route('shelters.index');
     }
 
     /**
@@ -62,8 +80,11 @@ class ShelterController extends Controller
      * @return \Illuminate\Http\Response*/
     public function show($id)
     {
+        $user=NULL;
+        if(Auth::check()){
+          $user = Auth::user()->id;}
         $shelterinfo =  Shelter::find($id);
-        return view('shelters/show', ['shelter' => $shelterinfo]);
+        return view('shelters/show', ['shelter' => $shelterinfo, 'user' => $user]);
     }
 
     /**
@@ -75,7 +96,9 @@ class ShelterController extends Controller
     public function edit($id)
     {
         $shelterinfo = Shelter::find($id);
-
+        if( !Auth::check() || $shelterinfo->user_id != Auth::user()->id ){
+          $shelterinfo = NULL;
+          }
         return view('shelters/edit', ['shelter' => $shelterinfo]);
     }
 
@@ -103,7 +126,6 @@ class ShelterController extends Controller
         $shelterinfo->save();
 
        return view('shelters/show', ['shelter' => $shelterinfo]);
-      //return  dd($request);
     }
 
     /**
@@ -117,4 +139,4 @@ class ShelterController extends Controller
       Shelter::find($id)->delete();
       return redirect()->route('shelters.index');
     }
-}
+  }

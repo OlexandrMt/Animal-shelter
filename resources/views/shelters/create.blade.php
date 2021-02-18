@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
-
+<!-- Styles -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> -->
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <body>
-  @if ($errors->any())
-      <div class="alert alert-danger">
-          <ul>
-              @foreach ($errors->all() as $error)
-                  <li>{{ $error }}</li>
-              @endforeach
-          </ul>
-      </div>
-  @endif
+
+      <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
       <form action="/shelters" method="post" enctype="multipart/form-data">
         <div>
           <label for="name">Input name<label>
