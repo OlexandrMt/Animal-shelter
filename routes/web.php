@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,8 +15,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	 $loginBtnText = "LogIn";
+	 $loginClass = "login";
+	 
+	 if(Auth::user()){
+		 $loginBtnText = "LogOut";
+		 $loginClass = "logout";
+	 }
+    return view('welcome', [
+			"loginBtnText" => $loginBtnText,
+			"loginClass" => $loginClass
+		]);
 });
+<<<<<<< HEAD
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -24,3 +36,8 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::resource('shelters', ShelterController::class);
+=======
+require __DIR__.'/auth.php';
+
+
+>>>>>>> origin/auth
