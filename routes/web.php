@@ -16,7 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('photos', NewResourceController::class);
-Route::get('/animalIndex', function(){
-  return view("animals/Index");
-});
+Route::resource('/animals', NewResourceController::class);
