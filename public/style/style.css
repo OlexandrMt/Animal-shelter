@@ -1,0 +1,15 @@
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background: rgb (5, 200, 200)
+}
+d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm{
+  width: 100%;
+    height:250px;
+    background-color:rgb (5, 200, 200);
+    border-top 5px solid #778492;
+}
