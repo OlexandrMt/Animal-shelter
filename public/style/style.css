@@ -1,11 +1,15 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> dev
 =======
 >>>>>>> dev
 *{
   padding: 0;
   margin: 0;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 body{
@@ -18,6 +22,8 @@ d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white bord
     border-top 5px solid #778492;
 }
 =======
+=======
+>>>>>>> dev
 .top-block{
   width: 100%;
   height:250px;
@@ -78,5 +84,9 @@ d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white bord
 .description-block>h1,.description-block>h3,.description-block>h2{
   font-family: Arial;
   text-align: center  ;
+<<<<<<< HEAD
+}
+>>>>>>> dev
+=======
 }
 >>>>>>> dev

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 class MyController extends Controller
 {
@@ -99,6 +100,8 @@ class MyController extends Controller
     }
   //  Route::resource('p', MyController::class);
 =======
+=======
+>>>>>>> dev
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -124,5 +127,8 @@ class MyController extends Controller {
   public function destroy($id){
      echo 'destroy';
   }
+<<<<<<< HEAD
+>>>>>>> dev
+=======
 >>>>>>> dev
 }
