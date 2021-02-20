@@ -1,23 +1,7 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
 *{
   padding: 0;
   margin: 0;
 }
-<<<<<<< HEAD
-
-body{
-  background: rgb (5, 200, 200)
-}
-d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm{
-  width: 100%;
-    height:250px;
-    background-color:rgb (5, 200, 200);
-    border-top 5px solid #778492;
-}
-=======
 .top-block{
   width: 100%;
   height:250px;
@@ -25,10 +9,9 @@ d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white bord
   border-top 5px solid #778492;
 }
 .inner-top-block{
-  width: 1150px;
+  width: 950px;
   height:250px;
-  margin-right: 10px;
-  float: right;
+  margin: 0 auto;
 }
 .image-block{
   width: 183px;
@@ -37,16 +20,10 @@ d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white bord
   float: left;
 }
 .description-block{
-  width: 250px;
+  width: 350px;
   height:250px;
   margin-top: 60px;
   float: left;
-}
-.options{
-  width: 165px;
-  height:250px;
-  margin-top: 10px;
-  float: right;
 }
 .bottom-blok{
   width: 150px;
@@ -58,13 +35,11 @@ d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white bord
   font-weight: bold;
   font-size: 20;
   text-align: center;
-  margin-top: 5px;
-  margin-left: 0px;
-  margin-right: 5px;
-  padding: 20px 0;
+  margin-top: 95px;
+  padding: 5px 0;
 }
 .image-block>img{
-  margin: 28px 10px;
+  margin: 28px 0;
 
 }
 
@@ -75,8 +50,7 @@ d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white bord
   background-image: url(../imeges/spr.png);
   background-position: -5px -5px;
 }
-.description-block>h1,.description-block>h3,.description-block>h2{
+.description-block>h1,.description-block>h3{
   font-family: Arial;
   text-align: center  ;
 }
->>>>>>> dev
