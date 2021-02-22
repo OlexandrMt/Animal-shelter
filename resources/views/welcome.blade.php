@@ -20,11 +20,7 @@
 				<x-header.optionsBtn/>
 			</x-slot>
 			<x-slot name="userOptions">
-				@if(Auth::check())
-					<x-header.userOptions loginClass="logout" loginBtnText="Log Out"/>
-				@else
-					<x-header.userOptions loginClass="login" loginBtnText="Log In"/>
-				@endif
+				<x-header.userOptions/>
 			</x-slot>
 		</x-header.header>
 	</x-slot>
