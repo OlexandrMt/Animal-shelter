@@ -6,7 +6,7 @@
 		<span class="showLogin active">Login</span>
 		<span class="showRegister">Register</span>
 	</div>
-	<form method="POST" name="login" action="/login" class={{$active}}>
+	<form method="POST" name="login" action="/login" class="{{$active}}">
 		<div class="formInput">
 			<label for="username">Username*</label>
 			<input type="text" name="username" autocomplete="off">
