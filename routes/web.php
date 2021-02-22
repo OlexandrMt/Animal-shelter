@@ -14,19 +14,10 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-	 $loginBtnText = "LogIn";
-	 $loginClass = "login";
-	 
-	 if(Auth::user()){
-		 $loginBtnText = "LogOut";
-		 $loginClass = "logout";
-	 }
-    return view('welcome', [
-			"loginBtnText" => $loginBtnText,
-			"loginClass" => $loginClass
-		]);
+Route::get('/', function () {	 
+    return view('welcome');
 });
+
 require __DIR__.'/auth.php';
 
 
