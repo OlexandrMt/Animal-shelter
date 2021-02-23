@@ -11,6 +11,7 @@
 <table class="table-responsive">
 <thead>
 <form action="/animals" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="shelter_id" value="{{$shelter_id}}">
   <tr>
     <th>Name</th>
     <td>

@@ -24,9 +24,10 @@ class NewResourceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('animals/create');
+// dd($request->shelter_id);
+        return view('animals/create', ['shelter_id' => $request->shelter_id]);
     }
 
     /**
@@ -38,13 +39,12 @@ class NewResourceController extends Controller
     public function store(Request $request)
     {
       $animals= new Animal();
-      $animals->name = $request->input('name');
-      $animals->breed = $request->input('breed');
-      $animals->age = $request->input('age');
-      $animals->type = $request->input('type');
+      $animals->fill($request->all());
+
+      if ($request->file('photo')){
       $animals->photo = $request->file('photo')->store('avatars');
-      $animals->sex = $request->input('sex');
-      $animals->status = $request->input('status');
+      }
+      
 
       $animals->save();
       return redirect()->route('animals.index');
@@ -89,7 +89,9 @@ class NewResourceController extends Controller
      $animals->breed = $request->input('breed');
      $animals->age = $request->input('age');
      $animals->type = $request->input('type');
+     if ($request->file('photo')){
      $animals->photo = $request->file('photo')->store('avatars');
+  }
      $animals->sex = $request->input('sex');
      $animals->status = $request->input('status');
 

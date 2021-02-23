@@ -18,4 +18,3 @@ return view ('welcome');
 Route::resource('/animals', NewResourceController::class);
 Route::resource('main', MainController::class);
 Route::resource('photos', NewResourceController::class);
-});

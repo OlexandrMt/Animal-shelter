@@ -13,6 +13,7 @@ class Animals extends Migration
      */
     public function up()
     {
+      Schema::dropIfExists('animals');
       Schema::create('animals', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
@@ -22,7 +23,7 @@ class Animals extends Migration
             $table->string('photo')->nullable();
             $table->string('sex')->nullable();
             $table->string('status')->nullable();
-
+            $table->integer('shelter_id')->nullable();
 
             $table->timestamps();
 
