@@ -29,7 +29,7 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
-		  "active"
+		     "active"
     ];
 
     /**
@@ -48,6 +48,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        
+
     ];
 }

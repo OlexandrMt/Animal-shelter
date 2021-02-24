@@ -16,15 +16,17 @@ body {
 
 .content {
 	width: 80%;
-	margin: 3em auto;
+	margin: 2em auto;
+
 }
 
 header {
-	height: 3em;
+	height: 100%;
 	color: #fff;
 	position: relative;
 	font-size: 1.5em;
 	user-select: none;
+	padding-bottom: 1em;
 }
 
 header .hidden {
@@ -32,7 +34,7 @@ header .hidden {
 }
 
 .navbar {
-	height: 100%;
+	height: 3em;
 	position: relative;
 	background: green;
 	z-index: 2;
@@ -330,7 +332,7 @@ header .hidden {
 
 /*design for mobile devices*/
 @media (max-width: 768px) {
-	
+
 	.menuBtn{
 		display: block;
 		position: absolute;
@@ -339,7 +341,7 @@ header .hidden {
 		width: 3em;
 		height: 3em;
 	}
-	
+
 	.menuItems{
 		background: green;
 		position: fixed;
@@ -354,11 +356,11 @@ header .hidden {
 		box-shadow: 5px 0 5px rgba(72, 72, 72, 0.7);
 		z-index: 1;
 	}
-	
+
 	.menuItems.open{
 		width: 7em;
 	}
-	
+
 	.menuItems.open .menuCloseBtn{
 		display: block;
 	}
@@ -368,14 +370,13 @@ header .hidden {
 		width: 100%;
 		height: auto;
 	}
-	
+
 	.menuItems .bi {
 		width: 100%;
 		padding: 0;
 	}
-	
+
 	.authContainer {
 		width: 70%;
 	}
 }
-

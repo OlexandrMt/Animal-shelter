@@ -18,19 +18,11 @@ class ShelterController extends Controller
 
 
 
-    public function index()
+    public function index(Request $request)
     {
 
       $shelterinfo = Shelter::all();
 
-      /* BELONG TO
-      $shelterinfo = Shelter::find(3);
-      $shelterinfo = $shelterinfo->user()->get();
-      */
-
-      //dd($shelterinfo);
-
-      //$shelterinfo = Shelter::admin()->get();//scope
       return view('shelters/index', ['shelters' => $shelterinfo]);
     }
 
@@ -39,12 +31,13 @@ class ShelterController extends Controller
 
     public function create()
     {
-        // if(Auth::check()){
-        //   return view('shelters/create');
-        //   }
-        // else{
-        //   return redirect()->route('shelters.index')->withErrors(['You should be logged in to add new shelter']);
-        //   }
+        if(Auth::check()){
+          return view('shelters/create');
+          }
+        else{
+          return redirect()->back()->withErrors(['You should be logged in to add new shelter']);
+          }
+
             return view('shelters/create');
     }
 
@@ -56,6 +49,7 @@ class ShelterController extends Controller
      */
     public function store( ShelterRequest $request)
     {
+
 
       $shelterinfo = new Shelter();
       $shelterinfo->name = $request->input('name');
@@ -86,7 +80,6 @@ class ShelterController extends Controller
         $shelterinfo =  Shelter::find($id);
         return view('shelters/show', ['shelter' => $shelterinfo, 'user' => $user]);
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -96,9 +89,12 @@ class ShelterController extends Controller
     public function edit($id)
     {
         $shelterinfo = Shelter::find($id);
-        if( !Auth::check() || $shelterinfo->user_id != Auth::user()->id ){
-          $shelterinfo = NULL;
-          }
+
+        if(isset($shelterinfo)){
+          if(!Auth::check() || $shelterinfo->user_id != Auth::user()->id ){
+            $shelterinfo = NULL;
+            }
+        }
         return view('shelters/edit', ['shelter' => $shelterinfo]);
     }
 
@@ -125,7 +121,7 @@ class ShelterController extends Controller
         $shelterinfo->status = true;
         $shelterinfo->save();
 
-       return view('shelters/show', ['shelter' => $shelterinfo]);
+       return redirect()->route('shelters.show', $id);
     }
 
     /**
@@ -139,4 +135,21 @@ class ShelterController extends Controller
       Shelter::find($id)->delete();
       return redirect()->route('shelters.index');
     }
+
+    public function my()
+    {
+      if(!Auth::check()){
+        return redirect()->back()->withErrors(['You should be logged in to watch your shelters']);
+        }
+
+      $shelterinfo = User::find(Auth::user()->id);
+      $shelterinfo = $shelterinfo->shelter()->get();
+
+
+      if(empty($shelterinfo)){
+        return redirect()->back()->withErrors(['You don`t have shelters']);
+        }
+      return view('shelters/index', ['shelters' => $shelterinfo]);
+    }
+
   }

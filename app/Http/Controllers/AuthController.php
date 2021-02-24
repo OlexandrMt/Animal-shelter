@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
-{	 
+{
 	public function doRegister(Request $request){
 
 		  $request->validate([
@@ -25,21 +25,21 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password)
         ]);
-			
+
 		  $user->save();
         Auth::login($user);
 		  return response()->json([
 			"errors" => []
 		  ]);
 	 }
-	 
+
 	 public function showLogin(){
 		 if(!Auth::user()){
-			return(view("authPage")); 
+			return(view("authPage"));
 		 }
 		 return redirect("/");
 	 }
-	 
+
 	 public function doLogin(Request $request){
 		  $request->validate([
             'username' => 'bail|required|string|min:3|max:30',
@@ -47,7 +47,7 @@ class AuthController extends Controller
         ]);
 
         if(!Auth::attempt($request->only("username", "password"))){
-				throw ValidationException::withMessages([			  
+				throw ValidationException::withMessages([
 				"general" => "User not found"
 				]);
 
@@ -59,11 +59,11 @@ class AuthController extends Controller
 				"errors" => []
 		  ]);
 	 }
-	 
+
 	 public function doLogout(Request $request){
 		 Auth::guard("web")->logout();
 		 $request->session()->invalidate();
 		 $request->session()->regenerateToken();
-		 return redirect("/");
+		 return redirect('/');
 	 }
 }

@@ -1,5 +1,5 @@
 <ul class="userOptions">
-	<li>My Shelters</li>
-	<li>Settings</li>
+	<li><a class="menuItems-a" href="/shelters/create">CreateShelter</a></li>
+	<li><a class="menuItems-a" href="/shelters/my">MyShelter</a></li>
 	<li class={{$loginClass}}>{{$loginBtnText}}</li>
 </ul>

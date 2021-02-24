@@ -1,7 +1,6 @@
 <ul class="menuItems">
 	<li class="menuCloseBtn">
-		<i class="bi bi-x-circle"></i>			
-	<li>Item 1
-	<li>Item 2
-	<li>Item 3
-</ul>	
+		<i class="bi bi-x-circle"></i>
+	<li><a class="menuItems-a"  href="/">Home</a></li>
+	<li><a class="menuItems-a" href="/shelters">Shelters</a></li>
+</ul>

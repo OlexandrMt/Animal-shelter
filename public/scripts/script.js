@@ -33,21 +33,21 @@ let hideAuthForm = function(e){
 let switchAuthFrom = function(e){
 	let target = $(e.target);
 	resetAuthForm();
-	
+
 	if(!target.hasClass("active")){
-		
-		if(target.hasClass("showLogin")){	
+
+		if(target.hasClass("showLogin")){
 			$(".showRegister").removeClass("active");
-			$("form[name=register]").removeClass("active");			
+			$("form[name=register]").removeClass("active");
 			$("form[name=login]").addClass("active");
 		}
-		
-		if(target.hasClass("showRegister")){		
+
+		if(target.hasClass("showRegister")){
 			$(".showLogin").removeClass("active");
-			$("form[name=login]").removeClass("active");			
+			$("form[name=login]").removeClass("active");
 			$("form[name=register]").addClass("active");
 		}
-		
+
 		$(target).addClass("active");
 	}
 }
@@ -61,7 +61,7 @@ let hideOpened = function(){
 		$(".userOptions").removeClass("open");
 		return 1;
 	}
-	
+
 	return 0;
 }
 
@@ -70,7 +70,7 @@ let handleMobileMenu= function(e){
 		$(".menuItems").addClass("open");
 		return;
 	}
-	
+
 	if($(e.target).hasClass("menuCloseBtn") || $(e.target).parents(".menuCloseBtn").length){
 		$(".menuItems").removeClass("open");
 		return;
@@ -90,24 +90,24 @@ let transitionedListener = function(){
 
 let attachEventListeners = function(){
 	$(".login").on("click", showAuthForm);
-	
+
 	$(".logout").on("click", function(){
-		window.location.replace("\logout");
+		window.location.replace("/logout");
 	});
-	
+
 	$(".showLogin, .showRegister").on("click", switchAuthFrom);
-	
+
 	$("body").on("click", function(e){
 		if(hideOpened()) return;
 		handleMobileMenu(e);
 		handleUserOptions(e);
 		hideAuthForm(e);
 	});
-	
+
 	$("form[name=login] :input, form[name=register] :input").on("keyup", ()=>{
 		clearServerMsg();
 	});
-	
+
 	$(window).on("resize", function(e){
 		if($(window).width() > 768 && $(".menuItems").hasClass("open")){
 			$(".menuItems").removeClass("open")

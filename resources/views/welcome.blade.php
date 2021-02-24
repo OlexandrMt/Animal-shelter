@@ -1,32 +1,24 @@
-<<<<<<< HEAD
-=======
-<x-layout>
+<x-app-layout>
 	<x-slot name="head">
 		<x-head.head>
 			<x-slot name="headCommon">
-				<x-head.headCommon title="Register"/>
+				<x-head.headCommon title="Home"/>
 			</x-slot>
 			<link rel="stylesheet" href="/css/styles.css">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 		</x-head.head>
 	</x-slot>
-	
+
 	<x-slot name="header">
-		<x-header.header>
-			<x-slot name="menuBtn">
-				<x-header.menuBtn/>
-			</x-slot>
-			<x-slot name="menuItems">
-				<x-header.menuItems/>
-			</x-slot>
-			<x-slot name="optionsBtn">
-				<x-header.optionsBtn/>
-			</x-slot>
-			<x-slot name="userOptions">
-				<x-header.userOptions loginClass={{$loginClass}} loginBtnText={{$loginBtnText}}/>
-			</x-slot>
-		</x-header.header>
-	</x-slot>
-	
+    <x-header.header-combined  />
+
+  </x-slot>
+
+	  <x-auth-validation-errors class="text-center" :errors="$errors" />
+
 	<x-slot name="auth">
 		<x-auth.auth hidden="hidden" active="">
 			<x-slot name="closeBtn">
@@ -34,11 +26,11 @@
 			</x-slot>
 		</x-auth.auth>
 	</x-slot>
-	
+
 	<x-slot name="scripts">
 		<x-scripts.scripts/>
 	</x-slot>
-	
+
 	<div class="content">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor aliquet tincidunt. Donec vitae turpis non risus feugiat finibus et non enim. Phasellus quis mauris efficitur, faucibus nulla eget, feugiat nunc. Nulla elementum interdum aliquet. Sed porttitor in purus id vulputate. Suspendisse efficitur felis nec ex scelerisque suscipit. Fusce sit amet odio tellus. Etiam fringilla nulla magna, venenatis elementum turpis dictum ut. Phasellus massa felis, sollicitudin sit amet mollis nec, convallis ut est. Vivamus finibus massa magna, vitae fringilla odio accumsan non. Sed arcu magna, semper eu quam id, efficitur mollis ipsum.
 
@@ -50,7 +42,6 @@
 
 		Sed porttitor arcu id lacus vehicula, quis ultricies urna laoreet. Nam commodo, elit vitae tempor pulvinar, risus mi gravida ex, et convallis enim metus ut erat. Praesent vitae rhoncus nulla. Integer pellentesque tempor suscipit. Vestibulum augue metus, vulputate et neque at, ultricies iaculis nisi. Nunc ac interdum nibh. Morbi porttitor consequat mattis. Nam sed est in lorem vehicula lobortis a ut sapien. Sed ac neque aliquet, feugiat sem et, interdum ligula.
 
-		Nunc consectetur blandit urna, a semper enim cursus vel. Maecenas finibus pulvinar eros in congue. Vestibulum aliquam dui eget risus eleifend scelerisque. Maecenas rutrum vulputate est eget bibendum. Ut et tincidunt ipsum, sit amet mattis leo. Aliquam ultrices lacus id ex hendrerit auctor. Nunc ullamcorper, nunc non hendrerit pellentesque, velit metus placerat ligula, sed semper dui ex sit amet elit. Pellentesque id elementum sapien, id maximus nisi. Phasellus consequat nulla eu felis mollis bibendum. Nullam blandit massa purus, vitae finibus ipsum dapibus eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut fermentum lectus ac lectus gravida, vitae faucibus nibh rhoncus. Pellentesque venenatis ex a tellus pulvinar, ut lobortis lacus tincidunt. Donec malesuada rutrum tellus ut pulvinar. Etiam iaculis lorem quis leo consequat viverra. 
+		Nunc consectetur blandit urna, a semper enim cursus vel. Maecenas finibus pulvinar eros in congue. Vestibulum aliquam dui eget risus eleifend scelerisque. Maecenas rutrum vulputate est eget bibendum. Ut et tincidunt ipsum, sit amet mattis leo. Aliquam ultrices lacus id ex hendrerit auctor. Nunc ullamcorper, nunc non hendrerit pellentesque, velit metus placerat ligula, sed semper dui ex sit amet elit. Pellentesque id elementum sapien, id maximus nisi. Phasellus consequat nulla eu felis mollis bibendum. Nullam blandit massa purus, vitae finibus ipsum dapibus eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut fermentum lectus ac lectus gravida, vitae faucibus nibh rhoncus. Pellentesque venenatis ex a tellus pulvinar, ut lobortis lacus tincidunt. Donec malesuada rutrum tellus ut pulvinar. Etiam iaculis lorem quis leo consequat viverra.
 	</div>
-</x-layout>
->>>>>>> origin/auth
+</x-app-layout>
