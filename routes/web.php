@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () {
-return view ('welcome');
+  return view ('welcome');
 });
-<<<<<<< HEAD
 //Route::get('p', 'MyController@index');*/
 
 //Route::get('/', 'MyControler@index' {
@@ -24,9 +23,3 @@ return view ('welcome');
 Route::resource('my', MyController::class);
 Route::resource('photos', PhotoController::class);
 Route::resource('main', MainController::class);
-=======
-Route::resource('photos', NewResourceController::class);
-Route::get('/animalIndex', function(){
-  return view("animals/Index");
-});
->>>>>>> dev

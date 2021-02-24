@@ -10,7 +10,7 @@ Animal-shelters
   <div class="row">
     @foreach ($animals as $animal)
     <div class="col-sm-4" >
-      <img src="/{{$animal["ava"]}}" class="card-img-top" alt="...">
+      <img src="{{$animal["ava"]}}" class="card-img-top" alt="...">
       <div class="card-body" >
         <!--<p class="card-text" >Animal's name</p>
         <form action="#" method="get">
