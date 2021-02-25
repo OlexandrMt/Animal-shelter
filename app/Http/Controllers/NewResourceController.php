@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Animal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class NewResourceController extends Controller
 {
@@ -13,7 +15,8 @@ class NewResourceController extends Controller
      */
     public function index()
     {
-        return "jinna";
+        $animals = Animal::all();
+        return view('animals/index',['animal'=>$animals]);
     }
 
     /**
@@ -21,9 +24,10 @@ class NewResourceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+// dd($request->shelter_id);
+        return view('animals/create', ['shelter_id' => $request->shelter_id]);
     }
 
     /**
@@ -34,7 +38,16 @@ class NewResourceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $animals= new Animal();
+      $animals->fill($request->all());
+
+      if ($request->file('photo')){
+      $animals->photo = $request->file('photo')->store('avatars');
+      }
+      
+
+      $animals->save();
+      return redirect()->route('animals.index');
     }
 
     /**
@@ -54,9 +67,12 @@ class NewResourceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Request $request)
     {
-        //
+      $animals = Animal::find($id);
+
+      return view('animals/edit',['animal'=>$animals]);
+
     }
 
     /**
@@ -68,7 +84,20 @@ class NewResourceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+     $animals = Animal::find($id);
+     $animals->name = $request->input('name');
+     $animals->breed = $request->input('breed');
+     $animals->age = $request->input('age');
+     $animals->type = $request->input('type');
+     if ($request->file('photo')){
+     $animals->photo = $request->file('photo')->store('avatars');
+  }
+     $animals->sex = $request->input('sex');
+     $animals->status = $request->input('status');
+
+     $animals->save();
+
+    return redirect()->route('animals.index');
     }
 
     /**
@@ -79,6 +108,7 @@ class NewResourceController extends Controller
      */
     public function destroy($id)
     {
-        //
+      Animal::find($id)->delete();
+   return redirect()->route('animals.index');
     }
 }
