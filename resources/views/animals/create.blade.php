@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
     <head>
@@ -68,4 +69,74 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
     </body>
+=======
+<!DOCTPE html>
+<html>
+<head>
+<title>Animals</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<table class="table-responsive">
+<thead>
+<form action="/animals" method="post" enctype="multipart/form-data">
+  <input type="hidden" name="shelter_id" value="{{$shelter_id}}">
+  <tr>
+    <th>Name</th>
+    <td>
+      <input type="text" name="name"  id="name">
+    </td>
+  </tr>
+  <tr>
+    <th>breed</th>
+    <td>
+      <input type="text" name="breed"  id="breed">
+    </td>
+  </tr>
+  <tr>
+    <th>age</th>
+    <td>
+      <input type="text" name="age"  id="age">
+    </td>
+  </tr>
+  <tr>
+    <th>type</th>
+    <td>
+      <input type="text" name="type"  id="type">
+    </td>
+  </tr>
+  <tr>
+    <th>photo</th>
+    <td>
+        <input type="file" id="photo" name="photo">
+    </td>
+  </tr>
+  <tr>
+    <th>sex</th>
+    <td>
+      <input type="text" name="sex"  id="sex">
+    </td>
+  </tr>
+  <tr>
+    <th>status</th>
+    <td>
+      <input type="text" name="status"  id="status">
+    </td>
+  </tr>
+</thead>
+  <tr>
+    <td>
+    </td>
+    <td>
+    <input type="submit" class="btn-success" value="create">
+    </td>
+  </tr>
+@csrf
+</form>
+</table>
+</body>
+>>>>>>> dev
 </html>
