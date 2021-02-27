@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Animal;
 
-class MainController extends Controller
+class NewMainController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,62 +13,7 @@ class MainController extends Controller
      */
     public function index()
     {
-      /*$animals=[
-        [
-          "id"=>1,
-          "name"=>'Cat 1',
-          "age"=>'2',
-          "ava"=> "images/Screenshot.jpg"
-        ],
-        [
-          "id"=>2,
-          "name"=>'Cat 2',
-          "age"=>'5',
-          "ava"=> "images/Screenshot.jpg"
-        ],
-        [
-          "id"=>3,
-          "name"=>'Cat 3',
-          "age"=>'1',
-          "ava"=> "images/Screenshot.jpg"
-        ],
-        [
-          "id"=>4,
-          "name"=>'Cat 4',
-          "age"=>'1',
-          "ava"=> "images/Screenshot.jpg"
-        ],
-        [
-          "id"=>5,
-          "name"=>'Cat 5',
-          "age"=>'8',
-          "ava"=> "images/Screenshot.jpg"
-        ],
-        [
-          "id"=>6,
-          "name"=>'Cat 8',
-          "age"=>'5',
-          "ava"=> "images/Screenshot.jpg"
-        ],
-        [
-          "id"=>7,
-          "name"=>'Cat 7',
-          "age"=>'1',
-          "ava"=> "images/Screenshot.jpg"
-        ],
-        [
-          "id"=>8,
-          "name"=>'Cat 8',
-          "age"=>'2',
-          "ava"=> "images/Screenshot.jpg"
-        ],
-      ];
-      $animals= collect($animals);
-
-      return view ('layouts.contact', ["animals"=>$animals]); */
-      $animals = Animal::all();
-
-      return view ('layouts.contact', ["animals"=>$animals]);  //
+        //
     }
 
     /**

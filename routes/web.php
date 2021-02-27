@@ -23,3 +23,6 @@ Route::get('/', function () {
 Route::resource('my', MyController::class);
 Route::resource('photos', PhotoController::class);
 Route::resource('main', MainController::class);
+Route::resource('newmain', NewMainController::class);
+Route::resource('/animals', NewResourceController::class);
+//Route::resource('main', MainController::class);
