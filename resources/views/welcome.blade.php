@@ -13,8 +13,7 @@
 	</x-slot>
 
 	<x-slot name="header">
-    <x-header.header-combined  />
-
+    <x-header.header-combined/>
   </x-slot>
 
 	  <x-auth-validation-errors class="text-center" :errors="$errors" />

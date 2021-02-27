@@ -10,7 +10,7 @@
 
     @if(isset($shelter))
 
-    <x-auth-validation-errors class="mb-4" :errors="$errors" />
+    <!-- <x-auth-validation-errors class="mb-4" :errors="$errors" /> -->
 
     <div class="create-form">
       <form class="form-signing" action="/shelters/ {{$shelter->id}}" method="post" enctype="multipart/form-data">
@@ -33,7 +33,7 @@
           <input type="text" name="phone" value={{$shelter->phone}} id="phone">
         </div>
         <div class="img-round">
-          <img src="{{ asset("storage/".$shelter->logo) }}" alt="" title="">
+          <img src="{{ asset("storage/".$shelter->logo) }}" id="logo-preview">
         </div>
         <div class="formInput">
           <label for="img">Добавьте логотип</label>
@@ -58,5 +58,24 @@
       <h2 class="text-center">Page do not exist, or you have no right to edit it</h1>
       @endif
 
+      <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+      <script>
+          $('#logo').change(function () {
+              var input = $(this)[0];
+              if (input.files && input.files[0]) {
+                  if (input.files[0].type.match('image.*')) {
+                      var reader = new FileReader();
+                      reader.onload = function (e) {
+                          $('#logo-preview').attr('src', e.target.result);
+                      }
+                      reader.readAsDataURL(input.files[0]);
+                  } else {
+                      console.log('ошибка, не изображение');
+                  }
+              } else {
+                  console.log('хьюстон у нас проблема');
+              }
+          });
+      </script>
 
 </x-fullapp-layout>
