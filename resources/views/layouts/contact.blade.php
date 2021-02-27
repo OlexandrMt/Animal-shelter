@@ -1,10 +1,8 @@
-@extends('layouts.app')
+<x-fullapp-layout>
 
-@section('title')
-Animal-shelters
-@endsection
-@section('content')
-
+  <x-slot name="title">
+    Kitty
+  </x-slot>
 
 <div class="container">
   <div class="row">
@@ -42,4 +40,5 @@ Animal-shelters
     <p class="card-text">Animal's name</p>
   </div>
 </div>-->
-@endsection
+
+</x-fullapp-layout>
