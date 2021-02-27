@@ -13,8 +13,8 @@ use App\Http\Controllers\AuthController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
+
 	 $loginBtnText = "LogIn";
 	 $loginClass = "login";
 
@@ -35,5 +35,8 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::get('shelters/my', 'ShelterController@my')->name('shelters.my');
-
 Route::resource('shelters', ShelterController::class);
+
+
+Route::resource('/animals', AnimalController::class);
+Route::resource('main', MainController::class);

@@ -8,7 +8,7 @@
 
     </x-slot>
 
-    <!-- <x-auth-validation-errors class="mb-4" :errors="$errors" /> -->
+    <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
 
     <div class="create-form">
@@ -37,7 +37,6 @@
 
         <div class="img-round">
             <img id="logo-preview" src="default-preview.jpg" />
-
         </div>
 
         <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button> -->
@@ -69,15 +68,6 @@
                 console.log('хьюстон у нас проблема');
             }
         });
-
-        // $('#reset-img-preview').click(function() {
-        //     $('#img').val('');
-        //     $('#img-preview').attr('src', 'default-preview.jpg');
-        // });
-        //
-        // $('#form').bind('reset', function () {
-        //     $('#img-preview').attr('src', 'default-preview.jpg');
-        // });
     </script>
 
 
