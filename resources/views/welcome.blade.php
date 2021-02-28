@@ -43,4 +43,10 @@
 
 		Nunc consectetur blandit urna, a semper enim cursus vel. Maecenas finibus pulvinar eros in congue. Vestibulum aliquam dui eget risus eleifend scelerisque. Maecenas rutrum vulputate est eget bibendum. Ut et tincidunt ipsum, sit amet mattis leo. Aliquam ultrices lacus id ex hendrerit auctor. Nunc ullamcorper, nunc non hendrerit pellentesque, velit metus placerat ligula, sed semper dui ex sit amet elit. Pellentesque id elementum sapien, id maximus nisi. Phasellus consequat nulla eu felis mollis bibendum. Nullam blandit massa purus, vitae finibus ipsum dapibus eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut fermentum lectus ac lectus gravida, vitae faucibus nibh rhoncus. Pellentesque venenatis ex a tellus pulvinar, ut lobortis lacus tincidunt. Donec malesuada rutrum tellus ut pulvinar. Etiam iaculis lorem quis leo consequat viverra.
 	</div>
+	<div class="jumbotron text-center" style="margin-bottom:0">
+	  <p>Animal-shelter</p>
+	  <p></p>
+	  <p>cell phone: +38 067 431 74 24</p>
+	</div>
+
 </x-app-layout>

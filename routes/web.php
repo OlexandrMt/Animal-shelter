@@ -27,6 +27,7 @@ Route::get('/', function () {
 			"loginBtnText" => $loginBtnText,
 			"loginClass" => $loginClass
 		]);
+
 });
 
 Route::get('/dashboard', function () {
