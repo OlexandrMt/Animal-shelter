@@ -14,13 +14,17 @@ class SetUserTypeAsForeignKeyOnUsers extends Migration
     public function up()
     {
         if(Schema::hasColumn("users", "type") && Schema::hasColumn("user_types", "value")){
-			  Schema::table("users", function(Blueprint $table){
-				  $table->foreign("type")
+			  $foreignKeys = $this->listTableForeignKeys("users");
+			  if(!in_array("users_type_foreign", $foreignKeys)) {
+					Schema::table("users", function(Blueprint $table){
+						$table->foreign("type")
 							->on("user_types")
 							->onUpdate("cascade")
 							->onDelete("set null")
 							->references("value");		
-				});
+				}); 
+			  }
+
 		  }
     }
 
@@ -33,4 +37,12 @@ class SetUserTypeAsForeignKeyOnUsers extends Migration
     {
         //
     }
+	 
+	 //Helper function
+	 public function listTableForeignKeys($table){
+		$conn = Schema::getConnection()->getDoctrineSchemaManager();
+		return array_map(function($key){
+			return $key->getName();
+		}, $conn->listTableForeignKeys($table));
+	}
 }

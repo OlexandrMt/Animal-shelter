@@ -28,31 +28,49 @@ class CreateUsersTable extends Migration
 			 });		
 		 } else {
 			if(!Schema::hasColumn("users", "id")){
-				$table->id();
+				Schema::table("users", function(Blueprint $table){
+					$table->id();
+				});
 			}
 			if(!Schema::hasColumn("users", "username")){
-				$table->string('username');
+				Schema::table("users", function(Blueprint $table){
+					$table->string('username');
+				});
 			}
 			if(!Schema::hasColumn("users", "password")){
+				Schema::table("users", function(Blueprint $table){
 				$table->string('password');
+				});
 			}
 			if(!Schema::hasColumn("users", "email")){
-				$table->string('email')->unique();
+				Schema::table("users", function(Blueprint $table){
+					$table->string('email')->unique();
+				});	
 			}
 			if(!Schema::hasColumn("users", "type_id")){
-				$table->unsignedTinyInteger("type")->nullable();
+				Schema::table("users", function(Blueprint $table){
+					$table->unsignedTinyInteger("type_id")->nullable();
+				});	
 			}
 			if(!Schema::hasColumn("users", "active")){
-				$table->boolean("active")->default(Config::get("constants.db.USER_ACTIVE"));
+				Schema::table("users", function(Blueprint $table){
+					$table->boolean("active")->default(Config::get("constants.db.USER_ACTIVE"));
+				});	
 			}
 			if(!Schema::hasColumn("users", "remember_token")){
-				$table->rememberToken();
+				Schema::table("users", function(Blueprint $table){
+					$table->rememberToken();
+				});	
 			}
 			if(!Schema::hasColumn("users", "created_at")){
-				$table->timestamp("created_at")->useCurrent();
+				Schema::table("users", function(Blueprint $table){
+					$table->timestamp("created_at")->useCurrent();
+				});	
 			}
 			if(!Schema::hasColumn("users", "updated_at")){
-				$table->timestamp("updated_at")->useCurrent();
+				Schema::table("users", function(Blueprint $table){
+					$table->timestamp("updated_at")->useCurrent();
+				});	
 			}
 		 }
     }
