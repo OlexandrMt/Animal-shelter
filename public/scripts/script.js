@@ -33,21 +33,21 @@ let hideAuthForm = function(e){
 let switchAuthFrom = function(e){
 	let target = $(e.target);
 	resetAuthForm();
-	
+
 	if(!target.hasClass("active")){
-		
-		if(target.hasClass("showLogin")){	
+
+		if(target.hasClass("showLogin")){
 			$(".authContainer .showRegister").removeClass("active");
-			$("form[name=register]").removeClass("active");			
+			$("form[name=register]").removeClass("active");
 			$("form[name=login]").addClass("active");
 		}
-		
-		if(target.hasClass("showRegister")){		
+
+		if(target.hasClass("showRegister")){
 			$(".authContainer .showLogin").removeClass("active");
-			$("form[name=login]").removeClass("active");			
+			$("form[name=login]").removeClass("active");
 			$("form[name=register]").addClass("active");
 		}
-		
+
 		$(target).addClass("active");
 	}
 }
@@ -61,7 +61,7 @@ let hideOpened = function(){
 		$(".navbar .userOptions").removeClass("open");
 		return 1;
 	}
-	
+
 	return 0;
 }
 
@@ -70,7 +70,7 @@ let handleMobileMenu= function(e){
 		$(".navbar .menuItems").addClass("open");
 		return;
 	}
-	
+
 	if($(e.target).hasClass("menuCloseBtn") || $(e.target).parents(".navbar .menuCloseBtn").length){
 		$(".navbar .menuItems").removeClass("open");
 		return;
@@ -90,24 +90,24 @@ let transitionedListener = function(){
 
 let attachEventListeners = function(){
 	$(".navbar .login").on("click", showAuthForm);
-	
+
 	$(".navbar .logout").on("click", function(){
 		window.location.replace("\logout");
 	});
-	
+
 	$(".authContainer .showLogin, .authContainer .showRegister").on("click", switchAuthFrom);
-	
+
 	$("body").on("click", function(e){
 		if(hideOpened()) return;
 		handleMobileMenu(e);
 		handleUserOptions(e);
 		hideAuthForm(e);
 	});
-	
+
 	$(".authContainer form[name=login] :input, .authContainer form[name=register] :input").on("keyup", ()=>{
 		clearServerMsg();
 	});
-	
+
 	$(window).on("resize", function(e){
 		if($(window).width() > 768 && $(".navbar .menuItems").hasClass("open")){
 			$(".navbar .menuItems").removeClass("open")

@@ -1,7 +1,7 @@
 /*Header styles*/
 .navbar {
 	height: 3em;
-	color: #fff;	
+	color: #fff;
 	font-size: 1.5em;
 	user-select: none;
 	position: relative;
@@ -331,7 +331,7 @@
 
 /*design for mobile devices*/
 @media (max-width: 768px) {
-	
+
 	.navbar .menuBtn{
 		display: block;
 		position: absolute;
@@ -340,7 +340,7 @@
 		width: 3em;
 		height: 3em;
 	}
-	
+
 	.navbar .menuItems{
 		background: green;
 		position: fixed;
@@ -355,11 +355,11 @@
 		box-shadow: 5px 0 5px rgba(72, 72, 72, 0.7);
 		z-index: 1;
 	}
-	
+
 	.navbar .menuItems.open{
 		width: 7em;
 	}
-	
+
 	.navbar .menuItems.open .menuCloseBtn{
 		display: block;
 	}
@@ -369,12 +369,12 @@
 		width: 100%;
 		height: auto;
 	}
-	
+
 	.navbar .menuItems .bi {
 		width: 100%;
 		padding: 0;
 	}
-	
+
 	.authContainer {
 		width: 70%;
 	}

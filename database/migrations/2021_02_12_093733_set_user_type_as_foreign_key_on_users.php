@@ -21,10 +21,9 @@ class SetUserTypeAsForeignKeyOnUsers extends Migration
 							->on("user_types")
 							->onUpdate("cascade")
 							->onDelete("set null")
-							->references("value");		
-				}); 
+							->references("value");
+				});
 			  }
-
 		  }
     }
 
@@ -37,7 +36,7 @@ class SetUserTypeAsForeignKeyOnUsers extends Migration
     {
         //
     }
-	 
+
 	 //Helper function
 	 public function listTableForeignKeys($table){
 		$conn = Schema::getConnection()->getDoctrineSchemaManager();

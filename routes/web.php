@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,10 +14,13 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {	 
+Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('shelters/my', 'ShelterController@my')->name('shelters.my');
+Route::resource('shelters', ShelterController::class);
+
+Route::resource('/animals', AnimalController::class);
+Route::resource('main', MainController::class);
 require __DIR__.'/auth.php';
-
-

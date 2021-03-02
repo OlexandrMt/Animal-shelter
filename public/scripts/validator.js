@@ -6,7 +6,7 @@ export function clearServerMsg(){
 }
 
 export function createValidator(formName){
-	
+
 	if(formName === "login"){
 		return (
 			$(".authContainer form[name=login]").validate({
@@ -16,7 +16,7 @@ export function createValidator(formName){
 				submitHandler: submitHandler
 			})
 		)
-	} 
+	}
 
 	if(formName === "register"){
 		return (
@@ -28,19 +28,19 @@ export function createValidator(formName){
 			})
 		)
 	}
-	
+
 	return null;
 }
-	
+
 let showErrors = function(errors, form){
 	let msg;
-	
+
 	if(errors.general){
 		msg = "<div class='error serverError general centerText'>" + errors.general + "</div>";
 		$(form).before(msg);
 		return;
 	}
-	
+
 	let formInputs = $(form).find(":input");
 	formInputs.each(function(input){
 		let fieldErrors = errors[$(this).attr("name")];
@@ -55,23 +55,23 @@ let getData = function(form){
 	let data = {};
 	let formInputs = $(form).find(":input");
 	formInputs = formInputs.not(":input[type=submit], :input[type=hidden]");
-	
-	formInputs.each(function(){	
+
+	formInputs.each(function(){
 		let name = $(this).attr("name");
 		let value = $(this).val();
 		data[name] = value;
 	});
-	
+
 	return data;
 }
 
-let submitHandler = function(form){	
+let submitHandler = function(form){
 	$(form).submit((e) => {
 		e.preventDefault();
 	});
-	
+
 	clearServerMsg();
-	
+
 	let msg = $("<div class='error serverError general centerText'></div>");
 	$(form).find(":input[type=submit]").attr("disabled", "true");
 	$.ajax({
@@ -79,27 +79,27 @@ let submitHandler = function(form){
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 		},
 		method: $(form).attr("method"),
-		url: $(form).attr("action"),					
+		url: $(form).attr("action"),
 		data: getData(form)
 	}).done((data, status)=>{
 			if(data.intendedUrl){
 				window.location.replace(data.intendedUrl);
 			} else {
-				window.location.replace("/");
-			}					
+				window.location.replace(window.location.href);
+			}
 	}).fail((xhr)=>{
 		if(xhr.status == 422){
-			try{							
-				let response = JSON.parse(xhr.responseText);							
-				if(response.errors) showErrors(response.errors, form);							
+			try{
+				let response = JSON.parse(xhr.responseText);
+				if(response.errors) showErrors(response.errors, form);
 			} catch(e) {
 				msg.text("Cannot read server response");
-				$(form).before(msg);	
-			}			
+				$(form).before(msg);
+			}
 		} else {
 			msg.text("Something went wrong on the server. Try to reload the page");
 			$(form).before(msg);
 		}
-		$(form).find(":input[type=submit]").removeAttr("disabled");		
+		$(form).find(":input[type=submit]").removeAttr("disabled");
 	});
 }

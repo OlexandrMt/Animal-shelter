@@ -217,9 +217,8 @@
 
 /*design for mobile devices*/
 @media (max-width: 768px) {
-	
+
 	.authContainer {
 		width: 70%;
 	}
 }
-
