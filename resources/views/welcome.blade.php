@@ -31,7 +31,7 @@
 	</x-slot>
 
 	<div class="content">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor aliquet tincidunt. Donec vitae turpis non risus feugiat finibus et non enim. Phasellus quis mauris efficitur, faucibus nulla eget, feugiat nunc. Nulla elementum interdum aliquet. Sed porttitor in purus id vulputate. Suspendisse efficitur felis nec ex scelerisque suscipit. Fusce sit amet odio tellus. Etiam fringilla nulla magna, venenatis elementum turpis dictum ut. Phasellus massa felis, sollicitudin sit amet mollis nec, convallis ut est. Vivamus finibus massa magna, vitae fringilla odio accumsan non. Sed arcu magna, semper eu quam id, efficitur mollis ipsum.
+		 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor aliquet tincidunt. Donec vitae turpis non risus feugiat finibus et non enim. Phasellus quis mauris efficitur, faucibus nulla eget, feugiat nunc. Nulla elementum interdum aliquet. Sed porttitor in purus id vulputate. Suspendisse efficitur felis nec ex scelerisque suscipit. Fusce sit amet odio tellus. Etiam fringilla nulla magna, venenatis elementum turpis dictum ut. Phasellus massa felis, sollicitudin sit amet mollis nec, convallis ut est. Vivamus finibus massa magna, vitae fringilla odio accumsan non. Sed arcu magna, semper eu quam id, efficitur mollis ipsum.
 
 		Sed arcu arcu, vehicula sit amet volutpat at, malesuada id ex. Nullam vitae lorem orci. Etiam ligula nunc, fermentum vel sem vitae, commodo rutrum arcu. Fusce lacinia lacinia ultrices. Etiam nulla purus, euismod vitae accumsan ac, ultricies nec velit. Mauris volutpat porttitor eleifend. Nulla ut porttitor mauris.
 
@@ -44,9 +44,10 @@
 		Nunc consectetur blandit urna, a semper enim cursus vel. Maecenas finibus pulvinar eros in congue. Vestibulum aliquam dui eget risus eleifend scelerisque. Maecenas rutrum vulputate est eget bibendum. Ut et tincidunt ipsum, sit amet mattis leo. Aliquam ultrices lacus id ex hendrerit auctor. Nunc ullamcorper, nunc non hendrerit pellentesque, velit metus placerat ligula, sed semper dui ex sit amet elit. Pellentesque id elementum sapien, id maximus nisi. Phasellus consequat nulla eu felis mollis bibendum. Nullam blandit massa purus, vitae finibus ipsum dapibus eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut fermentum lectus ac lectus gravida, vitae faucibus nibh rhoncus. Pellentesque venenatis ex a tellus pulvinar, ut lobortis lacus tincidunt. Donec malesuada rutrum tellus ut pulvinar. Etiam iaculis lorem quis leo consequat viverra.
 	</div>
 	<div class="jumbotron text-center" style="margin-bottom:0">
-	  <p>Animal-shelter</p>
-	  <p></p>
-	  <p>cell phone: +38 067 431 74 24</p>
+	  <p>Притулок для тварин</p>
+	  <p>Ми знаходимось за адресою:</p>
+		<p>м.Вінниця, провулок Цегельний, 12</p>
+	  <p>Наш телефон: +38-067-431-74-24</p>
 	</div>
 
 </x-app-layout>
