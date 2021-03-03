@@ -28,6 +28,8 @@ class AnimalController extends Controller
     {
 // dd($request->shelter_id);
         return view('animals/create', ['shelter_id' => $request->shelter_id]);
+
+
     }
 
     /**
@@ -44,8 +46,8 @@ class AnimalController extends Controller
       if ($request->file('photo')){
       $animals->photo = $request->file('photo')->store('avatars');
       }
-
-
+      // $shelter_id  = 1;
+      $animals->shelter_id = 1;
       $animals->save();
       return redirect()->route('animals.index');
     }
