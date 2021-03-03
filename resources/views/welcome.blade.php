@@ -4,7 +4,7 @@
 			<x-slot name="headCommon">
 				<x-head.headCommon title="Home"/>
 			</x-slot>
-			<link rel="stylesheet" href="/css/styles.css">
+			<link rel="stylesheet" href="./css/styles.css">
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -17,7 +17,7 @@
   </x-slot>
 
 	  <x-auth-validation-errors class="text-center" :errors="$errors" />
-
+	@if(!Auth::check())
 	<x-slot name="auth">
 		<x-auth.auth hidden="hidden" active="">
 			<x-slot name="closeBtn">
@@ -25,10 +25,12 @@
 			</x-slot>
 		</x-auth.auth>
 	</x-slot>
+	@endif
 
 	<x-slot name="scripts">
 		<x-scripts.scripts/>
 	</x-slot>
+<<<<<<< HEAD
 
 	<div class="content">
 		 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor aliquet tincidunt. Donec vitae turpis non risus feugiat finibus et non enim. Phasellus quis mauris efficitur, faucibus nulla eget, feugiat nunc. Nulla elementum interdum aliquet. Sed porttitor in purus id vulputate. Suspendisse efficitur felis nec ex scelerisque suscipit. Fusce sit amet odio tellus. Etiam fringilla nulla magna, venenatis elementum turpis dictum ut. Phasellus massa felis, sollicitudin sit amet mollis nec, convallis ut est. Vivamus finibus massa magna, vitae fringilla odio accumsan non. Sed arcu magna, semper eu quam id, efficitur mollis ipsum.
@@ -50,4 +52,6 @@
 	  <p>Наш телефон: +38-067-431-74-24</p>
 	</div>
 
+=======
+>>>>>>> dev
 </x-app-layout>

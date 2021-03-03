@@ -20,17 +20,21 @@ class CreateUserTypesTable extends Migration
 			  $table->string("name");
         });
 		 } else {
-			Schema::create('user_types', function (Blueprint $table) {
 			  if(!Schema::hasColumn("user_types", "id")){
-				  $table->tinyIncrements("id")->autoIncrement();
+				  Schema::table("user_types", function(Blueprint $table){
+					 $table->tinyIncrements("id")->autoIncrement(); 
+				  });
 			  }
 			  if(!Schema::hasColumn("user_types", "value")){
-				  $table->unsignedTinyInteger("value")->unique();
+				  Schema::table("user_types", function(Blueprint $table){
+					$table->unsignedTinyInteger("value")->unique();
+				  });
 			  }
 			  if(!Schema::hasColumn("user_types", "name")){
-				  $table->string("name");
+				  Schema::table("user_types", function(Blueprint $table){
+					$table->string("name");
+				  });
 			  }
-        }); 
 		 }
     }
 
