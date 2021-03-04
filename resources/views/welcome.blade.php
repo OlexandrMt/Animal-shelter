@@ -16,7 +16,7 @@
     <x-header.header-combined/>
   </x-slot>
 
-	  <x-auth-validation-errors class="text-center" :errors="$errors" />
+	  <x-validation-errors class="text-center" :errors="$errors" />
 
 	<x-slot name="auth">
 		<x-auth.auth hidden="hidden" active="">
