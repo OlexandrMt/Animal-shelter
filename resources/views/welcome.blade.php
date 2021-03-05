@@ -53,7 +53,7 @@
 
 	        <h4 class="card-title"> Імя:{{ $animal->name }}</h4>
 	        <p class="card-text"> Вік:{{ $animal->age }}</p>
-	        <a href="/animals{id}" class="btn btn-dark">Детальна інформація</a>
+	        <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-dark">Детальна інформація</a>
 	      </div>
 	    </div>
 	    @endforeach

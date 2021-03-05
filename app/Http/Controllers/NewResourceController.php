@@ -58,7 +58,8 @@ class NewResourceController extends Controller
      */
     public function show($id)
     {
-        //
+      $animals = Animal::find($id);
+        return view('animals.show', ['animal'=>$animals]);   //
     }
 
     /**
