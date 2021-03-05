@@ -6,7 +6,7 @@ use App\Models\Animal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class AnimalController extends Controller
+class NewResourceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -28,8 +28,6 @@ class AnimalController extends Controller
     {
 // dd($request->shelter_id);
         return view('animals/create', ['shelter_id' => $request->shelter_id]);
-
-
     }
 
     /**
@@ -48,10 +46,7 @@ class AnimalController extends Controller
       }
 
 
-      $animals->shelter_id = $request->input('shelter_id');;
-
       $animals->save();
-
       return redirect()->route('animals.index');
     }
 
@@ -63,9 +58,8 @@ class AnimalController extends Controller
      */
     public function show($id)
     {
-      //dd("show");
       $animals = Animal::find($id);
-        return view('animals.show', ['animal'=>$animals]);  //
+        return view('animals.show', ['animal'=>$animals]);   //
     }
 
     /**
