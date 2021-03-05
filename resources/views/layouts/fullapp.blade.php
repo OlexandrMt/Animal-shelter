@@ -39,7 +39,9 @@
      <x-validation-errors  :errors="$errors" />
    </div>
 
-		{{$slot}}
+		<div class="container">
+      {{$slot}}
+    </div>
 
       <x-scripts.scripts/>
       @if(@isset($scripts))
