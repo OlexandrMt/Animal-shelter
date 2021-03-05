@@ -9,7 +9,7 @@ export function createValidator(formName){
 
 	if(formName === "login"){
 		return (
-			$("form[name=login]").validate({
+			$(".authContainer form[name=login]").validate({
 				onfocusout: false,
 				rules: validationRules.login,
 				messages: validationMessages.login,
@@ -20,7 +20,8 @@ export function createValidator(formName){
 
 	if(formName === "register"){
 		return (
-			$("form[name=register]").validate({
+			$(".authContainer form[name=register]").validate({
+				onfocusout: false,
 				rules: validationRules.register,
 				messages: validationMessages.register,
 				submitHandler: submitHandler
@@ -59,7 +60,6 @@ let getData = function(form){
 		let name = $(this).attr("name");
 		let value = $(this).val();
 		data[name] = value;
-
 	});
 
 	return data;

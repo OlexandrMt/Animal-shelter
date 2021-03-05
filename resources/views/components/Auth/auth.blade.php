@@ -6,7 +6,7 @@
 		<span class="showLogin active">Login</span>
 		<span class="showRegister">Register</span>
 	</div>
-	<form method="POST" name="login" action="/login" class={{$active}}>
+	<form method="POST" name="login" action="/login" class="{{$active}}">
 		<div class="formInput">
 			<label for="username">Username*</label>
 			<input type="text" name="username" autocomplete="off">
@@ -21,7 +21,7 @@
 		<div class="formInput description">
 			<div class="forgotPassword"><a href="#">Forgot password?</a></div>
 			<div class="textRight"><span>* required fields</span></div>
-		</div>		
+		</div>
 	</form>
 	<form method="POST" name="register" action="/register">
 		<div class="formInput">
@@ -45,8 +45,6 @@
 		</div>
 		<div class="formInput description">
 			<div class="textRight"><span>* required fields</span></div>
-		</div>		
+		</div>
 	</form>
 </div>
-
-

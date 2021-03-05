@@ -3,25 +3,24 @@ export const validationRules = {
 		username: {
 			required: true,
 			minlength: 3,
-			maxlength: 20
+			maxlength: 255
 		},
 		password: {
 			required: true,
 			minlength: 3,
-			maxlength: 20
+			maxlength: 255
 		}
 	},
 	register: {
-		onfocusout: false,
 		username: {
 			required: true,
 			minlength: 3,
-			maxlength: 20,
+			maxlength: 255,
 		},
 		password: {
 			required: true,
 			minlength: 3,
-			maxlength: 20
+			maxlength: 255
 		},
 		confirmPassword: {
 			equalTo: "#password"

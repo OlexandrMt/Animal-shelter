@@ -2,7 +2,7 @@
 	<x-slot name="head">
 		<x-head.head>
 			<x-slot name="headCommon">
-				<x-head.headCommon title="Register"/>
+				<x-head.headCommon title="Login"/>
 			</x-slot>
 			<link rel="stylesheet" href="/css/authPagestyles.css">
 		</x-head.head>

@@ -1,40 +1,28 @@
-/*General styles*/
-*{
-	margin:0;
-	padding:0;
-}
-
-ul {
-	list-style:none;
-}
-
-body {
-	font-size: 16px;
-	color: #525151;
-
-}
-
-header {
+/*Header styles*/
+.navbar {
 	height: 3em;
 	color: #fff;
-	position: relative;
 	font-size: 1.5em;
 	user-select: none;
-}
-
-header .hidden {
-	display: none;
-}
-
-.navbar {
-	height: 100%;
+	margin:0;
+	padding:0;
 	position: relative;
 	background: green;
 	z-index: 2;
 }
 
+.navbar ul {
+	list-style:none;
+}
+
+.navbar .hidden {
+	display: none;
+}
+
 /*Auth form*/
 .authContainer {
+	margin:0;
+	padding:0;
 	position: absolute;
 	top: 5em;
 	left: 50%;
@@ -49,6 +37,7 @@ header .hidden {
 	letter-spacing: 0.05em;
 	line-height: 1.5em;
 	font-weight: bolder;
+	color: #525151;
 	box-shadow: 0 0 20px rgba(82, 81, 81, 0.7);
 	background: #fff;
 	z-index: 1000;
@@ -81,6 +70,7 @@ header .hidden {
 }
 
 .authContainer .formSwitchers>span.active {
+	border-bottom: 3px solid #e0c92f;
 	border-bottom: 3px solid #d09b1cb8;
 }
 
@@ -157,6 +147,7 @@ header .hidden {
 	font-size: 0.8em;
 	font-style: italic;
 	letter-spacing: normal;
+	color: #969592;
 	color: #797777d1;
 }
 
