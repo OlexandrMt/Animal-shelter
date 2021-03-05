@@ -10,6 +10,8 @@
 <body>
 <table class="table-responsive">
 <thead>
+
+
 <form action="/animals" method="post" enctype="multipart/form-data">
   <input type="hidden" name="shelter_id" value="{{$shelter_id}}">
   <tr>
@@ -62,6 +64,9 @@
     <input type="submit" class="btn-success" value="create">
     </td>
   </tr>
+
+  <input type="hidden" name="shelter_id" value='{{$shelter_id}}'>
+
 @csrf
 </form>
 </table>

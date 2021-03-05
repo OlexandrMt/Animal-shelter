@@ -105,7 +105,7 @@ class ShelterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id, Request $request )
+    public function update($id, ShelterRequest $request )
     {
 
         $shelterinfo = Shelter::find($id);

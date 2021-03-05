@@ -8,7 +8,6 @@
 
     </x-slot>
 
-    <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
 
     <div class="create-form">
@@ -32,14 +31,13 @@
 
         <div class="formInput">
            <label for="img">Logo</label>
-           <input type="file" name="logo" id="logo">
+           <input type="file" name="logo" id="logo" accept="image/*">
         </div>
 
         <div class="img-round">
-            <img id="logo-preview" src="default-preview.jpg" />
+            <img id="logo-preview" src={{ asset("storage/images/shalter_logos/defaultimg.jpg") }} />
         </div>
 
-        <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button> -->
         <div class="formInput submit">
     			<input type="submit" value="Create">
     		</div>
@@ -49,26 +47,6 @@
       </form>
     </div>
 
-
-    <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script>
-        $('#logo').change(function () {
-            var input = $(this)[0];
-            if (input.files && input.files[0]) {
-                if (input.files[0].type.match('image.*')) {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        $('#logo-preview').attr('src', e.target.result);
-                    }
-                    reader.readAsDataURL(input.files[0]);
-                } else {
-                    console.log('ошибка, не изображение');
-                }
-            } else {
-                console.log('хьюстон у нас проблема');
-            }
-        });
-    </script>
-
+      <x-scripts.img-preview img="logo" imgPreview="logo-preview" />
 
 </x-fullapp-layout>
