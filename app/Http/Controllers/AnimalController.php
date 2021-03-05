@@ -46,9 +46,9 @@ class AnimalController extends Controller
       if ($request->file('photo')){
       $animals->photo = $request->file('photo')->store('avatars');
       }
-      // $shelter_id  = 1;
-      $animals->shelter_id = 1;
-      $animals->save();
+      $animals->shelter_id = $request->input('shelter_id');
+      
+        $animals->save();
       return redirect()->route('animals.index');
     }
 
