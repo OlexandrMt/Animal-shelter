@@ -18,7 +18,7 @@ let resetAuthForm = function(){
 }
 
 let hideAuthForm = function(e){
-	// if($(e.target).hasClass("closeBtn") || $(e.target).parents(".closeBtn").length){
+	if($(e.target).hasClass("closeBtn") || $(e.target).parents(".closeBtn").length){
 		$(".showRegister").removeClass("active");
 		$(".showLogin").addClass("active");
 		$("form[name=login]").removeClass("active");
@@ -27,7 +27,7 @@ let hideAuthForm = function(e){
 		$(".authContainer").removeClass("open");
 		$(".shim").hide();
 		resetAuthForm();
-	// }
+	}
 }
 
 let switchAuthFrom = function(e){
