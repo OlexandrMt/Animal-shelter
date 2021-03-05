@@ -5,5 +5,5 @@
 		<li class="logout">Log Out</li>
 	@else
 		<li class="login">Log In</li>
-	@endif	
+	@endif
 </ul>

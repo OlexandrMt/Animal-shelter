@@ -21,7 +21,7 @@
 		<div class="formInput description">
 			<div class="forgotPassword"><a href="#">Forgot password?</a></div>
 			<div class="textRight"><span>* required fields</span></div>
-		</div>		
+		</div>
 	</form>
 	<form method="POST" name="register" action="/register">
 		<div class="formInput">
@@ -45,8 +45,6 @@
 		</div>
 		<div class="formInput description">
 			<div class="textRight"><span>* required fields</span></div>
-		</div>		
+		</div>
 	</form>
 </div>
-
-
