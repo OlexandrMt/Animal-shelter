@@ -61,7 +61,7 @@ class AnimalController extends Controller
       }
       $animals->shelter_id = $request->input('shelter_id');
       $animals->save();
-      
+
       return redirect()->route('animals.index');
     }
 

@@ -9,4 +9,10 @@ class Animal extends Model
 {
     use HasFactory;
     protected $fillable = ['name','breed','age','type','photo','sex','status'];
+
+    public function shelter()
+    {
+        return $this->belongsTo(Shelter::class);
+    }
+
 }
