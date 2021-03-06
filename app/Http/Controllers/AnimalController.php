@@ -6,6 +6,14 @@ use App\Models\Animal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
+use App\Http\Requests\AnimalRequest;
+
+
+
 class AnimalController extends Controller
 {
     /**
@@ -17,8 +25,14 @@ class AnimalController extends Controller
     {
         $animals = Animal::all();
         return view('animals/index',['animal'=>$animals]);
+        // return view('welcome',['animals'=>$animals]);
     }
+    public function all()
+    {
 
+        $animals = Animal::all();
+        return view('welcome',['animals'=>$animals]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -57,10 +71,9 @@ class AnimalController extends Controller
       if ($request->file('photo')){
       $animals->photo = $request->file('photo')->store('avatars');
       }
-
-      $animals->shelter_id=1;
-
+      $animals->shelter_id = $request->input('shelter_id');
       $animals->save();
+
       return redirect()->route('animals.index');
     }
 

@@ -14,13 +14,15 @@ use App\Models\Animal;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', 'AnimalController@all');
 
 Route::get('shelters/my', 'ShelterController@my')->name('shelters.my');
+Route::get('shelters/{shelter}/animals', 'ShelterController@animals')->name('shelters.animals');
+
 Route::resource('shelters', ShelterController::class);
 
 Route::resource('/animals', AnimalController::class);
-Route::resource('main', MainController::class);
 require __DIR__.'/auth.php';

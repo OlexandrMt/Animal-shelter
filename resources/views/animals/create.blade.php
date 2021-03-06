@@ -9,7 +9,7 @@
     </x-slot>
 
 
-    <div class="main-container">
+    <div class="main-container mb-4">
     <div class="body-container">
 
     <div class='signup-container'>
@@ -83,11 +83,13 @@
               </form>
             -->
           <input type="submit" id='next' value="Добавити">
+          <input type="hidden" name="shelter_id" value='{{$shelter_id}}'>
 
 
       </div>
     </footer>
     </div>
+
     @csrf
     </form>
     </div>

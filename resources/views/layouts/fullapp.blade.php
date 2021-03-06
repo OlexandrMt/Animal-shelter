@@ -35,7 +35,7 @@
        </x-auth.auth>
 @endif
 
-    <div class="errors mb-4" >
+    <div class="col-md mb-4 d-flex justify-content-center" >
      <x-validation-errors  :errors="$errors" />
    </div>
 
@@ -43,9 +43,14 @@
       {{$slot}}
     </div>
 
+    <x-footer.footer>
+    </x-footer.footer>
+
       <x-scripts.scripts/>
       @if(@isset($scripts))
         {{$scripts}}
       @endif
-	  </body>
+
+
+  	  </body>
 </html>
