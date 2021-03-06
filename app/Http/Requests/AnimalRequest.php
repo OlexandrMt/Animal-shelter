@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ShelterRequest extends FormRequest
+class AnimalRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,14 +21,16 @@ class ShelterRequest extends FormRequest
      *
      * @return array
      */
+
     public function rules()
     {
         return [
-            'name' => 'required | between: 3,30',
-            'address' => 'required | between: 5,50',
-            'mail' => 'required | email',
-            'phone' => 'required | numeric',
-            'logo' => 'image'
+            'name' => 'required | between: 1,30',
+            'breed' => 'required | between: 1,30',
+            'sex' => 'required',
+            'type' => 'required',
+            'age' => 'required | numeric',
+            'photo' => 'image'
         ];
     }
     public function messages()
@@ -36,10 +38,9 @@ class ShelterRequest extends FormRequest
     return [
         'required' => 'Поле :attribute должно быть заполнено',
         'name.between' => 'Поле :attribute должно быть от :min до :max символов',
-        'address.between' => 'Поле :attribute должно быть от :min до :max символов',
+        'breed.between' => 'Поле :attribute должно быть от :min до :max символов',
         'numeric' => 'Поле :attribute должно содержать только цифры',
         'image' => 'Поле :attribute должно содержать изображение',
-        'email' => 'Поле :attribute должно содержать email адрес'
 
     ];
 }
@@ -47,10 +48,10 @@ class ShelterRequest extends FormRequest
     {
         return [
             'name' => '"Имя"',
-            'address' => '"Адрес"',
-            'mail' => '"Email"',
-            'phone' => '"Телефон"',
-            'logo' => '"Логотип"',
+            'breed' => '"Порода"',
+            'sex' => '"Стать"',
+            'age' => '"Возраст"',
+            'photo' => '"Фото"',
         ];
     }
 }
