@@ -2,8 +2,8 @@
 	<li><a class="menuItems-a" href="/shelters/create">CreateShelter</a></li>
 	<li><a class="menuItems-a" href="/shelters/my">MyShelter</a></li>
 	@if(Auth::check())
-		<li class="logout"><a href="#">Log Out</a></li>
+		<li class="logout">Log Out</li>
 	@else
-		<li class="login"><a href="#">Log In</a></li>
+		<li class="login">Log In</li>
 	@endif
 </ul>

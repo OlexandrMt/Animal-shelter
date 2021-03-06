@@ -92,7 +92,7 @@ let attachEventListeners = function(){
 	$(".navbar .login").on("click", showAuthForm);
 
 	$(".navbar .logout").on("click", function(){
-		window.location.replace("\logout");
+		window.location.replace("/logout");
 	});
 
 	$(".authContainer .showLogin, .authContainer .showRegister").on("click", switchAuthFrom);
@@ -101,7 +101,7 @@ let attachEventListeners = function(){
 		if(hideOpened()) return;
 		handleMobileMenu(e);
 		handleUserOptions(e);
-		hideAuthForm(e);
+		// hideAuthForm(e);
 	});
 
 	$(".authContainer form[name=login] :input, .authContainer form[name=register] :input").on("keyup", ()=>{
