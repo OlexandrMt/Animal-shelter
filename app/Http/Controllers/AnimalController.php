@@ -5,10 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Animal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-<<<<<<< HEAD
-use Illuminate\Support\Facades\Storage;
-=======
->>>>>>> dev
 
 class AnimalController extends Controller
 {
@@ -19,13 +15,8 @@ class AnimalController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-      $animalinfo = Animal::all();
-      return view('animals/index', ['animal' => $animalinfo]);
-=======
         $animals = Animal::all();
         return view('animals/index',['animal'=>$animals]);
->>>>>>> dev
     }
 
     /**
@@ -33,16 +24,10 @@ class AnimalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
-    public function create()
-    {
-      return view('animals/create');
-=======
     public function create(Request $request)
     {
 // dd($request->shelter_id);
         return view('animals/create', ['shelter_id' => $request->shelter_id]);
->>>>>>> dev
     }
 
     /**
@@ -53,31 +38,28 @@ class AnimalController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
-        $animalinfo = new Animal();
-        $animalinfo->nickname = $request->input('fname');
-        $animalinfo->breed = $request->input('fbreed');
-        $animalinfo->age = $request->input('fage');
-        $animalinfo->type = $request->input('ftype');
-        //$animalinfo->photo = $request->input('fphoto');
-        $animalinfo->photo = $request->fphoto->store('animal_photo','public');
-        $animalinfo->sex = $request->input('gender');
-        $animalinfo->status = $request->input('status');
-        $animalinfo->save();
-
-        return redirect()->route('animals.index');
-=======
       $animals= new Animal();
       $animals->fill($request->all());
+
+/*
+      $animals->nickname = $request->input('name');
+      $animals->breed = $request->input('breed');
+      $animals->age = $request->input('age');
+      $animals->type = $request->input('type');
+      $animals->photo = $request->fphoto->store('avatars','public');
+*/
+      $animals->sex = $request->input('sex');
+      $animals->status = $request->input('status');
+
 
       if ($request->file('photo')){
       $animals->photo = $request->file('photo')->store('avatars');
       }
 
+      $animals->shelter_id=1;
 
       $animals->save();
       return redirect()->route('animals.index');
->>>>>>> dev
     }
 
     /**
@@ -88,7 +70,8 @@ class AnimalController extends Controller
      */
     public function show($id)
     {
-        //
+        $animals = Animal::all();
+        return view('animals/show',['animal'=>$animals]);
     }
 
     /**
@@ -97,18 +80,12 @@ class AnimalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
-    public function edit($id)
-    {
-        //
-=======
     public function edit($id, Request $request)
     {
       $animals = Animal::find($id);
 
       return view('animals/edit',['animal'=>$animals]);
 
->>>>>>> dev
     }
 
     /**
@@ -120,9 +97,6 @@ class AnimalController extends Controller
      */
     public function update(Request $request, $id)
     {
-<<<<<<< HEAD
-        //
-=======
      $animals = Animal::find($id);
      $animals->name = $request->input('name');
      $animals->breed = $request->input('breed');
@@ -137,7 +111,6 @@ class AnimalController extends Controller
      $animals->save();
 
     return redirect()->route('animals.index');
->>>>>>> dev
     }
 
     /**
@@ -148,11 +121,7 @@ class AnimalController extends Controller
      */
     public function destroy($id)
     {
-<<<<<<< HEAD
-        //
-=======
       Animal::find($id)->delete();
    return redirect()->route('animals.index');
->>>>>>> dev
     }
 }

@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-INDEX
-
-<form action="animals/create" method="get">
-  <input type="submit" value="CreateAnimal">
-</form>
-=======
 <!DOCTPE html>
 <html>
 <head>
@@ -15,6 +8,13 @@ INDEX
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+  <div class="input-group">
+    <form action="/animals/create" method="get">
+          @csrf
+          <input type="submit" class="btn-success" value="add animal">
+          @method('GET')
+        </form>
+  </div>
 <table class="table table-striped">
 <thead>
 <tr>
@@ -38,8 +38,26 @@ INDEX
 <td>{{ $animal->age }}</td>
 <td>{{ $animal->type }}</td>
 <td><img src="{{asset("storage/" .$animal->photo) }}"></td>
-<td>{{ $animal->sex }}</td>
-<td>{{ $animal->status }}</td>
+
+<td>
+@if(is_null($animal->sex))
+unknown
+@elseif($animal->sex==1)
+Male
+@else
+Female
+@endif
+</td>
+
+<td>
+  @if(is_null($animal->status))
+  unknown
+  @elseif($animal->status==1)
+  Sheltered
+  @else
+  Free
+  @endif
+</td>
 <td>
   <div class="input-group">
   <form action="/animals/{{ $animal->id }}/edit" method="get">
@@ -62,4 +80,3 @@ INDEX
 </table>
 </body>
 </html>
->>>>>>> dev

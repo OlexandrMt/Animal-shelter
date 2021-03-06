@@ -1,142 +1,83 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
-<html>
-    <head>
-      <meta charset="UTF-8">
-      <title>Add animal</title>
-      <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    </head>
-    <body>
-      @if ($errors->any())
-          <div class="alert alert-danger">
-              <ul>
-                  @foreach ($errors->all() as $error)
-                      <li>{{ $error }}</li>
-                  @endforeach
-              </ul>
-          </div>
-      @endif
-      <form role="form" action="/animals" method="post" enctype="multipart/form-data">
-        @csrf
-        <div class="container">
-          <label for="fname">Nickname:</label>
-          <input type="text" class="form-control" name="fname" id="fname" placeholder="input animal nicename">
-
-          <label for="fbreed">Breed:</label>
-          <input type="text" class="form-control" name="fbreed" id="fbreed" placeholder="input animal breed">
-
-          <label for="fage">Age:</label>
-          <input type="text" class="form-control" name="fage" id="fage" placeholder="input animal age">
-
-          <label for="ftype">Type:</label>
-          <input type="text" class="form-control" name="ftype" id="ftype" placeholder="input animal type">
-
-          <div class="mb-3">
-            <label for="fphoto" class="form-label">Default file input example</label>
-            <input class="form-control" type="file" id="fphoto" name="fphoto">
-          </div>
-
-          <div class="form-check">
-            <label for="gender" class="form-label">Sex:</label><br>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="gender" id="male" value="1">
-              <label class="form-check-label" for="male">Male</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="gender" id="female" value="0">
-              <label class="form-check-label" for="female">Female</label>
-            </div>
-          </div>
-          <br>
-          <div class="form-check">
-            <label for="status" class="form-label">Status:</label><br>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="status" id="free" value="1">
-              <label class="form-check-label" for="free">Free</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="status" id="taken away" value="0">
-              <label class="form-check-label" for="taken away">Taken away</label>
-            </div>
-          </div>
-          <br>
-          <input type="submit" class="btn btn-success" value="Add">
-        </div>
-      </form>
-
-      <!-- JavaScript Bundle with Popper -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
-    </body>
-=======
-<!DOCTPE html>
 <html>
 <head>
 <title>Animals</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/animal.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<table class="table-responsive">
-<thead>
-<form action="/animals" method="post" enctype="multipart/form-data">
-  <input type="hidden" name="shelter_id" value="{{$shelter_id}}">
-  <tr>
-    <th>Name</th>
-    <td>
-      <input type="text" name="name"  id="name">
-    </td>
-  </tr>
-  <tr>
-    <th>breed</th>
-    <td>
-      <input type="text" name="breed"  id="breed">
-    </td>
-  </tr>
-  <tr>
-    <th>age</th>
-    <td>
-      <input type="text" name="age"  id="age">
-    </td>
-  </tr>
-  <tr>
-    <th>type</th>
-    <td>
-      <input type="text" name="type"  id="type">
-    </td>
-  </tr>
-  <tr>
-    <th>photo</th>
-    <td>
-        <input type="file" id="photo" name="photo">
-    </td>
-  </tr>
-  <tr>
-    <th>sex</th>
-    <td>
-      <input type="text" name="sex"  id="sex">
-    </td>
-  </tr>
-  <tr>
-    <th>status</th>
-    <td>
-      <input type="text" name="status"  id="status">
-    </td>
-  </tr>
-</thead>
-  <tr>
-    <td>
-    </td>
-    <td>
-    <input type="submit" class="btn-success" value="create">
-    </td>
-  </tr>
-@csrf
-</form>
-</table>
+  <div class='signup-container'>
+  <div class='left-container'>
+  <h1>
+    <i class='fas fa-paw'></i>
+    ANIMAL-SHELTER
+  </h1>
+  <div class='puppy'>
+    <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-542207-jpeg.png'>
+  </div>
+  </div>
+  <form action="/animals" method="post" enctype="multipart/form-data">
+  <div class='right-container'>
+  <header>
+    <div class='set'>
+      <div class='pets-name'>
+        <label for='name'>Name</label>
+        <input id='name' placeholder="Pet's name" type='text' name='name'>
+      </div>
+      <div class='pets-type'>
+        <label for='type'>Type</label>
+        <input id='type' placeholder="Pet's type" type='text' name='type'>
+      </div>
+    </div>
+    <div class='set'>
+      <div class='pets-breed'>
+        <label for='breed'>Breed</label>
+        <input id='breed' placeholder="Pet's breed" type='text' name='breed'>
+      </div>
+      <div class='pets-birthday'>
+        <label for='age'>Age</label>
+        <input id='age' placeholder="Pet's age" type='text' name='age'>
+      </div>
+    </div>
+    <div class='set'>
+      <div class='pets-gender'>
+        <label for='pet-gender-female'>Gender</label>
+        <div class='radio-container'>
+          <input checked='' id='pet-gender-female' name='sex' type='radio' value='0'>
+          <label for='pet-gender-female'>Female</label>
+          <input id='pet-gender-male' name='sex' type='radio' value='1'>
+          <label for='pet-gender-male'>Male</label>
+        </div>
+      </div>
+      <div class='pets-spayed-neutered'>
+        <label for='pet-spayed'>Pet's status</label>
+        <div class='radio-container'>
+          <input checked='' id='pet-spayed' name='status' type='radio' value='0'>
+          <label for='pet-spayed'>Free</label>
+          <input id='pet-neutered' name='status' type='radio' value='1'>
+          <label for='pet-neutered'>Sheltered</label>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class='pets-photo'>
+
+      <label for="photo">Photo:</label>
+      <input type="file" id="photo" name="photo">
+    </div>
+  </header>
+  <footer>
+    <div class='set'>
+      <input type="submit" id='next' value="Add">
+    </div>
+  </footer>
+  </div>
+  @csrf
+  </form>
+  </div>
 </body>
->>>>>>> dev
 </html>
