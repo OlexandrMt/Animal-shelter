@@ -145,11 +145,22 @@ class ShelterController extends Controller
       $shelterinfo = User::find(Auth::user()->id);
       $shelterinfo = $shelterinfo->shelter()->get();
 
-
-      if(empty($shelterinfo)){
+      if($shelterinfo->isEmpty()){
         return redirect()->back()->withErrors(['You don`t have shelters']);
         }
       return view('shelters/index', ['shelters' => $shelterinfo]);
+    }
+
+    public function animals($id)
+    {
+
+      $shelterinfo = Shelter::find($id);
+      $shelterinfo = $shelterinfo->animal()->get();
+
+      if($shelterinfo->isEmpty()){
+        return redirect()->back()->withErrors(['Shelter is empty']);
+        }
+      return view('welcome', ['animals' => $shelterinfo]);
     }
 
   }

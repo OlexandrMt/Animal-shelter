@@ -29,7 +29,7 @@
         <li>{{$shelter->mail}}</li>
         <li>{{$shelter->phone}}</li>
       </ul>
-        <form action="" method="get" style="margin-bottom: 1em;">
+        <form class="mb-2" action="/shelters/{{$shelter->id}}/animals" method="get" ">
               <button type="submit" class="w-100 btn btn-lg btn-outline-primary">Our animals</button>
         </form>
       @if($shelter->user_id == $user)

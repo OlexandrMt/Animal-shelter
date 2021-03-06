@@ -35,7 +35,7 @@
        </x-auth.auth>
 @endif
 
-    <div class="errors mb-4" >
+    <div class="col-md mb-4 d-flex justify-content-center" >
      <x-validation-errors  :errors="$errors" />
    </div>
 
