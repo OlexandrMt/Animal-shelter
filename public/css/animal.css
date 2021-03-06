@@ -1,18 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap");
-* {
+ .main-containeer{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
+.body-container{
   align-items: center;
   color: rgba(0, 0, 0, 0.8);
   display: grid;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 400;
-  height: 100vh;
   justify-items: center;
   weight: 100vw;
 }
@@ -138,16 +137,15 @@ body {
   border-radius: 19px;
   font-family: "Montserrat", sans-serif;
 }
-/*
 .right-container footer #back {
-  background: #fff;
+  background: rgba(0, 102, 0, 0.7);
   transition: 0.2s all ease-in-out;
+  color: #fff;
 }
 .right-container footer #back:hover {
   background: #171a2b;
   color: white;
 }
-*/
 .right-container footer #next {
   background: rgba(0, 102, 0, 0.7);
   border: 1px solid transparent;
