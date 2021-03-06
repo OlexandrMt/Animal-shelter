@@ -10,7 +10,7 @@ if(Auth::user()){
 @endphp
 
 <x-header.header>
-  <div class="jumbotron text-center" style="margin: auto; padding: 15px; color: black;">
+  <div class="jumbotron text-center m-auto p-3 text-black">
     <div class="container">
       <h1 class="display-4">Animal-shelter <i class="fas fa-paw"></i></h1>
     </div>

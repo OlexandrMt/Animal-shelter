@@ -24,10 +24,33 @@ class ShelterRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required ',
-            'address' => 'required ',
-            'mail' => 'required',
-            'phone' => 'required'
+            'name' => 'required | between: 3,30',
+            'address' => 'required | between: 5,50',
+            'mail' => 'required | email',
+            'phone' => 'required | numeric',
+            'logo' => 'image'
+        ];
+    }
+    public function messages()
+{
+    return [
+        'required' => 'Поле :attribute должно быть заполнено',
+        'name.between' => 'Поле :attribute должно быть от :min до :max символов',
+        'address.between' => 'Поле :attribute должно быть от :min до :max символов',
+        'numeric' => 'Поле :attribute должно содержать только цифры',
+        'logo' => 'Поле :attribute должно содержать изображение',
+        'email' => 'Поле :attribute должно содержать email адрес'
+
+    ];
+}
+    public function attributes()
+    {
+        return [
+            'name' => '"Имя"',
+            'address' => '"Адрес"',
+            'mail' => '"Email"',
+            'phone' => '"Телефон"',
+            'logo' => '"Логотип"',
         ];
     }
 }

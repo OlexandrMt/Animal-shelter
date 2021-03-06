@@ -28,6 +28,8 @@ class AnimalController extends Controller
     {
 // dd($request->shelter_id);
         return view('animals/create', ['shelter_id' => $request->shelter_id]);
+
+
     }
 
     /**
@@ -70,8 +72,9 @@ class AnimalController extends Controller
      */
     public function show($id)
     {
-        $animals = Animal::all();
-        return view('animals/show',['animal'=>$animals]);
+      //dd("show");
+      $animals = Animal::find($id);
+        return view('animals.show', ['animal'=>$animals]);  //
     }
 
     /**

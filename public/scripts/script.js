@@ -37,13 +37,13 @@ let switchAuthFrom = function(e){
 	if(!target.hasClass("active")){
 
 		if(target.hasClass("showLogin")){
-			$(".showRegister").removeClass("active");
+			$(".authContainer .showRegister").removeClass("active");
 			$("form[name=register]").removeClass("active");
 			$("form[name=login]").addClass("active");
 		}
 
 		if(target.hasClass("showRegister")){
-			$(".showLogin").removeClass("active");
+			$(".authContainer .showLogin").removeClass("active");
 			$("form[name=login]").removeClass("active");
 			$("form[name=register]").addClass("active");
 		}
@@ -53,12 +53,12 @@ let switchAuthFrom = function(e){
 }
 
 let hideOpened = function(){
-	if($(".menuItems").hasClass("open")){
-		$(".menuItems").removeClass("open");
+	if($(".navbar .menuItems").hasClass("open")){
+		$(".navbar .menuItems").removeClass("open");
 		return 1;
 	}
-	if($(".userOptions").hasClass("open")){
-		$(".userOptions").removeClass("open");
+	if($(".navbar .userOptions").hasClass("open")){
+		$(".navbar .userOptions").removeClass("open");
 		return 1;
 	}
 
@@ -66,20 +66,20 @@ let hideOpened = function(){
 }
 
 let handleMobileMenu= function(e){
-	if($(e.target).hasClass("menuBtn") || $(e.target).parents(".menuBtn").length){
-		$(".menuItems").addClass("open");
+	if($(e.target).hasClass("menuBtn") || $(e.target).parents(".navbar .menuBtn").length){
+		$(".navbar .menuItems").addClass("open");
 		return;
 	}
 
-	if($(e.target).hasClass("menuCloseBtn") || $(e.target).parents(".menuCloseBtn").length){
-		$(".menuItems").removeClass("open");
+	if($(e.target).hasClass("menuCloseBtn") || $(e.target).parents(".navbar .menuCloseBtn").length){
+		$(".navbar .menuItems").removeClass("open");
 		return;
 	}
 }
 
 let handleUserOptions = function(e){
-	if($(e.target).hasClass("optionsBtn") || $(e.target).parents(".optionsBtn").length){
-		$(".userOptions").toggleClass("open");
+	if($(e.target).hasClass("optionsBtn") || $(e.target).parents(".navbar .optionsBtn").length){
+		$(".navbar .userOptions").toggleClass("open");
 	}
 }
 
@@ -89,28 +89,28 @@ let transitionedListener = function(){
 }
 
 let attachEventListeners = function(){
-	$(".login").on("click", showAuthForm);
+	$(".navbar .login").on("click", showAuthForm);
 
-	$(".logout").on("click", function(){
+	$(".navbar .logout").on("click", function(){
 		window.location.replace("/logout");
 	});
 
-	$(".showLogin, .showRegister").on("click", switchAuthFrom);
+	$(".authContainer .showLogin, .authContainer .showRegister").on("click", switchAuthFrom);
 
 	$("body").on("click", function(e){
 		if(hideOpened()) return;
 		handleMobileMenu(e);
 		handleUserOptions(e);
-		hideAuthForm(e);
+		// hideAuthForm(e);
 	});
 
-	$("form[name=login] :input, form[name=register] :input").on("keyup", ()=>{
+	$(".authContainer form[name=login] :input, .authContainer form[name=register] :input").on("keyup", ()=>{
 		clearServerMsg();
 	});
 
 	$(window).on("resize", function(e){
-		if($(window).width() > 768 && $(".menuItems").hasClass("open")){
-			$(".menuItems").removeClass("open")
+		if($(window).width() > 768 && $(".navbar .menuItems").hasClass("open")){
+			$(".navbar .menuItems").removeClass("open")
 		}
 	});
 }
