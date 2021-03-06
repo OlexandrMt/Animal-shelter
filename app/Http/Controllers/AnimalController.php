@@ -23,8 +23,8 @@ class AnimalController extends Controller
     public function index()
     {
         $animals = Animal::all();
-        // return view('animals/index',['animal'=>$animals]);
-        return view('welcome',['animals'=>$animals]);
+        return view('animals/index',['animal'=>$animals]);
+        // return view('welcome',['animals'=>$animals]);
     }
     public function all()
     {

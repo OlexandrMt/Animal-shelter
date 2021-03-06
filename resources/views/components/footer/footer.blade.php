@@ -1,5 +1,7 @@
 <footer>
-	<div>
+	<div class="navbar-fixed-bottom row-fluid">
+	      <div class="navbar-inner">
+	        	<div>
 		{{$slot}}
 	</div>
 	<div class="jumbotron text-center" style="margin-bottom:0">
@@ -8,4 +10,6 @@
 		<p>м.Вінниця, провулок Цегельний, 12</p>
 		<p>Наш телефон: +38-067-431-74-24</p>
 	</div>
+</div>
+</div>
 </footer>
