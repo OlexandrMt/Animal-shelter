@@ -1,8 +1,13 @@
 <x-fullapp-layout>
+	<x-slot name="title">
+		Home
+	</x-slot>
 
-  <x-slot name="title">
-    main
-  </x-slot>
+
+	<x-slot name="scripts">
+		<x-scripts.scripts/>
+	</x-slot>
+
 
 	<div class="container">
 		<div class="row">
