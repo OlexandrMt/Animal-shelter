@@ -43,9 +43,14 @@
       {{$slot}}
     </div>
 
+    <x-footer.footer>
+    </x-footer.footer>
+
       <x-scripts.scripts/>
       @if(@isset($scripts))
         {{$scripts}}
       @endif
-	  </body>
+
+
+  	  </body>
 </html>
