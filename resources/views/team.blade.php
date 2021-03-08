@@ -18,7 +18,7 @@
   <div class="card border-light mb-3" style="max-width: 1200px;">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="images/unnamed.jpg" class="rounded" alt="...">
+      <img src="{{ ($team["ava"]) }}" class="rounded" alt="...">
     </div>
     <div class="col-md-8">
       <div class="card-body">
