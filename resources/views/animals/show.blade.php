@@ -34,8 +34,22 @@
 <div class="card">
     <div class="card-body">
       <h2 class="margin"> {{ $animal->name }}</h2>
-      <p class="card-text"> Порода: {{ $animal->breed }} </p>
-      <p class="card-text">Вік: {{ $animal->age }} </p>
+      <p class="card-text"> Тип:
+        @if(is_null($animal->type))
+        Не вказано
+        @else {{ $animal->type}}
+      @endif</p>
+      <p class="card-text"> Порода:
+        @if(is_null($animal->breed))
+        Не вказано
+        @else {{ $animal->breed}}
+      @endif</p>
+      <p class="card-text">Вік:
+        @if(is_null($animal->age))
+        Не вказано
+        @else {{ $animal->age}}
+        @endif
+      </p>
       <p class="card-text">Стать: @if(is_null($animal->sex))
       Не вказано
       @elseif($animal->sex==1)
@@ -50,7 +64,14 @@
       @else
       Вільний
       @endif </p>
-      <p class="card-text">Моя історія:  </p>
+      <p class="card-text">Моя історія:
+        @if(is_null($animal->description))
+        Не вказано
+        @else {{ $animal->description}}
+        @endif
+
+
+       </p>
     </div>
   </div>
 </div>
