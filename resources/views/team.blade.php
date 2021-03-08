@@ -15,10 +15,10 @@
 <div class=".container">
   <div class="row">
 @foreach($teams as $team)
-  <div class="card border-light mb-3" style="max-width: 1200px;">
+  <div class="card border-light mb-3" style="max-width: 650px;">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="{{ ($team["ava"]) }}" class="rounded" alt="...">
+      <img src="{{ ($team["ava"]) }}" class="rounded-circle" alt="...">
     </div>
     <div class="col-md-8">
       <div class="card-body">

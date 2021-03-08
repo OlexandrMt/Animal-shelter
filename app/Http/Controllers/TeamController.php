@@ -32,7 +32,7 @@ class TeamController extends Controller
           [
             "id"=>4,
             "name"=>'Наталія Макодай',
-            "ava"=> "images/unnamed.jpg"
+            "ava"=> "images/Nata1.jpg"
           ],
           [
             "id"=>5,
