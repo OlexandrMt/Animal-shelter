@@ -23,6 +23,10 @@ Route::get('shelters/my', 'ShelterController@my')->name('shelters.my');
 Route::get('shelters/{shelter}/animals', 'ShelterController@animals')->name('shelters.animals');
 
 Route::resource('shelters', ShelterController::class);
+// Route::get('/team', function () {
+//  return view('team');
+// });
 
+Route::get('/team', 'TeamController@index');
 Route::resource('/animals', AnimalController::class);
 require __DIR__.'/auth.php';
