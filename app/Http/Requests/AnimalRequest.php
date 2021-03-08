@@ -28,7 +28,6 @@ class AnimalRequest extends FormRequest
             'name' => 'required | between: 1,30',
             'breed' => 'required | between: 1,30',
             'sex' => 'required',
-            'type' => 'required',
             'age' => 'required | numeric',
             'photo' => 'image'
         ];

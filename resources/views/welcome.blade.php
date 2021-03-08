@@ -35,7 +35,7 @@
           <div class="card-group">
             <div class="card mb-4 shadow-sm">
             <div class="card-body d-flex flex-column">
-              <div class="img-round"  style="width: 200px; height:200px; border-radius: 0">
+              <div class="img-square">
                     <img src="{{asset("storage/" .$animal->photo) }}" class="card-img-top" alt="...">
               </div>
               <h4 class="card-title">  {{ $animal->name }}</h4>
