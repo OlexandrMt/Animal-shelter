@@ -42,9 +42,9 @@
               <div class="img-round"  style="width: 200px; height:200px; border-radius: 0">
                     <img src="{{asset("storage/" .$animal->photo) }}" class="card-img-top" alt="...">
               </div>
-              <h4 class="card-title"> Імя: {{ $animal->name }}</h4>
+              <h4 class="card-title">  {{ $animal->name }}</h4>
               <ul class="list-unstyled mt-3 mb-4">
-                <p class="card-text"> Вік: {{ $animal->age }}</p>
+                <!-- <p class="card-text"> Вік: {{ $animal->age }}</p> -->
                 <div class="mt-auto">
                   <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-dark">Детальна інформація</a>
                 </div>

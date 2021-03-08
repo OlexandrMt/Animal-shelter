@@ -2,4 +2,3 @@
 	{{$headCommon}}
 	{{$slot}}
 </head>
-  

@@ -10,11 +10,11 @@ if(Auth::user()){
 @endphp
 
 <x-header.header>
-  <div class="jumbotron text-center m-auto p-3 text-black">
+  <!-- <div class="jumbotron text-center m-auto p-3 text-black">
     <div class="container">
       <h1 class="display-4">Animal-shelter <i class="fas fa-paw"></i></h1>
     </div>
-  </div>
+  </div> -->
   <x-slot name="menuBtn">
     <x-header.menuBtn/>
   </x-slot>

@@ -1,15 +1,10 @@
-<footer>
-	<div class="navbar-fixed-bottom row-fluid">
-	      <div class="navbar-inner">
-	        	<div>
+<footer class="container-fluid text-center">
+			<div>
 		{{$slot}}
 	</div>
 	<div class="jumbotron text-center" style="margin-bottom:0">
-		<p>Притулок для тварин</p>
-		<p>Ми знаходимось за адресою:</p>
-		<p>м.Вінниця, провулок Цегельний, 12</p>
-		<p>Наш телефон: +38-067-431-74-24</p>
+  <h1 class="display-4"><i class="fas fa-paw">Animal-shelter </i></h1>
+<h4> Вінницька ІТ-Академія</h4>
+		<p>Студенський проект</p>
 	</div>
-</div>
-</div>
 </footer>
