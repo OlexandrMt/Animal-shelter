@@ -57,6 +57,17 @@ class AnimalController extends Controller
       $animals= new Animal();
       $animals->fill($request->all());
 
+/*
+      $animals->nickname = $request->input('name');
+      $animals->breed = $request->input('breed');
+      $animals->age = $request->input('age');
+      $animals->type = $request->input('type');
+      $animals->photo = $request->fphoto->store('avatars','public');
+*/
+      $animals->sex = $request->input('sex');
+      $animals->status = $request->input('status');
+
+
       if ($request->file('photo')){
       $animals->photo = $request->file('photo')->store('avatars');
       }
