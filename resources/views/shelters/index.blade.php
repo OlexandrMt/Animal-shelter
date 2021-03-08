@@ -5,14 +5,9 @@
         Shelter
       </x-slot>
 
-
-
-
   <x-slot name="header">
 
   </x-slot>
-
-
 
 
   <div class="content">
@@ -27,8 +22,11 @@
             </div>
             <div class="card-body d-flex flex-column">
               <div class="img-round mt-0 mb-3" >
-                @if($shelter->logo==NULL) @php $shelter->logo = "images/shalter_logos/defaultimg.jpg" @endphp  @endif
+                @if($shelter->logo==NULL)
+                <img src="images/default_logo.jpg" alt="" title="">
+                @else
                 <img src="{{ asset("storage/".$shelter->logo) }}" alt="" title="">
+                @endif
               </div>
 
               <ul class="list-unstyled mt-3 mb-4">
@@ -38,7 +36,7 @@
               </ul>
               <div class="mt-auto">
               <form  action="/shelters/{{$shelter->id}}" method="get">
-                    <button type="submit" class="w-100 btn btn-lg btn-outline-primary">Look closer</button>
+                    <button type="submit" class="w-75 btn btn-dark">Детальніше</button>
               </form>
             </div>
             </div>

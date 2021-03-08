@@ -14,7 +14,7 @@ class AddDescriptionToAnimalsTable extends Migration
     public function up()
     {
         Schema::table('animals', function (Blueprint $table) {
-            $table->string('description');
+            $table->string('description')->nullable();
         });
     }
 
