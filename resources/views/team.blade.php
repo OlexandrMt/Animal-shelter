@@ -15,14 +15,14 @@
 <div class=".container">
   <div class="row">
 @foreach($teams as $team)
-  <div class="card mb-3" style="max-width: 1200px;">
+  <div class="card border-light mb-3" style="max-width: 1200px;">
   <div class="row g-0">
     <div class="col-md-4">
       <img src="images/unnamed.jpg" class="rounded" alt="...">
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h4 class="card-title"> Моє імя</h4>
+        <h4 class="card-title">  {{ ($team["name"]) }}</h4>
       </div>
     </div>
   </div>

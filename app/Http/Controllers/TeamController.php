@@ -40,6 +40,17 @@ class TeamController extends Controller
             "ava"=> "images/unnamed.jpg"
           ],
 
+          [
+            "id"=>6,
+            "name"=>'Олександр Панченко',
+            "ava"=> "images/unnamed.jpg"
+          ],
+          [
+            "id"=>5,
+            "name"=>'Олег Ростов',
+            "ava"=> "images/unnamed.jpg"
+          ],
+
         ];
         $teams= collect($teams);
 

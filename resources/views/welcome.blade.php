@@ -3,11 +3,9 @@
 		Home
 	</x-slot>
 
-
 	<x-slot name="scripts">
 		<x-scripts.scripts/>
 	</x-slot>
-
 
 	<!-- <div class="container">
 		<div class="row">
@@ -33,11 +31,9 @@
 
   <div class="content">
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-
       @foreach($animals as $animal)
           <div class="card-group">
             <div class="card mb-4 shadow-sm">
-
             <div class="card-body d-flex flex-column">
               <div class="img-round"  style="width: 200px; height:200px; border-radius: 0">
                     <img src="{{asset("storage/" .$animal->photo) }}" class="card-img-top" alt="...">
@@ -55,10 +51,6 @@
       @endforeach
     </div>
   </div>
-
-
-
-
 
 
 </x-fullapp-layout>

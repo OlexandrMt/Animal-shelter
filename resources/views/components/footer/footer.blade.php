@@ -3,8 +3,9 @@
 		{{$slot}}
 	</div>
 	<div class="jumbotron text-center" style="margin-bottom:0">
-  <h1 class="display-4"><i class="fas fa-paw">Animal-shelter </i></h1>
+  <h1 class="display-4"><i class="fas fa-paw">Animal-shelter</i></h1>
 <h4> Вінницька ІТ-Академія</h4>
 		<p>Студенський проект</p>
+	
 	</div>
 </footer>
