@@ -213,9 +213,6 @@
 
 .authContainer .formInput input:focus {
 	outline: none;
-}
-
-.authContainer .formInput input:hover {
 	box-shadow: 0 0 5px rgba(82, 81, 81, 0.5);
 }
 
@@ -272,6 +269,11 @@
 
 .authContainer .forgotPassword{
 	font-style: normal;
+}
+
+.authContainer .forgotPassword a{
+	color: #797777d1;
+	text-decoration: none;
 }
 
 .authContainer .forgotPassword a:hover{
