@@ -8,7 +8,7 @@
       <link rel="stylesheet" href="/css/animal.css">
     </x-slot>
 
-    <div class="main-container">
+    <div class="main-container mb-4">
         <div class="body-container">
             <div class='signup-container'>
                 <div class='left-container'>

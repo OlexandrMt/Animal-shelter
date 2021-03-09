@@ -61,7 +61,7 @@
             <input checked='' id='pet-spayed' name='status' type='radio' value='0'>
             <label for='pet-spayed'>Вільний</label>
             <input id='pet-neutered' name='status' type='radio' value='1'>
-            <label for='pet-neutered'>Прихищен.</label>
+            <label for='pet-neutered'>Прихищений</label>
           </div>
         </div>
       </div>
@@ -70,7 +70,13 @@
       <div class='pets-photo'>
 
         <label for="photo">Фото:</label>
-        <input type="file" id="photo" name="photo">
+        <div class="pets-photo-input">
+          <input type="file" id="photo" name="photo">
+        </div>
+      </div>
+      <label for="comment">Моя історія:</label>
+      <div class="set">
+        <textarea style="width: 720px;" name="comment" rows="4" cols="80"></textarea>
       </div>
     </header>
     <footer>
