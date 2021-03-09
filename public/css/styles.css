@@ -328,6 +328,11 @@
 	bottom: 0;
 	background: rgba(128, 128, 128, 0.5);
 }
+.menuHome {
+	z-index: 1;
+	position: relative;
+	display: inline-block;
+}
 
 /*design for mobile devices*/
 @media (max-width: 768px) {
@@ -339,6 +344,7 @@
 		top: 0;
 		width: 3em;
 		height: 3em;
+
 	}
 
 	.navbar .menuItems{
@@ -357,7 +363,7 @@
 	}
 
 	.navbar .menuItems.open{
-		width: 7em;
+		width: auto;
 	}
 
 	.navbar .menuItems.open .menuCloseBtn{
@@ -368,6 +374,7 @@
 		display: block;
 		width: 100%;
 		height: auto;
+		padding-left: .5em;
 	}
 
 	.navbar .menuItems .bi {
@@ -378,4 +385,16 @@
 	.authContainer {
 		width: 70%;
 	}
+	.menuHome {
+		z-index: 1;
+		position: relative;
+		display: block;
+		margin: auto;
+	}
+}
+@media (max-width: 320px){
+	.fa-paw>span{
+	display: none;
+	}
+
 }
