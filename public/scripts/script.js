@@ -101,7 +101,7 @@ let attachEventListeners = function(){
 		if(hideOpened()) return;
 		handleMobileMenu(e);
 		handleUserOptions(e);
-		// hideAuthForm(e);
+		hideAuthForm(e);
 	});
 
 	$(".authContainer form[name=login] :input, .authContainer form[name=register] :input").on("keyup", ()=>{
