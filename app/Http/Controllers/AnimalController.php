@@ -128,6 +128,7 @@ class AnimalController extends Controller
   }
      $animals->sex = $request->input('sex');
      $animals->status = $request->input('status');
+     $animals->description = $request->input('description');
 
      $animals->save();
 
