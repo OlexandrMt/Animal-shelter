@@ -74,9 +74,9 @@
           <input type="file" id="photo" name="photo">
         </div>
       </div>
-      <label for="comment">Моя історія:</label>
+      <label for="description">Моя історія:</label>
       <div class="set">
-        <textarea style="width: 720px;" name="comment" rows="4" cols="80"></textarea>
+        <textarea style="width: 720px;" name="description" rows="4" cols="80"></textarea>
       </div>
     </header>
     <footer>

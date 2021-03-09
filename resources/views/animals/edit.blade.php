@@ -70,6 +70,10 @@
         <label for="photo">Фото:</label>
         <input type="file" id="photo" name="photo">
       </div>
+      <label for="description">Моя історія:</label>
+      <div class="set">
+        <textarea style="width: 720px;" name="description" rows="4" cols="80">{{$animal->description}}</textarea>
+      </div>
     </header>
     <footer>
       <div class='set'>
