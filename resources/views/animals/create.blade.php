@@ -50,9 +50,9 @@
           <label for='pet-gender-female'>Стать</label>
           <div class='radio-container'>
             <input checked='' id='pet-gender-female' name='sex' type='radio' value='0'>
-            <label for='pet-gender-female'>Дівчинка</label>
+            <label for='pet-gender-female'>Самка</label>
             <input id='pet-gender-male' name='sex' type='radio' value='1'>
-            <label for='pet-gender-male'>Хлопчик</label>
+            <label for='pet-gender-male'>Самець</label>
           </div>
         </div>
         <div class='pets-spayed-neutered'>
