@@ -40,7 +40,12 @@ class AnimalController extends Controller
      */
     public function create(Request $request)
     {
-// dd($request->shelter_id);
+        if(!Auth::check()){
+          return redirect()->back()->withErrors(['Потрібно авторизуватися, щоб додати тварину']);
+        }
+        elseif(!$request->shelter_id){
+          return redirect()->back()->withErrors(['Потрібно увійти до притулку, та мати права адміністраторв щоб додати тварину']);
+        }
         return view('animals/create', ['shelter_id' => $request->shelter_id]);
 
 
