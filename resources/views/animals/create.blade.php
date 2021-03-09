@@ -61,7 +61,7 @@
             <input checked='' id='pet-spayed' name='status' type='radio' value='0'>
             <label for='pet-spayed'>Вільний</label>
             <input id='pet-neutered' name='status' type='radio' value='1'>
-            <label for='pet-neutered'>Прихищен.</label>
+            <label for='pet-neutered'>Прихищений</label>
           </div>
         </div>
       </div>

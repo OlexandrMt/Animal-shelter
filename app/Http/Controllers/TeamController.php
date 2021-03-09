@@ -27,7 +27,7 @@ class TeamController extends Controller
           [
             "id"=>3,
             "name"=>'Дмитро Базалицький',
-            "ava"=> "images/unnamed.jpg"
+            "ava"=> "images/Bazalytskyi.png"
           ],
           [
             "id"=>4,
@@ -37,7 +37,7 @@ class TeamController extends Controller
           [
             "id"=>5,
             "name"=>'Олександр Метельний',
-            "ava"=> "images/unnamed.jpg"
+            "ava"=> "images/Metelnyi.png"
           ],
 
           [
