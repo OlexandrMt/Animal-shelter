@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap");
  .main-containeer{
   box-sizing: border-box;
-  margin: 0;
+  margin: auto;
   padding: 0;
 }
 
@@ -19,7 +19,7 @@
 .signup-container {
   display: grid;
   grid-template-areas: "left right";
-  max-width: 900px;
+
 }
 
 .left-container {
@@ -68,7 +68,7 @@
   background: rgba(51, 204, 51, 0.7);
   display: grid;
   grid-template-areas: "." ".";
-  width: 500px;
+  width: 800px;
 }
 .right-container h1:nth-of-type(1) {
   color: rgba(0, 0, 0, 0.8);
@@ -97,16 +97,20 @@
 .right-container label,
 .right-container input,
 .right-container .pets-photo {
-  width: 176px;
+  width: 325px;
 }
 .right-container .pets-photo {
   align-items: center;
   display: grid;
   grid-template-areas: ". .";
 }
-.pets-photo{
-  display: grid;
+.pets-photo label{
+  width: 395px;
 }
+.pets-photo-input{
+  float: right;
+}
+
 .right-container .pets-photo button {
   border: none;
   border-radius: 50%;
@@ -185,7 +189,7 @@
   padding: 0;
   text-align: center;
   transition: 0.2s all ease-in-out;
-  width: 80px;
+  width: 120px;
 }
 
 .radio-container input[type=radio] {

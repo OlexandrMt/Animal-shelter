@@ -31523,6 +31523,12 @@ select {
   color: inherit;
 }
 
+@media (max-width: 768px) {
+  .create-form{
+    width: 70%;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
