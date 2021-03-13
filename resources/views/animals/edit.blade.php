@@ -79,7 +79,7 @@
       <div class='set'>
 
           <input type="submit" id='next' value="Редагувати">
-
+<input type="hidden" name="shelter_id" value='{{$shelter_id}}'>
 
       </div>
     </footer>

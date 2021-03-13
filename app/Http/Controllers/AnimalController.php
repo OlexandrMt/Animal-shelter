@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use App\Http\Requests\AnimalRequest;
-
+use App\Http\Controllers\ShelterController;
 
 
 class AnimalController extends Controller
@@ -105,7 +105,7 @@ class AnimalController extends Controller
     {
       $animals = Animal::find($id);
 
-      return view('animals/edit',['animal'=>$animals]);
+      return view('animals/edit',['animal'=>$animals], ['shelter_id' => $request->shelter_id]);
 
     }
 
@@ -132,7 +132,7 @@ class AnimalController extends Controller
 
      $animals->save();
 
-    return redirect()->route('animals.index');
+    return redirect()->route('animals.show', $id);
     }
 
     /**
@@ -141,9 +141,14 @@ class AnimalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
+      $shelter_id = Animal::find($id);
+      $shelter_id = $shelter_id->shelter_id;
       Animal::find($id)->delete();
-   return redirect()->route('animals.index');
+
+   // return redirect()->route('animals.index');
+   return redirect()->route('shelters.show', [$shelter_id]);
+   // return redirect()->route('animals.show', $id);
     }
 }
