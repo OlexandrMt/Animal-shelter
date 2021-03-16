@@ -1,0 +1,423 @@
+@import "./contact.css";
+
+/*Header styles*/
+.navbar {
+	display: block;
+	padding: 0;
+	height: 3em;
+	color: #fff;
+	font-size: 1.5em;
+	user-select: none;
+	position: relative;
+	background: green;
+	z-index: 2;
+}
+
+.navbar * {
+	margin: 0;
+	padding: 0;
+}
+
+.navbar a {
+	color: #fff;
+}
+
+.navbar ul {
+	list-style: none;
+}
+
+.navbar .hidden {
+	display: none;
+}
+
+.navbar .bi {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	padding: 0.6em 1em 1em 1em;
+}
+
+.navbar .logo{
+	position: relative;
+	
+	top: 0;
+	left: 0;
+	display: inline-block;
+	height: 100%;
+	width: 3em;
+	z-index: 3;
+	font-size: 140%;
+}
+
+.navbar .logo a{
+	display: inline-block;
+	padding: 0.3em 1em;
+	width: 100%;
+	height: 100%;
+}
+
+.navbar .logo:hover{
+	background: #139c38;
+}
+
+.navbar .menuBtn{
+	display: none;
+}
+
+.navbar .optionsBtn {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 3em;
+	height: 3em;
+}
+
+.navbar .menuItems {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 3em;
+	height: 100%;
+	text-align:right;
+	line-height: 3em;
+	white-space: nowrap;
+}
+
+.navbar .menuItems>li {
+	display: inline-block;
+	height: 100%;
+	padding: 0 1em;
+	text-align: center;
+	transition: 0.3s;
+	white-space: nowrap;
+}
+
+.navbar .menuItems .menuCloseBtn {
+	display: none;
+}
+
+.navbar .optionsBtn:hover,
+.navbar .menuBtn:hover,
+.navbar .menuItems li:hover {
+	cursor:pointer;
+	background: #139c38;
+}
+
+/*Header menu options*/
+.navbar .userOptions{
+	position: absolute;
+	right: 0;
+	top: 3em;
+	color: #fff;
+	background: green;
+	height: 0;
+	overflow: hidden;
+	transition: 0.2s;
+	z-index: 1;
+}
+
+.navbar .userOptions.open {
+	height: 7.5em;
+	box-shadow: 0 5px 5px rgba(72, 72, 72, 0.7);
+}
+
+.navbar .userOptions li{
+	padding: 0.5em 1em;
+	transition: 0.3s;
+}
+
+.navbar .userOptions li:hover{
+	background: #139c38;
+	cursor: pointer;
+}
+
+/*Auth form*/
+.authContainer {
+	margin:0;
+	padding:0;
+	position: absolute;
+	top: -100%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: 20em;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	padding: 2em 1.5em;
+	border-radius: 0.5em;
+	border: 1px solid #52515163;
+	font-size: 1.2em;
+	letter-spacing: 0.05em;
+	line-height: 1.5em;
+	font-weight: bolder;
+	color: #525151;
+	box-shadow: 0 0 20px rgba(82, 81, 81, 0.7);
+	background: #fff;
+	z-index: 1000;
+	transition: top 0.3s;
+}
+
+.authContainer * {
+	margin: 0;
+	padding: 0;
+}
+
+.authContainer.open{
+	top: 5em;
+}
+
+.authContainer .closeBtn {
+	position: absolute;
+	top: 0.8em;
+	right: 0.8em;
+	width: 1.5em;
+	height: 1.5em;
+	font-size: 1em;
+	line-height: 1.5em;
+	text-align: center;
+	color: #969592;
+	color: #797777d1;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.authContainer .closeBtn:hover {
+	font-weight:bold;
+	text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+	color: #bb6439;
+}
+
+.authContainer .hidden {
+	display: none;
+}
+
+.authContainer .textRight {
+	text-align: right;
+}
+
+.authContainer .formSwitchers {
+	white-space: nowrap;
+	margin-bottom: 2em;
+	user-select: none;
+}
+
+.authContainer .formSwitchers>span {
+	display: inline-block;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	width: 50%;
+	padding: 0.5em;
+	text-align: center;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.authContainer .formSwitchers>span.active {
+	border-bottom: 3px solid #e0bd3a;
+	border-bottom: 3px solid #d09b1cb8;
+}
+
+.authContainer .formSwitchers>span:hover {
+	font-weight:bold;
+	text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+	color: #bb6439;
+}
+
+.authContainer .formInput:not(:last-child) {
+	margin-bottom: 1.2em;
+}
+
+.authContainer .formInput label {
+	display:block;
+	margin-bottom: 0.5em;
+	user-select: none;
+}
+
+.authContainer .formInput input {
+	display: block;
+	height: 3em;
+	width: 100%;
+	border: 1px solid #c2c2c2;
+	border: 1px solid #52515163;
+	border-radius: 0.4em;
+	padding: 0.5em 1em;
+}
+
+.authContainer .formInput input:focus {
+	outline: none;
+	box-shadow: 0 0 5px rgba(82, 81, 81, 0.5);
+}
+
+.authContainer .formInput.submit{
+	padding-top: 1em;
+}
+
+.authContainer .formInput input[type="submit"] {
+	height: auto;
+	background: #e0bd3a;
+	background: #d09b1cb8;
+	font-weight: bold;
+	border: none;
+	letter-spacing: 0.05em;
+	font-size: inherit;
+	color: inherit;
+}
+
+.authContainer .formInput input[type="submit"]:hover {
+	cursor: pointer;
+	background: #f0cd48;
+	background: #f2b523e8;
+	box-shadow: 0 0 5px rgba(82, 81, 81, 0.5);
+}
+
+.authContainer .formInput input[type="submit"]:disabled {
+	cursor: default;
+	background: #cbcbcb;
+	box-shadow: none;
+}
+
+.authContainer .formInput input[type="text"],
+.authContainer .formInput input[type="email"],
+.authContainer .formInput input[type="password"]
+{
+	font-weight: bold;
+	color: #7a7a7a;
+}
+
+.authContainer .description {
+	display: table;
+	width: 100%;
+	font-size: 0.8em;
+	font-style: italic;
+	letter-spacing: normal;
+	color: #969592;
+	color: #797777d1;
+}
+
+.authContainer .description div {
+	display: table-cell;
+	width: 50%;
+}
+
+.authContainer .forgotPassword{
+	font-style: normal;
+}
+
+.authContainer .forgotPassword a{
+	color: #797777d1;
+	text-decoration: none;
+}
+
+.authContainer .forgotPassword a:hover{
+	text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+	color: #bb6439;
+}
+
+.authContainer form[name="register"] .description div{
+	display: block;
+	width: 100%;
+}
+
+.authContainer .error {
+	font-size: 0.6em;
+	color: #ed3d15;
+}
+
+.authContainer .centerText {
+	text-align: center;
+}
+
+.authContainer form[name="register"],
+.authContainer form[name="login"]{
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+}
+
+.authContainer form[name="register"].active,
+.authContainer form[name="login"].active{
+	overflow: visible;
+	height: auto;
+	opacity: 1;
+	transition: 0.7s;
+}
+
+.authContainer .serverError{
+	font-size: 0.6em;
+	color: #ed3d15;
+}
+
+.authContainer .serverError.general{
+	margin-top: -2em;
+}
+
+.shim {
+	display: none;
+	z-index: 999;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	background: rgba(128, 128, 128, 0.5);
+}
+
+footer a.contactLink{
+	color: #212529;
+	text-decoration: none;
+}
+
+/*design for mobile devices*/
+@media (max-width: 768px) {
+
+	.navbar .menuBtn{
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 3em;
+		height: 3em;
+	}
+
+	.navbar .menuItems{
+		background: green;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: auto;
+		width: 0;
+		height: 100%;
+		overflow:hidden;
+		transition: 0.2s;
+		overflow-x: hidden;
+		box-shadow: 5px 0 5px rgba(72, 72, 72, 0.7);
+		z-index: 1;
+	}
+
+	.navbar .menuItems.open{
+		width: 7em;
+	}
+
+	.navbar .menuItems.open .menuCloseBtn{
+		display: block;
+	}
+
+	.navbar .menuItems>li {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.navbar .menuItems .bi {
+		width: 100%;
+		padding: 0;
+	}
+
+	.authContainer {
+		width: 70%;
+	}
+	
+	.navbar .logo{
+		margin-left: 2em;
+	}
+}

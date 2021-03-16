@@ -1,10 +1,5 @@
-<!-- <a class="navbar-brand"><i class="fas fa-paw"></a> -->
-<!-- <a class="navbar"><i class="fas fa-paw"></a> -->
-<h1 class="display-4,text-body" style="z-index: 3">
-	<form action="/">
-		<button  class="fas fa-paw">Animal-shelter</button>
-	</form>
-</h1>
+<div class="logo"><a href="/"><i class="fas fa-paw"></i></a></div>
+
 
 <ul class="menuItems">
 	<li class="menuCloseBtn">

@@ -13,7 +13,7 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get("/login", [AuthController::class, "showLogin"])->name("login");
+Route::get("/login", [AuthController::class, "showLogin"]);
 Route::post('/login', [AuthController::class, "doLogin"]);
 Route::get("/logout", [AuthController::class, "doLogout"]);
 

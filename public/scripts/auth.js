@@ -113,35 +113,10 @@ let attachEventListeners = function(){
 			$(".navbar .menuItems").removeClass("open")
 		}
 	});
-	
-	$(".contactAnimal textarea.disabled").on("click",function(e){
-		if($(this).hasClass("disabled")){
-			sessionStorage.setItem("intendedUrl", window.location.href);
-			window.location.replace("/login");	
-		}	
-	});
-	
-	$(".contactAnimal textarea").on("keyup", function(){
-		if($(this).val().trim()) {
-			$(".contactAnimal input[type=submit]").removeAttr("disabled");
-		} else {
-			$(".contactAnimal input[type=submit]").attr("disabled", "true");
-		}
-	});
-	
-	$(".messageStatus .closeBtn").on("click", function(){
-		$(".messageStatus").animate({height:0},400);
-	})
-}
-
-let disableSubmitBtn = function(form){
-	$(".contactAnimal input[type=submit]").attr("disabled", "true");
 }
 
 $(document).ready(function(){
 	createValidator("login");
 	createValidator("register");
 	attachEventListeners();
-	
-	disableSubmitBtn($(".contactAnimal form"));
 });

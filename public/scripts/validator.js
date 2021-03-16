@@ -66,10 +66,11 @@ let getData = function(form){
 }
 
 let submitHandler = function(form){
+	
 	$(form).submit((e) => {
 		e.preventDefault();
 	});
-
+	
 	clearServerMsg();
 
 	let msg = $("<div class='error serverError general centerText'></div>");
@@ -82,9 +83,14 @@ let submitHandler = function(form){
 		url: $(form).attr("action"),
 		data: getData(form)
 	}).done((data, status)=>{
+			let intendedUrl = "";
+			
 			if(data.intendedUrl){
 				window.location.replace(data.intendedUrl);
-			} else {
+			} else if (intendedUrl = sessionStorage.getItem("intendedUrl")){
+				sessionStorage.setItem("intendedUrl", "");
+				window.location.replace(intendedUrl);
+			} else {			
 				window.location.replace(window.location.href);
 			}
 	}).fail((xhr)=>{
