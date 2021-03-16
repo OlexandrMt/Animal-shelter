@@ -33,6 +33,14 @@ class AnimalController extends Controller
         $animals = Animal::all();
         return view('welcome',['animals'=>$animals]);
     }
+
+    public function main()
+    {
+
+        $animals = Animal::all();
+        return view('main1',['animals'=>$animals]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

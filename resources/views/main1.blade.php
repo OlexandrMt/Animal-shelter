@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>E Store - eCommerce HTML Template</title>
+        <title>Animal-shelter</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="eCommerce HTML Template Free Download" name="keywords">
         <meta content="eCommerce HTML Template Free Download" name="description">
@@ -16,11 +16,18 @@
         <!-- CSS Libraries -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="scripts/libs/slick/slick.css" rel="stylesheet">
-        <link href="scripts/libs/slick/slick-theme.css" rel="stylesheet">
+
+
+
+        <link href="{{asset('lib/slick/slick.css')}}" rel="stylesheet">
+        <link href="{{asset('lib/slick/slick-theme.css')}}" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+          <!-- <script src="/public/lib/slick/slick.min.js"></script>
+          <script src="/public/js/main.js"></script> -->
 
         <!-- Template Stylesheet -->
-        <link href="css/stylenew.css" rel="stylesheet">
+        <link href="css/stylegreen.css" rel="stylesheet">
     </head>
 
     <body>
@@ -72,11 +79,24 @@
         <div class="bottom-bar">
             <div class="container-fluid">
                 <div class="row align-items-center">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="logo">
-                            <a href="index.html">
-                                <img src="img/logo.png" alt="Logo">
-                            </a>
+                          <!-- <form action="/">
+                    				<button  class="fas fa-paw"><span>Animal-shelter</span></button>
+                    			</form> -->
+                            <!-- <a href="index.html">
+                                <img src="images/logo 1.png" alt="Logo">
+                                                            </a> -->
+                            <!-- <h3 class="display-4,text-body">  Animal-shelter </h3> -->
+                            <div class="menuHome">
+                                <h1 class="display-4,text-body">
+                                  <a href="index.html">
+                                  <div class="fas"> <img src="images/logo 1.png" alt="Logo"><span>Animal-shelter</span></div>
+                                                                  </a>
+                                    <!-- <div  class="fas fa-paw"><span>Animal-shelter</span></div> -->
+                                </h1>
+                              </div>
+
                         </div>
                     </div>
 
@@ -92,176 +112,93 @@
         <div class="breadcrumb-wrap">
             <div class="container-fluid">
                 <ul class="breadcrumb">
+
+
+
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Products</a></li>
-                    <li class="breadcrumb-item active">Product List</li>
+                    <li class="breadcrumb-item"><a href="/shelters">Притулки</a></li>
+                    <li class="breadcrumb-item"><a href="/team">Наша команда</a></li>
+                    <!-- <li class="breadcrumb-item active">Product List</li> -->
                 </ul>
             </div>
         </div>
         <!-- Breadcrumb End -->
 
+
+        <!-- Brand Start -->
+
+                <div class="brand">
+                    <div class="container-fluid">
+                        <div class="brand-slider">
+                            <div class="brand-item"><img src="images/1.png" alt="Logo"></div>
+                            <div class="brand-item"><img src="images/2.png" alt="Logo"></div>
+                            <div class="brand-item"><img src="images/3.png" alt="Logo"></div>
+                            <!-- <div class="brand-item"><img src="images/4.png" alt="Logo"></div> -->
+                            <div class="brand-item"><img src="images/1.png" alt="Logo"></div>
+                            <div class="brand-item"><img src="images/2.png" alt="Logo"></div>
+                            <div class="brand-item"><img src="images/3.png" alt="Logo"></div>
+                            <!-- <div class="brand-item"><img src="img/brand-5.png" alt=""></div>
+                            <div class="brand-item"><img src="img/brand-6.png" alt=""></div> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Brand End -->
+
+
+
+
+
+
+
         <!-- Product List Start -->
         <div class="product-view">
             <div class="container-fluid">
                 <div class="row">
+
                     <div class="col-lg-8">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="product-view-top">
                                     <div class="row">
                                         <div class="col-md-4">
-
+                                          <h3>  </h3>
                                         </div>
                                         <div class="col-md-4">
-
+                                          <h2> Наші тварини </h2>
                                         </div>
                                         <div class="col-md-4">
-
+                                          <h5> </h5>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
+                        <!-- <div class="content">
+                          <div class="row row-cols-1 row-cols-md-3 mb-3 text-center"> -->
+                              @foreach($animals as $animal)
+                              <!-- <div class="card-group"> -->
                             <div class="col-md-4">
                                 <div class="product-item">
                                     <div class="product-title">
-                                        <a href="#">Animal Name</a>
-
+                                      <a href="{{action('AnimalController@show',['animal'=>$animal])}}">{{ $animal->name }}</a>
                                     </div>
                                     <div class="product-image">
                                         <a href="product-detail.html">
-                                            <img src="img/product-1.jpg" alt="Product Image">
+                                            <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
+                                        <!-- <img  src="{{asset("storage/" .$animal->photo) }}" class="card-img-top" alt="..."> -->
                                         </a>
-
                                     </div>
                                   <div class="product-price">
-
-                                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Looking animal</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="product-item">
-                                    <div class="product-title">
-                                        <a href="#">Animal Name</a>
-
-                                    </div>
-                                    <div class="product-image">
-                                        <a href="product-detail.html">
-                                            <img src="img/product-2.jpg" alt="Product Image">
-                                        </a>
-
-                                    </div>
-                                    <div class="product-price">
-                                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Looking animal</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="product-item">
-                                    <div class="product-title">
-                                        <a href="#">Animal Name</a>
+                                    <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-dark">Детальна інформація</a>
+                                        <!-- <a class="btn" href="">Детальна інформація</a> -->
                                      </div>
-                                    <div class="product-image">
-                                        <a href="product-detail.html">
-                                            <img src="img/product-3.jpg" alt="Product Image">
-                                        </a>
-
-                                    </div>
-                                    <div class="product-price">
-
-                                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Looking animal</a>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="product-item">
-                                    <div class="product-title">
-                                        <a href="#">Animal Name</a>
-                                    </div>
-                                    <div class="product-image">
-                                        <a href="product-detail.html">
-                                            <img src="img/product-4.jpg" alt="Product Image">
-                                        </a>
-                                    </div>
-                                    <div class="product-price">
+                            <!-- </div> -->
+                            @endforeach
+                          <!-- </div>
+                        </div> -->
 
-                                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Looking animal</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="product-item">
-                                    <div class="product-title">
-                                        <a href="#">Animal Name</a>
-
-                                    </div>
-                                    <div class="product-image">
-                                        <a href="product-detail.html">
-                                            <img src="img/product-5.jpg" alt="Product Image">
-                                        </a>
-
-                                    </div>
-                                    <div class="product-price">
-
-                                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Looking animal</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="product-item">
-                                    <div class="product-title">
-
-                                        <a href="#">Animal Name</a>
-
-                                    </div>
-                                    <div class="product-image">
-                                        <a href="product-detail.html">
-                                            <img src="img/product-6.jpg" alt="Product Image">
-                                        </a>
-
-                                    </div>
-                                    <div class="product-price">
-
-                                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Looking animal</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="product-item">
-                                    <div class="product-title">
-                                        <a href="#">Animal Name</a>
-                                    </div>
-                                    <div class="product-image">
-                                        <a href="product-detail.html">
-                                            <img src="img/product-7.jpg" alt="Product Image">
-                                        </a>
-                                    </div>
-                                    <div class="product-price">
-                                         <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Looking animal</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="product-item">
-                                    <div class="product-title">
-                                        <a href="#">Animal Name</a>
-
-                                    </div>
-                                    <div class="product-image">
-                                        <a href="product-detail.html">
-                                            <img src="img/product-8.jpg" alt="Product Image">
-                                        </a>
-
-                                    </div>
-				<div class="product-price">
-
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Looking animal</a>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-md-4">
+                            <!-- <div class="col-md-4">
                                 <div class="product-item">
                                     <div class="product-title">
                                         <a href="#">Animal Name</a>
@@ -270,15 +207,13 @@
                                         <a href="product-detail.html">
                                             <img src="img/product-9.jpg" alt="Product Image">
                                         </a>
-
                                     </div>
                                     <div class="product-price">
-
                                         <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Looking animal</a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <!-- Pagination Start -->
                         <div class="col-md-12">
@@ -298,75 +233,83 @@
                         </div>
                         <!-- Pagination Start -->
                     </div>
+                </div>
 
-                    <!-- Side Bar Start -->
-                    <div class="col-lg-4 sidebar">
-                        <div class="sidebar-widget category">
-                            <h2 class="title">Category</h2>
-                            <nav class="navbar bg-light">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fac fa-cat"></i>Котики</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fal fa-dog"></i>Собачки</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fac fa-dragon"></i>Інші тварини</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
+                <!-- Side Bar Start -->
+                <div class="col-lg-4 sidebar">
+                    <div class="sidebar-widget category">
+                        <h2 class="title">Category</h2>
+                        <nav class="navbar bg-light">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fac fa-cat"></i>Котики</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fal fa-dog"></i>Собачки</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fac fa-dragon"></i>Інші тварини</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
 
-                        <div class="sidebar-widget widget-slider">
-                            <div class="sidebar-slider normal-slider">
-                                <div class="product-item">
-                                    <div class="product-title">
-                                        <a href="#">Animal name</a>
-
-                                    </div>
-                                    <div class="product-image">
-                                        <a href="product-detail.html">
-                                            <img src="img/product-10.jpg" alt="Product Image">
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="product-item">
-                                    <div class="product-title">
-                                        <a href="#">Animal name</a>
-                                    </div>
-                                    <div class="product-image">
-                                        <a href="product-detail.html">
-                                            <img src="img/product-9.jpg" alt="Product Image">
-                                        </a>
-
-                                    </div>
+                    <div class="sidebar-widget widget-slider">
+                        <div class="sidebar-slider normal-slider">
+                            <div class="product-item">
+                                <div class="product-title">
+                                    <a href="#">Animal name 1</a>
 
                                 </div>
-                                <div class="product-item">
-                                    <div class="product-title">
-                                        <a href="#">Product Name</a>
-                                    </div>
-                                    <div class="product-image">
-                                        <a href="product-detail.html">
-                                            <img src="img/product-8.jpg" alt="Product Image">
-                                        </a>
-                                        <div class="product-action">
-                                            <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                            <a href="#"><i class="fa fa-heart"></i></a>
-                                            <a href="#"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div>
-
+                                <div class="product-image">
+                                    <a href="product-detail.html">
+                                        <img src="images/unnamed.jpg" alt="Product Image">
+                                    </a>
                                 </div>
                             </div>
+                            <div class="product-item">
+                                <div class="product-title">
+                                    <a href="#">Animal name 2</a>
+                                </div>
+                                <div class="product-image">
+                                    <a href="product-detail.html">
+                                        <img src="images/unnamed.jpg" alt="Product Image">
+                                    </a>
+
+                                </div>
+
+                            </div>
+                            <div class="product-item">
+                                <div class="product-title">
+                                    <a href="#">Product Name</a>
+                                </div>
+                                <div class="product-image">
+                                    <a href="product-detail.html">
+                                        <img src="images/unnamed.jpg" alt="Product Image">
+                                    </a>
+                                    <div class="product-action">
+                                        <a href="#"><i class="fa fa-cart-plus"></i></a>
+                                        <a href="#"><i class="fa fa-heart"></i></a>
+                                        <a href="#"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
                         </div>
                     </div>
-                    <!-- Side Bar End -->
                 </div>
+                <!-- Side Bar End -->
             </div>
         </div>
+        </div>
         <!-- Product List End -->
+
+
+
+
+
 
         <!-- Footer Start -->
         <div class="footer">
@@ -374,8 +317,11 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-widget">
-                            <h2>Our contacts</h2>
+                            <h2> Студентський проект</h2>
+
+                            <h2 class="display-4"><i class="fas fa-paw">Animal-shelter</i></h2>
                             <div class="contact-info">
+                              <!-- <p><i> </i>Студентський проект</p> -->
                                 <p><i class="fa fa-map-marker"></i>IT Academy by Vinnitsya</p>
                                 <p><i class="fa fa-envelope"></i>intitavn@gmail.com</p>
                                 <p><i class="fa fa-phone"></i>тел. моб: +38 067 431 74 24</p>
@@ -415,12 +361,14 @@
         <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
         <!-- JavaScript Libraries -->
+
+
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/slick/slick.min.js"></script>
+        <script src="{{asset('lib/easing/easing.min.js')}}"></script>
+        <script src="{{asset('lib/slick/slick.min.js')}}"></script>
 
         <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+        <script src="{{asset('js/main.js')}}"></script>
     </body>
 </html>
