@@ -28,28 +28,28 @@ class AnimalRequest extends FormRequest
             'name' => 'required | between: 1,30',
             'breed' => 'required | between: 1,30',
             'sex' => 'required',
-            'age' => 'required | numeric',
+            'age' => 'required | numeric' ,
             'photo' => 'image'
         ];
     }
     public function messages()
 {
     return [
-        'required' => 'Поле :attribute должно быть заполнено',
-        'name.between' => 'Поле :attribute должно быть от :min до :max символов',
-        'breed.between' => 'Поле :attribute должно быть от :min до :max символов',
-        'numeric' => 'Поле :attribute должно содержать только цифры',
-        'image' => 'Поле :attribute должно содержать изображение',
+        'required' => 'Поле :attribute не повинно бути пустим',
+        'name.between' => 'Поле :attribute повинно бути :min до :max символів',
+        'breed.between' => 'Поле :attribute повинно бути :min до :max символів',
+        'numeric' => 'Поле :attribute може містити тільки цифри',
+        'image' => 'Поле :attribute має містити зображення',
 
     ];
 }
     public function attributes()
     {
         return [
-            'name' => '"Имя"',
+            'name' => '"Кличка"',
             'breed' => '"Порода"',
             'sex' => '"Стать"',
-            'age' => '"Возраст"',
+            'age' => '"Вік"',
             'photo' => '"Фото"',
         ];
     }
