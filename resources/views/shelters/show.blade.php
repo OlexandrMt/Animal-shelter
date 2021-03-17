@@ -19,15 +19,11 @@
     </div>
     <div class="card-body">
       <div class="img-round mb-3">
-        @if($shelter->logo==NULL)
-
-        <!-- /*@if($shelter->logo==NULL) @php $shelter->logo = "images/shalter_logos/defaultimg.jpg" @endphp  @endif*/
-        <img src="{{ asset("storage/".$shelter->logo) }}" id="logo-preview"> -->
-
-        <img src="http://127.0.0.1:8000/images/default_logo.jpg" alt="" title="">
+        @isset($shelter->logo)
+          <img src="{{ asset("storage/".$shelter->logo) }}" alt="" title="">
         @else
-        <img src="{{ asset("storage/".$shelter->logo) }}" alt="" title="">
-        @endif
+          <img src="{{asset('images/default_logo.jpg')}}" alt="" title="">
+        @endisset
       </div>
 
       @if($shelter->user_id == $user)

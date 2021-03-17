@@ -22,11 +22,11 @@
             </div>
             <div class="card-body d-flex flex-column">
               <div class="img-round mt-0 mb-3" >
-                @if($shelter->logo==NULL)
-                <img src="images/default_logo.jpg" alt="" title="">
+                @isset($shelter->logo)
+                  <img src="{{ asset("storage/".$shelter->logo) }}" alt="" title="">
                 @else
-                <img src="{{ asset("storage/".$shelter->logo) }}" alt="" title="">
-                @endif
+                  <img src="{{asset('images/default_logo.jpg')}}" alt="" title="">
+                @endisset
               </div>
 
               <ul class="list-unstyled mt-3 mb-4">
