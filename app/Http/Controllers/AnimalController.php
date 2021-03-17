@@ -37,7 +37,7 @@ class AnimalController extends Controller
     public function main()
     {
 
-        $animals = Animal::all();
+        $animals = Animal::paginate(6);
         return view('main1',['animals'=>$animals]);
     }
 
