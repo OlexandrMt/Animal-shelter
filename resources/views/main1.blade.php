@@ -16,11 +16,13 @@
         <!-- CSS Libraries -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
 
 
-        <link href="{{asset('lib/slick/slick.css')}}" rel="stylesheet">
-        <link href="{{asset('lib/slick/slick-theme.css')}}" rel="stylesheet">
+
+        <link href="{{asset('scripts/libs/slick/slick.css')}}" rel="stylesheet">
+        <link href="{{asset('scripts/libs/slick/slick-theme.css')}}" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
           <!-- <script src="/public/lib/slick/slick.min.js"></script>
@@ -133,41 +135,26 @@
                             <div class="brand-item"><img src="images/1.png" alt="Logo"></div>
                             <div class="brand-item"><img src="images/2.png" alt="Logo"></div>
                             <div class="brand-item"><img src="images/3.png" alt="Logo"></div>
-                            <!-- <div class="brand-item"><img src="images/4.png" alt="Logo"></div> -->
                             <div class="brand-item"><img src="images/1.png" alt="Logo"></div>
                             <div class="brand-item"><img src="images/2.png" alt="Logo"></div>
                             <div class="brand-item"><img src="images/3.png" alt="Logo"></div>
-                            <!-- <div class="brand-item"><img src="img/brand-5.png" alt=""></div>
-                            <div class="brand-item"><img src="img/brand-6.png" alt=""></div> -->
                         </div>
                     </div>
                 </div>
                 <!-- Brand End -->
-
-
-
-
-
-
 
         <!-- Product List Start -->
         <div class="product-view">
             <div class="container-fluid">
                 <div class="row">
 
-                    <div class="col-lg-8">
+                    <div class="col-xl-8">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-12 text-center">
                                 <div class="product-view-top">
                                     <div class="row">
-                                        <div class="col-md-4">
-                                          <h3>  </h3>
-                                        </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-12">
                                           <h2> Наші тварини </h2>
-                                        </div>
-                                        <div class="col-md-4">
-                                          <h5> </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -176,15 +163,14 @@
                           <div class="row row-cols-1 row-cols-md-3 mb-3 text-center"> -->
                               @foreach($animals as $animal)
                               <!-- <div class="card-group"> -->
-                            <div class="col-md-4">
+                            <div class="col-md-4 col-sm-6">
                                 <div class="product-item">
                                     <div class="product-title">
                                       <a href="{{action('AnimalController@show',['animal'=>$animal])}}">{{ $animal->name }}</a>
                                     </div>
                                     <div class="product-image">
-                                        <a href="product-detail.html">
+                                        <a href="{{action('AnimalController@show',['animal'=>$animal])}}"> <!--// can be redirected on image itself"{{asset("storage/" .$animal->photo) }}"-->
                                             <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
-                                        <!-- <img  src="{{asset("storage/" .$animal->photo) }}" class="card-img-top" alt="..."> -->
                                         </a>
                                     </div>
                                   <div class="product-price">
@@ -195,28 +181,10 @@
                             </div>
                             <!-- </div> -->
                             @endforeach
-                          <!-- </div>
-                        </div> -->
 
-                            <!-- <div class="col-md-4">
-                                <div class="product-item">
-                                    <div class="product-title">
-                                        <a href="#">Animal Name</a>
-                                    </div>
-                                    <div class="product-image">
-                                        <a href="product-detail.html">
-                                            <img src="img/product-9.jpg" alt="Product Image">
-                                        </a>
-                                    </div>
-                                    <div class="product-price">
-                                        <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Looking animal</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
 
                         <!-- Pagination Start -->
-                        <div class="col-md-12">
+                        <div class="col-sm-12">
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center">
                                     <li class="page-item disabled">
@@ -236,7 +204,7 @@
                 </div>
 
                 <!-- Side Bar Start -->
-                <div class="col-lg-4 sidebar">
+                <div class="col-xl-4 sidebar">
                     <div class="sidebar-widget category">
                         <h2 class="title">Category</h2>
                         <nav class="navbar bg-light">
@@ -365,8 +333,8 @@
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="{{asset('lib/easing/easing.min.js')}}"></script>
-        <script src="{{asset('lib/slick/slick.min.js')}}"></script>
+        <script src="{{asset('scripts/libs/easing/easing.min.js')}}"></script>
+        <script src="{{asset('scripts/libs/slick/slick.min.js')}}"></script>
 
         <!-- Template Javascript -->
         <script src="{{asset('js/main.js')}}"></script>
