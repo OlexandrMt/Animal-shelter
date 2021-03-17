@@ -12,7 +12,7 @@
 
 
 
-<div class=".container">
+<div class="container">
   <div class="row">
 @foreach($teams as $team)
   <div class="card border-light mb-3" style="max-width: 650px;">

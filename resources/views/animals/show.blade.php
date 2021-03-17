@@ -28,7 +28,11 @@
 <div class="card-group">
   <div class="card">
     <img class="card-img-top" src="{{asset("storage/" .$animal->photo) }}" alt="Card image cap">
-      <div class="card-body">
+      <div class="card-body text-center">
+        <form action="/notifications/create" method="get">
+          <input type="hidden" name="animal_id" value='{{$animal->id}}'>
+          <button type="submit" class="w-75 btn btn-dark mb-1">Хочу собі <i class="fas fa-hands"></i></button>
+        </form>
       </div>
   </div>
 <div class="card">
