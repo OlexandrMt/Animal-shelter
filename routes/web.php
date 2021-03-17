@@ -28,6 +28,13 @@ Route::post('/delete-notification', 'NotificationController@deleteNotification')
 
 
 Route::resource('shelters', ShelterController::class);
+// Route::get('/team', function () {
+//  return view('team');
+// });
+// Route::get('/main', function () {
+//     return view('main1');
+// });
+Route::get('/main', 'AnimalController@main');
 
 
 Route::get('/team', 'TeamController@index');

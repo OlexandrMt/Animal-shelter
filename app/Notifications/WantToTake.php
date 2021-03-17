@@ -62,7 +62,7 @@ class WantToTake extends Notification
                     ->line("127.0.0.1:8000/animals/$animal_id");
 
     }
-    
+
 
     /**
      * Get the array representation of the notification.

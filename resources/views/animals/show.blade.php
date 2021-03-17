@@ -74,6 +74,31 @@
         @else {{ $animal->description}}
         @endif
 
+        <div class="input-group">
+        <form action="/animals/{{ $animal->id }}/edit" method="get">
+              @csrf
+              <!-- <input type="submit" class="btn-success" value=" Редагувати "> -->
+              <button type="submit" class="btn btn-dark">Редагувати </i></button>
+              @method('GET')
+            </form>
+        </div>
+<br>
+        <div class="input-group">
+            <form action="/animals/{{ $animal->id }}" method="post">
+              @csrf
+              <!-- <input type="submit" class="btn-success" value=" Видалити "> -->
+              <button type="submit" class="btn btn-dark">Видалити </i></button>
+              @method('DELETE')
+            </form>
+
+        </div>
+
+
+
+
+
+
+
 
        </p>
     </div>
