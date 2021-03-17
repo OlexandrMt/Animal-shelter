@@ -60,7 +60,6 @@
     <div class="card-header ">
       <h4 class="my-0 fw-normal"><b>Наші тварини</b></h4>
     </div>
-    <div>
       <div class="row row-cols-1 row-cols-md-3 mb-3 ">
         @foreach($animals as $animal)
             <div class="card-group">
@@ -72,12 +71,12 @@
                   <h4 class="card-title">  {{ $animal->name }}</h4>
                   <ul class="list-unstyled mt-3 mb-4">
                   <!-- <p class="card-text"> Вік: {{ $animal->age }}</p> -->
-                <div class="mt-auto">
-                  <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-dark">Детальна інформація</a>
+                    <div class="mt-auto">
+                      <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-dark">Детальна інформація</a>
+                    </div>
+                  </ul>
                 </div>
-                </ul>
-                </div>
-          </div>
+              </div>
           </div>
       @endforeach
     </div>
@@ -85,6 +84,7 @@
   @if($animals->isEmpty())
     <div class="m-4">Притулок пустий =)</div>
   @endif
+</div>
 </div>
 
 

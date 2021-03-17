@@ -17,13 +17,10 @@
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
         <link href="{{asset('scripts/libs/slick/slick.css')}}" rel="stylesheet">
         <link href="{{asset('scripts/libs/slick/slick-theme.css')}}" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-          <!-- <script src="/public/lib/slick/slick.min.js"></script>
-          <script src="/public/js/main.js"></script> -->
 
         <!-- Template Stylesheet -->
         <link href="css/stylegreen.css" rel="stylesheet">
