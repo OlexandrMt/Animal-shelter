@@ -41,10 +41,10 @@
 
 
     <!-- Template Stylesheet -->
-    <link href="/css/stylegreen.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/animal.css">
+    <link rel="stylesheet" href="/css/stylegreen.css">
 
     @if(@isset($head))
       {{$head}}
@@ -68,7 +68,7 @@
      <x-validation-errors  :errors="$errors" />
    </div>
 
-		<div class="container">
+		<div>
       {{$slot}}
     </div>
 

@@ -23,7 +23,7 @@
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
         <!-- Template Stylesheet -->
-        <link href="css/stylegreen.css" rel="stylesheet">
+        <link href="/css/stylegreen.css" rel="stylesheet">
     </head>
 
     <body>
@@ -74,21 +74,16 @@
         <!-- Bottom Bar Start -->
         <div class="bottom-bar">
             <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-md-4">
+                <div class="row ">
+                    <div class="col-md-5">
                         <div class="logo">
-                          <!-- <form action="/">
-                    				<button  class="fas fa-paw"><span>Animal-shelter</span></button>
-                    			</form> -->
-                            <!-- <a href="index.html">
-                                <img src="images/logo 1.png" alt="Logo">
-                                                            </a> -->
-                            <!-- <h3 class="display-4,text-body">  Animal-shelter </h3> -->
-                            <div class="menuHome">
-                                <h1 class="display-4,text-body">
-                                  <a href="index.html">
-                                  <div class="fas"> <img src="images/logo 1.png" alt="Logo"><span>Animal-shelter</span></div>
-                                                                  </a>
+                            <div class="menuHome" >
+                                <h1 class="display-4 text-body" >
+                                  <a href="index.html" >
+                                    <div class="inline-block">
+                                      <div class="fas float-left"><img src="images/logo 1.png">Animal-shelter</div>
+                                    </div>
+                                  </a>
                                     <!-- <div  class="fas fa-paw"><span>Animal-shelter</span></div> -->
                                 </h1>
                               </div>
