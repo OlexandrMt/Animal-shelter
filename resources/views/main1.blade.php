@@ -17,16 +17,13 @@
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
         <link href="{{asset('scripts/libs/slick/slick.css')}}" rel="stylesheet">
         <link href="{{asset('scripts/libs/slick/slick-theme.css')}}" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-          <!-- <script src="/public/lib/slick/slick.min.js"></script>
-          <script src="/public/js/main.js"></script> -->
 
         <!-- Template Stylesheet -->
-        <link href="css/stylegreen.css" rel="stylesheet">
+        <link href="/css/stylegreen.css" rel="stylesheet">
     </head>
 
     <body>
@@ -77,21 +74,16 @@
         <!-- Bottom Bar Start -->
         <div class="bottom-bar">
             <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-md-4">
+                <div class="row ">
+                    <div class="col-md-5">
                         <div class="logo">
-                          <!-- <form action="/">
-                    				<button  class="fas fa-paw"><span>Animal-shelter</span></button>
-                    			</form> -->
-                            <!-- <a href="index.html">
-                                <img src="images/logo 1.png" alt="Logo">
-                                                            </a> -->
-                            <!-- <h3 class="display-4,text-body">  Animal-shelter </h3> -->
-                            <div class="menuHome">
-                                <h1 class="display-4,text-body">
-                                  <a href="index.html">
-                                  <div class="fas"> <img src="images/logo 1.png" alt="Logo"><span>Animal-shelter</span></div>
-                                                                  </a>
+                            <div class="menuHome" >
+                                <h1 class="display-4 text-body" >
+                                  <a href="index.html" >
+                                    <div class="inline-block">
+                                      <div class="fas float-left"><img src="images/logo 1.png">Animal-shelter</div>
+                                    </div>
+                                  </a>
                                     <!-- <div  class="fas fa-paw"><span>Animal-shelter</span></div> -->
                                 </h1>
                               </div>
