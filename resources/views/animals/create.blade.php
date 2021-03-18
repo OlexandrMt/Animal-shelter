@@ -55,7 +55,7 @@
                                   <div class="col-md-12">
                                     <div class="mb-3">
                                     <label for="photo" class="form-label">Фото</label>
-                                    <input class="form-control" type="file" id="photo" name="photo" accept="*">
+                                    <input class="form-control" type="file" id="photo" name="photo" accept="image/*">
                                   </div>
                                 </div>
                                 <div class="col-md-12">
@@ -88,6 +88,6 @@
     </div>
 
 
-      <x-scripts.img-preview img="logo" imgPreview="logo-preview" />
+      <x-scripts.img-preview img="photo" imgPreview="photo-preview" />
 
 </x-fullapp-layout>
