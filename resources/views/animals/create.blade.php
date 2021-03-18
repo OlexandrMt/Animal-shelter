@@ -23,11 +23,16 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for='type'>Тип</label>
-                                    <input id='type' name='type' class="form-control" type="text" placeholder="Тип тваринки">
+                                    <select class="form-select" aria-label="type" name="type" id="type">
+                                      <option selected value="3">Оберіть тип тваринки</option>
+                                      <option value="Кіт">Кіт</option>
+                                      <option value="Пес">Пес</option>
+                                      <option value="3">Інше</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for='breed'>Порода</label>
-                                    <input id='breed' name='breed' class="form-control" type="text" placeholder="Порода тваринки">
+                                  <label for="breed">Порода</label>
+                                  <input id='breed' name='breed' class="form-control" type="text" placeholder="Порода тваринки">
                                 </div>
                                 <div class="col-md-6">
                                     <label for='age'>Вік</label>
@@ -50,7 +55,14 @@
                                   <div class="col-md-12">
                                     <div class="mb-3">
                                     <label for="photo" class="form-label">Фото</label>
-                                    <input class="form-control" type="file" id="photo" name="photo">
+                                    <input class="form-control" type="file" id="photo" name="photo" accept="*">
+                                  </div>
+                                </div>
+                                <div class="col-md-12">
+                                  <div class="mb-3">
+                                    <div style="margin-top:5px;" class="img-round">
+                                      <img id="photo-preview" src={{ asset("storage/animal_photo/defaultimg.jpg") }} />
+                                    </div>
                                   </div>
                                 </div>
                                 <div class="col-md-12">
@@ -60,8 +72,12 @@
                                   </div>
                                   <br>
                                 </div>
-                                <input type="submit" class="btn btn-success" id='next' value="Добавити">
-                                <input type="hidden" name="shelter_id" value='{{$shelter_id}}'>
+                                <div class="col-md-12">
+                                  <div class="mb-3">
+                                    <input type="submit" class="btn btn-success" id='next' value="Добавити">
+                                    <input type="hidden" name="shelter_id" value='{{$shelter_id}}'>
+                                  </div>
+                                </div>
                             </div>
                         </div>
                     </div>

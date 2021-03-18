@@ -5,11 +5,62 @@
     </x-slot>
 
     <x-slot name="head">
-
+      <link rel="stylesheet" href="/css/style.css">
     </x-slot>
 
 
+    <div class="checkout">
+        <div class="container-fluid">
+          <form class="form-signing" action="/shelters" method="post" enctype="multipart/form-data">
+            <div class="row">
+                    <div class="checkout-inner">
+                        <div class="billing-address">
+                            <h2>Створіть свій притулок для тварин</h2>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for='name'>Назва</label>
+                                    <input id='name' name='name' class="form-control" type="text" placeholder="Назва притулку">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for='address'>Адреса</label>
+                                    <input id='address' name='address' class="form-control" type="text" placeholder="Адреса притулку">
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="mail">Електронна пошта</label>
+                                  <input type="mail" name="mail" class="form-control" type="text" placeholder="Адреса електронної пошти">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for='phone'>Телефон</label>
+                                    <input id='phone' name='phone' class="form-control" type="text" placeholder="Номер телефону">
+                                </div>
+                                  <div class="col-md-6">
+                                    <div class="mb-3">
 
+                                        <label for="logo" class="form-label">Логотип</label>
+                                        <input class="form-control" type="file" id="logo" name="logo" accept="image/*">
+
+                                  </div>
+                                </div>
+                                <div class="col-md-6">
+                                  <div class="mb-3">
+                                    <div style="margin-top:5px;" class="img-round">
+                                      <img id="logo-preview" src={{ asset("storage/images/shalter_logos/defaultimg.jpg") }} />
+                                    </div>
+                                </div>
+                              </div>
+
+                                <input type="submit" class="btn btn-success" value="Створити">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            @csrf
+          </form>
+        </div>
+    </div>
+
+
+<!--
     <div class="create-form">
       <form class="form-signing" action="/shelters" method="post" enctype="multipart/form-data">
         <div class="formInput ">
@@ -46,7 +97,7 @@
         @csrf
       </form>
     </div>
-
+-->
       <x-scripts.img-preview img="logo" imgPreview="logo-preview" />
 
 </x-fullapp-layout>
