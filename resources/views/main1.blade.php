@@ -181,47 +181,22 @@
 
                     <div class="sidebar-widget widget-slider">
                         <div class="sidebar-slider normal-slider">
-                            <div class="product-item">
+                          @foreach($animals as $animal)
+                            <div class="product-item pt-5">
                                 <div class="product-title">
-                                    <a href="#">Animal name 1</a>
-
+                                    <a href="{{route('animals.show',[$animal->id])}}">{{$animal->name}}</a>
                                 </div>
                                 <div class="product-image">
-                                    <a href="product-detail.html">
-                                        <img src="images/unnamed.jpg" alt="Product Image">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="product-item">
-                                <div class="product-title">
-                                    <a href="#">Animal name 2</a>
-                                </div>
-                                <div class="product-image">
-                                    <a href="product-detail.html">
-                                        <img src="images/unnamed.jpg" alt="Product Image">
-                                    </a>
-
-                                </div>
-
-                            </div>
-                            <div class="product-item">
-                                <div class="product-title">
-                                    <a href="#">Product Name</a>
-                                </div>
-                                <div class="product-image">
-                                    <a href="product-detail.html">
-                                        <img src="images/unnamed.jpg" alt="Product Image">
+                                    <a href="{{route('animals.show',[$animal->id])}}">
+                                        <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
                                     </a>
                                     <div class="product-action">
-                                        <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                        <a href="#"><i class="fa fa-heart"></i></a>
-                                        <a href="#"><i class="fa fa-search"></i></a>
+                                        <a href="{{route('animals.show',[$animal->id])}}"><i class="fa fa-search"></i></a>
                                     </div>
                                 </div>
-
                             </div>
-
-
+                          @endforeach
+                        </div>
                         </div>
                     </div>
                 </div>
