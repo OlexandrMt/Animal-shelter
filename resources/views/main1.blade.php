@@ -125,7 +125,6 @@
 
 
         <!-- Brand Start -->
-
                 <div class="brand">
                     <div class="container-fluid">
                         <div class="brand-slider">
@@ -213,18 +212,20 @@
 
                     <div class="sidebar-widget widget-slider">
                         <div class="sidebar-slider normal-slider">
+                          @foreach($animals as $animal)
                             <div class="product-item">
                                 <div class="product-title">
-                                    <a href="#">Animal name 1</a>
-
+                                    <a href="#">{{ $animal->name }} </a>
                                 </div>
                                 <div class="product-image">
                                     <a href="product-detail.html">
-                                        <img src="images/unnamed.jpg" alt="Product Image">
+                                        <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
                                     </a>
                                 </div>
                             </div>
-                            <div class="product-item">
+                            @endforeach
+
+                            <!-- <div class="product-item">
                                 <div class="product-title">
                                     <a href="#">Animal name 2</a>
                                 </div>
@@ -232,10 +233,9 @@
                                     <a href="product-detail.html">
                                         <img src="images/unnamed.jpg" alt="Product Image">
                                     </a>
-
                                 </div>
-
                             </div>
+
                             <div class="product-item">
                                 <div class="product-title">
                                     <a href="#">Product Name</a>
@@ -250,8 +250,7 @@
                                         <a href="#"><i class="fa fa-search"></i></a>
                                     </div>
                                 </div>
-
-                            </div>
+                            </div> -->
 
 
                         </div>
@@ -264,6 +263,20 @@
         <!-- Product List End -->
 
 
+        <!-- Brand Start -->
+                <div class="brand">
+                    <div class="container-fluid">
+                        <div class="brand-slider">
+                            <div class="brand-item"><img src="images/1.png" alt="Logo"></div>
+                            <div class="brand-item"><img src="images/2.png" alt="Logo"></div>
+                            <div class="brand-item"><img src="images/3.png" alt="Logo"></div>
+                            <div class="brand-item"><img src="images/1.png" alt="Logo"></div>
+                            <div class="brand-item"><img src="images/2.png" alt="Logo"></div>
+                            <div class="brand-item"><img src="images/3.png" alt="Logo"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Brand End -->
 
 
 

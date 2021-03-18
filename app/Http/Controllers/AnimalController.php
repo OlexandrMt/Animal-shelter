@@ -101,7 +101,7 @@ class AnimalController extends Controller
     {
       //dd("show");
       $animals = Animal::find($id);
-        return view('animals.show', ['animal'=>$animals]);  //
+        return view('animals.shownew', ['animal'=>$animals]);  //
     }
 
     /**
