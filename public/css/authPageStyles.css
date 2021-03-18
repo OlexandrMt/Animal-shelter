@@ -1,5 +1,5 @@
 /*Header styles*/
-.navbar {
+.navbarOld {
 	height: 3em;
 	color: #fff;
 	font-size: 1.5em;
@@ -11,11 +11,11 @@
 	z-index: 2;
 }
 
-.navbar ul {
+.navbarOld ul {
 	list-style:none;
 }
 
-.navbar .hidden {
+.navbarOld .hidden {
 	display: none;
 }
 
