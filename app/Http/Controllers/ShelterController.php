@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Models\Shelter;
+use App\Models\Animal;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -21,9 +22,10 @@ class ShelterController extends Controller
     public function index(Request $request)
     {
 
-      $shelterinfo = Shelter::all();
+      $shelterinfo = Shelter::paginate(6);
+      $animals = Animal::all();
 
-      return view('shelters/index', ['shelters' => $shelterinfo]);
+      return view('shelters/index', ['shelters' => $shelterinfo, 'animals' => $animals]);
     }
 
     /*Show the form for creating a new resource.

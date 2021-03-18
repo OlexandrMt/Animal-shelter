@@ -247,7 +247,7 @@ h2 {
     }
 }
 
-.nav .navbar {
+.nav .navbarNew {
     height: 100%;
     padding: 0;
 }
@@ -266,7 +266,7 @@ h2 {
 
 @media (min-width: 768px) {
     .nav,
-    .nav .navbar {
+    .nav .navbarNew {
           background: #009900 !important;
     }
 
@@ -292,7 +292,7 @@ h2 {
     }
 
     .nav,
-    .nav .navbar {
+    .nav .navbarNew {
         background: #000000 !important;
     }
 
@@ -414,7 +414,7 @@ h2 {
     margin-bottom: 30px;
 }
 
-.header .navbar {
+.header .navbarNew {
     padding: 0;
     height: 100%;
     max-height: 400px;
@@ -427,31 +427,31 @@ h2 {
     padding: 15px 0;
 }
 
-.header .navbar li {
+.header .navbarNew li {
     padding: 0 30px;
     border-bottom: 1px solid #f3f6ff;
 }
 
-.header .navbar li:last-child {
+.header .navbarNew li:last-child {
     border-bottom: none;
 }
 
-.header .navbar a {
+.header .navbarNew a {
     color: #353535;
 }
-.header .navbar a:hover {
+.header .navbarNew a:hover {
     color: #009900;
 }
 
 
-.header .navbar i {
+.header .navbarNew i {
     color: #009900;
     width: 20px;
     text-align: center;
     margin-right: 8px;
 }
 
-.header .navbar a:hover i {
+.header .navbarNew a:hover i {
     color: #353535;
 }
 
@@ -1315,7 +1315,7 @@ h2 {
     margin: 0;
 }
 
-.sidebar-widget.category .navbar {
+.sidebar-widget.category .navbarNew {
     padding: 0;
     overflow: hidden;
     background: #ffffff !important;
@@ -1325,30 +1325,30 @@ h2 {
     width: 100%;
 }
 
-.sidebar-widget.category .navbar li {
+.sidebar-widget.category .navbarNew li {
     border-bottom: 1px solid #f3f6ff;
 }
 
-.sidebar-widget.category .navbar li:last-child {
+.sidebar-widget.category .navbarNew li:last-child {
     border-bottom: none;
 }
 
-.sidebar-widget.category .navbar a {
+.sidebar-widget.category .navbarNew a {
     color: #353535;
 }
 
-.sidebar-widget.category .navbar a:hover {
+.sidebar-widget.category .navbarNew a:hover {
     color: #009900;
 }
 
-.sidebar-widget.category .navbar i {
+.sidebar-widget.category .navbarNew i {
     color: #009900;
     width: 20px;
     text-align: center;
     margin-right: 8px;
 }
 
-.sidebar-widget.category .navbar a:hover i {
+.sidebar-widget.category .navbarNew a:hover i {
     color: #353535;
 }
 
