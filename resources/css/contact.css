@@ -1,4 +1,4 @@
-.contactAnimal {
+.contactContainer {
 	margin: 1em 0;
 	padding: 1em;
 	box-sizing: border-box;
@@ -13,45 +13,54 @@
 	color: #525151;
 }
 
-.contactAnimal .hidden {
+.contactContainer .hidden {
 	display: none;
 }
 
-.contactAnimal .centerText {
+.contactContainer .centerText {
 	text-align: center;
 }
 
-.contactAnimal .textRight {
+.contactContainer .textRight {
 	text-align: right;
 }
 
-.contactAnimal .textBold {
+.contactContainer .textBold {
 	font-weight: bold;
 }
 
-.contactAnimal textarea {
+.contactContainer textarea {
 	display: block;
+	resize: none;
 	width: 100%;
 	border: 1px solid #c2c2c2;
 	border: 1px solid #52515163;
 	outline: none;
 	box-shadow: none;
 	border-radius: 0.5em;
-	font: inherit;
-	font-weight: normal;
+	font-family: inherit;
+	font-weight: bold;
+	color: #7a7a7a;
+	line-height: 1.1;
+	padding: 0.5em;
 }
 
-.contactAnimal .formInput:not(:last-child) {
+.contactContainer .formInput input,
+.contactContainer .formInput textarea {
+	font-size: 80%;
+}
+
+.contactContainer .formInput:not(:last-child) {
 	margin-bottom: 1.2em;
 }
 
-.contactAnimal .formInput label {
+.contactContainer .formInput label {
 	display:block;
 	margin-bottom: 0.5em;
 	user-select: none;
 }
 
-.contactAnimal .formInput input {
+.contactContainer .formInput input {
 	display: block;
 	height: 3em;
 	width: 100%;
@@ -61,17 +70,17 @@
 	padding: 0.5em 1em;
 }
 
-.contactAnimal .formInput.submit {
+.contactContainer .formInput.submit {
 	text-align: right;
 }
 
-.contactAnimal .formInput input:focus,
-.contactAnimal .formInput textarea:focus{
+.contactContainer .formInput input:focus,
+.contactContainer .formInput textarea:focus{
 	outline: none;
 	box-shadow: 0 0 5px rgba(82, 81, 81, 0.5);
 }
 
-.contactAnimal .formInput input[type="submit"] {
+.contactContainer .formInput input[type="submit"] {
 	display: inline-block;
 	width: auto;
 	padding: 0.5em;
@@ -85,61 +94,49 @@
 	color: inherit;
 }
 
-.contactAnimal .formInput input[type="submit"]:hover {
+.contactContainer .formInput input[type="submit"]:hover {
 	cursor: pointer;
 	background: #f0cd48;
 	background: #f2b523e8;
 	box-shadow: 0 0 5px rgba(82, 81, 81, 0.5);
 }
 
-.contactAnimal .formInput input[type="submit"]:disabled {
+.contactContainer .formInput input[type="submit"]:disabled {
 	cursor: default;
 	background: #cbcbcb;
 	box-shadow: none;
 }
 
-.contactAnimal .formInput textarea {
-	resize: none;
-	padding: 0.5em;
-	color: #525151;
-	line-height: 1.1;
-}
-
-
-.contactAnimal .formInput textarea.disabled {
+.contactContainer .formInput textarea.disabled {
 	cursor: default;
 	border: none;
 }
 
-.contactAnimal .formInput input[type="text"],
-.contactAnimal .formInput input[type="email"],
-.contactAnimal .formInput input[type="password"]
+.contactContainer .formInput input[type="text"],
+.contactContainer .formInput input[type="email"],
+.contactContainer .formInput input[type="password"]
 {
 	font-weight: bold;
 	color: #7a7a7a;
 }
 
-.contactAnimal .error {
+.contactContainer .error {
 	font-size: 0.6em;
 	color: #ed3d15;
 }
 
-.contactAnimal .serverError{
+.contactContainer .serverError{
 	font-size: 0.6em;
 	color: #ed3d15;
 }
 
-.contactAnimal .serverError.general{
+.contactContainer .serverError.general{
 	margin-top: -2em;
 }
 
 .contactDevelopers{
-	position: relative;
-	top: 2em;
-	margin: 0 auto;
-	margin-bottom: 5em;
-	width: 45em;
-	box-shadow: 0 0 10px rgba(127, 127, 127, 0.8);
+	margin: 2em auto;
+	box-shadow: 0 0 20px rgba(82, 81, 81, 0.7);
 }
 
 .messageStatus{
@@ -177,13 +174,8 @@
 
 /*design for mobile devices*/
 @media (max-width: 768px) {
-	.contactAnimal {
-		margin: 1em 0;
-		padding: 1em;
-		box-sizing: border-box;
-		background: #e9ecef;
-		border-radius: 0.5em;
-		display: block;
-		max-width: 100%;
+	
+	.contactDevelopers form {
+		margin: 0 0.1em;
 	}
 }

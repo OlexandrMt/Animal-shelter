@@ -42,7 +42,8 @@ class ContactController extends Controller
 		 
 		 $data = $request->all();
 		 
-		 Mail::to("some@gmail.com")->send(new ContactDevelopersMail($data));
+		 Mail::to(env('MAIL_USERNAME'))->send(new ContactDevelopersMail($data));
+		 
 		 return redirect("/");
 	 }
 	 

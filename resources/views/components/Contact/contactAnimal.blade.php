@@ -10,7 +10,7 @@
 	@endphp
 @endif
 
-<div class="contactAnimal">
+<div class="contactContainer">
 	<form method="POST" name="contact" action="/contact/animal">
 		{{ csrf_field() }}
 		<input type="hidden" name="shelterId" value="{{$shelterId}}">

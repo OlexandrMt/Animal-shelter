@@ -35,7 +35,7 @@ class AuthController extends Controller
 
 	 public function showLogin(Request $request){
 		 if(!Auth::user()){
-			return(view("authPage"));
+			return(view("components/auth/authPage"));
 		 }
 		 return redirect("/");
 	 }

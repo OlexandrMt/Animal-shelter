@@ -6,6 +6,9 @@
 		@if(@isset($menuBtn))
 			{{$menuBtn}}
 		@endif
+		@if(@isset($logo))
+			{{$logo}}
+		@endif
 		@if(@isset($menuItems))
 			{{$menuItems}}
 		@endif

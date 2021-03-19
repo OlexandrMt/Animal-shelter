@@ -31,8 +31,8 @@ class ContactDevelopersMail extends Mailable
     public function build()
     {
         return $this
-			->subject("You've got a new message")
-			->from($this->content["email"])
+			->subject("New message in Animal Shelter")
+			->replyTo($this->content["email"])
 			->text('components.email.contactDevelopersMail');
     }
 }

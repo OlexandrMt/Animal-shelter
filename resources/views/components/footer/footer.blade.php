@@ -1,4 +1,4 @@
-<footer class="container-fluid text-center">
+<footer class = "container-fluid text-center" >
 			<div>
 		{{$slot}}
 	</div>
