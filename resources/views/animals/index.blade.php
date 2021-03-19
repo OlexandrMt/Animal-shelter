@@ -47,9 +47,9 @@
     @if(is_null($animal->sex))
     Не вказано
     @elseif($animal->sex==1)
-    Хлопчик
+    Самець
     @else
-    Дівчинка
+    Самка
     @endif
     </td>
 

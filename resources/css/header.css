@@ -25,7 +25,10 @@
 	text-decoration: none;
 }
 
-.navbar a:hover {
+.navbar a:hover,
+.navbar a:active,
+.navbar a:visited,
+.navbar a:focus {
 	color: #fff;
 }
 

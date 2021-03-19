@@ -20,6 +20,10 @@
 		</x-head.head>
 	</x-slot>
 	
+	<x-slot name="topBar">
+		<x-header.topBar/>
+	</x-slot>
+	
 	<x-slot name="header">
 		<x-header.header>
 			<x-slot name="logo">

@@ -22,6 +22,7 @@ let attachEventListeners = function(){
 	
 	$(".messageStatus .closeBtn").on("click", function(){
 		$(".messageStatus").animate({height:0},400);
+		$(".messageStatus .closeBtn").css("display", "none");
 	});
 }
 	

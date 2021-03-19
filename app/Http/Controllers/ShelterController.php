@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Models\Shelter;
+use App\Models\Animal;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -21,9 +22,10 @@ class ShelterController extends Controller
     public function index(Request $request)
     {
 
-      $shelterinfo = Shelter::all();
+      $shelterinfo = Shelter::paginate(6);
+      $animals = Animal::all();
 
-      return view('shelters/index', ['shelters' => $shelterinfo]);
+      return view('shelters/index', ['shelters' => $shelterinfo, 'animals' => $animals]);
     }
 
     /*Show the form for creating a new resource.
@@ -35,7 +37,7 @@ class ShelterController extends Controller
           return view('shelters/create');
           }
         else{
-          return redirect()->back()->withErrors(['You should be logged in to add new shelter']);
+          return redirect()->back()->withErrors(['Потрібно авторизуватися, щоб створити новий притулок']);
           }
 
             return view('shelters/create');
@@ -78,7 +80,12 @@ class ShelterController extends Controller
         if(Auth::check()){
           $user = Auth::user()->id;}
         $shelterinfo =  Shelter::find($id);
-        return view('shelters/show', ['shelter' => $shelterinfo, 'user' => $user]);
+
+        $animals = Shelter::find($id);
+        $animals = $animals->animal()->get();
+
+
+        return view('shelters/show', ['shelter' => $shelterinfo, 'user' => $user, 'animals' => $animals]);
     }
     /**
      * Show the form for editing the specified resource.
@@ -139,14 +146,14 @@ class ShelterController extends Controller
     public function my()
     {
       if(!Auth::check()){
-        return redirect()->back()->withErrors(['You should be logged in to watch your shelters']);
+        return redirect()->back()->withErrors(['Потрібно авторизуватися для перегляду своїх приьулків']);
         }
 
       $shelterinfo = User::find(Auth::user()->id);
       $shelterinfo = $shelterinfo->shelter()->get();
 
       if($shelterinfo->isEmpty()){
-        return redirect()->back()->withErrors(['You don`t have shelters']);
+        return redirect()->back()->withErrors(['У Вас поки що немає притулків']);
         }
       return view('shelters/index', ['shelters' => $shelterinfo]);
     }
@@ -158,7 +165,7 @@ class ShelterController extends Controller
       $shelterinfo = $shelterinfo->animal()->get();
 
       if($shelterinfo->isEmpty()){
-        return redirect()->back()->withErrors(['Shelter is empty']);
+        return redirect()->back()->withErrors(['Притулок пустий']);
         }
       return view('welcome', ['animals' => $shelterinfo]);
     }

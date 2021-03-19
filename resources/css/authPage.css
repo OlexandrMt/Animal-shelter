@@ -3,9 +3,11 @@
 @import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 @import "./header.css";
 @import "./footer.css";
+@import "./stylegreen.css";
 
 /*Auth form*/
 .authContainer {
+	font-family: 'Nunito', sans-serif !important; 
 	margin:0 auto;
 	margin-top: 2em;
 	margin-bottom: 2em;

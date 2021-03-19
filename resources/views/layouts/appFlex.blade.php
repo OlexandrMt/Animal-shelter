@@ -3,6 +3,9 @@
 	 {{$head}}
     <body>
 	 <div class="flexWrapper">
+		@if(@isset($topBar))
+			{{$topBar}}
+		@endif
 		<div class="content">
 			{{$header}}
 		

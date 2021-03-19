@@ -5,17 +5,184 @@
         Shelter
       </x-slot>
 
-
-
-
   <x-slot name="header">
 
   </x-slot>
 
+  <body>
+      <!-- Bottom Bar Start -->
+      <div class="bottom-bar">
+          <div class="container-fluid">
+              <div class="row ">
+                  <div class="col-md-5">
+                      <div class="logo">
+                          <div class="menuHome" >
+                              <h1 class="display-4 text-body" >
+                                <a href="index.html" >
+                                  <div class="inline-block">
+                                    <div class="fas float-left"><img src="images/logo 1.png">Animal-shelter</div>
+                                  </div>
+                                </a>
+                                  <!-- <div  class="fas fa-paw"><span>Animal-shelter</span></div> -->
+                              </h1>
+                            </div>
+
+                      </div>
+                  </div>
+
+                  <div class="col-md-3">
+
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Bottom Bar End -->
+
+      <!-- Breadcrumb Start -->
+      <div class="breadcrumb-wrap">
+          <div class="container-fluid">
+              <ul class="breadcrumb">
 
 
 
-  <div class="content">
+                  <li class="breadcrumb-item"><a href="#">Головна</a></li>
+                  <li class="breadcrumb-item"><a href="/shelters">Притулки</a></li>
+                  <li class="breadcrumb-item"><a href="/team">Наша команда</a></li>
+                  <!-- <li class="breadcrumb-item active">Product List</li> -->
+              </ul>
+          </div>
+      </div>
+      <!-- Breadcrumb End -->
+
+
+      <!-- Brand Start -->
+
+              <div class="brand">
+                  <div class="container-fluid">
+                      <div class="brand-slider">
+                          <div class="brand-item"><img src="images/1.png" alt="Logo"></div>
+                          <div class="brand-item"><img src="images/2.png" alt="Logo"></div>
+                          <div class="brand-item"><img src="images/3.png" alt="Logo"></div>
+                          <div class="brand-item"><img src="images/1.png" alt="Logo"></div>
+                          <div class="brand-item"><img src="images/2.png" alt="Logo"></div>
+                          <div class="brand-item"><img src="images/3.png" alt="Logo"></div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Brand End -->
+
+      <!-- Product List Start -->
+      <div class="product-view">
+          <div class="container-fluid">
+              <div class="row">
+
+                  <div class="col-xl-8">
+                      <div class="row">
+                          <div class="col-md-12 text-center">
+                              <div class="product-view-top">
+                                  <div class="row">
+                                      <div class="col-md-12">
+                                        <h2> Діючі притулки </h2>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      <!-- <div class="content">
+                        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center"> -->
+                            @foreach($shelters as $shelter)
+                            <!-- <div class="card-group"> -->
+                          <div class="col-md-4 col-sm-6">
+                            <div class="card-group text-center">
+                              <div class="card mb-4 shadow-sm">
+                              <div class="card-header text-white bg-dark">
+                                <h4 class="my-0 fw-normal">{{$shelter->name}}</h4>
+                              </div>
+                              <div class="card-body d-flex flex-column">
+                                <div class="img-round mt-0 mb-3" >
+                                  @isset($shelter->logo)
+                                    <img src="{{ asset("storage/".$shelter->logo) }}" alt="" title="">
+                                  @else
+                                    <img src="{{asset('images/default_logo.jpg')}}" alt="" title="">
+                                  @endisset
+                                </div>
+                                <div class="mt-auto">
+                                <form  action="/shelters/{{$shelter->id}}" method="get">
+                                      <button type="submit" class="w-75 btn btn-dark">Детальніше</button>
+                                </form>
+                              </div>
+                              </div>
+                            </div>
+                            </div>
+                              <!-- <div class="product-item">
+                                  <div class="product-title">
+                                    <a href="{{route('shelters.show',[$shelter->id])}}">{{ $shelter->name }}</a>
+                                  </div>
+                                  <div class="img-round mt-0 mb-3" >
+                                    @isset($shelter->logo)
+                                      <img src="{{ asset("storage/".$shelter->logo) }}" alt="" title="">
+                                    @else
+                                      <img src="{{asset('images/default_logo.jpg')}}" alt="" title="">
+                                    @endisset
+                                  </div>
+                                <div class="product-price">
+                                  <a href="{{route('shelters.show',[$shelter->id])}}" class="btn btn-dark">Детальна інформація</a>
+                                   </div>
+                              </div> -->
+                          </div>
+                          <!-- </div> -->
+                          @endforeach
+
+
+                      <!-- Pagination Start -->
+                      <div class="col-sm-12">
+                          <nav aria-label="Page navigation example">
+                              <ul class="pagination justify-content-center">
+                                    {{ $shelters->links() }}
+                              </ul>
+                          </nav>
+                      </div>
+                      <!-- Pagination Start -->
+                  </div>
+              </div>
+
+              <!-- Side Bar Start -->
+              <div class="col-xl-4 sidebar">
+                <div class="col-md-12 text-center">
+                    <div class="product-view-top">
+                        <div class="row">
+                            <div class="col-md-12">
+                              <h2> Наші тварини </h2>
+                  <!-- <div class="sidebar-widget widget-slider"> -->
+                              <div class="sidebar-slider normal-slider ">
+                                  @foreach($animals as $animal)
+                                    <div class="product-item pt-5">
+                                        <div class="product-title">
+                                            <a href="{{route('animals.show',[$animal->id])}}">{{$animal->name}}</a>
+                                        </div>
+                                        <div class="product-image">
+                                            <a href="{{route('animals.show',[$animal->id])}}">
+                                                <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
+                                            </a>
+                                            <div class="product-action">
+                                                <a href="{{route('animals.show',[$animal->id])}}"><i class="fa fa-search"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  @endforeach
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  <!-- </div> -->
+              </div>
+              <!-- Side Bar End -->
+          </div>
+      </div>
+      </div>
+      <!-- Product List End -->
+
+  <!-- <div class="content">
 
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
 
@@ -27,8 +194,11 @@
             </div>
             <div class="card-body d-flex flex-column">
               <div class="img-round mt-0 mb-3" >
-                @if($shelter->logo==NULL) @php $shelter->logo = "images/shalter_logos/defaultimg.jpg" @endphp  @endif
-                <img src="{{ asset("storage/".$shelter->logo) }}" alt="" title="">
+                @isset($shelter->logo)
+                  <img src="{{ asset("storage/".$shelter->logo) }}" alt="" title="">
+                @else
+                  <img src="{{asset('images/default_logo.jpg')}}" alt="" title="">
+                @endisset
               </div>
 
               <ul class="list-unstyled mt-3 mb-4">
@@ -38,7 +208,7 @@
               </ul>
               <div class="mt-auto">
               <form  action="/shelters/{{$shelter->id}}" method="get">
-                    <button type="submit" class="w-100 btn btn-lg btn-outline-primary">Look closer</button>
+                    <button type="submit" class="w-75 btn btn-dark">Детальніше</button>
               </form>
             </div>
             </div>
@@ -46,7 +216,7 @@
           </div>
       @endforeach
     </div>
-  </div>
+  </div> -->
 
 
 </x-fullapp-layout>
