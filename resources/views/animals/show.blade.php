@@ -1,80 +1,87 @@
 <x-fullapp-layout>
 
-  <body>
-      <!-- Top bar Start -->
-      <div class="top-bar">
-          <div class="container-fluid">
-              <div class="row">
-                  <div class="col-sm-6">
-                      <i class="fa fa-envelope"></i>
-                      intitavn@gmail.com
-                  </div>
-                  <div class="col-sm-6">
-                      <i class="fa fa-phone-alt"></i>
-                      +38 067 431 74 24
-                  </div>
-              </div>
-          </div>
+  <x-slot name="title">
+    Kitty
+  </x-slot>
+<!-- <div class="container-fluid bg-1 text-center">
+  <h3 class="margin"> {{ $animal->name }}</h3>
+  <img src="{{asset("storage/" .$animal->photo) }}" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
+	<p class="card-text"> Порода: {{ $animal->breed }} </p>
+  <p class="card-text">Вік: {{ $animal->age }} </p>
+    <p class="card-text">Стать: @if(is_null($animal->sex))
+    Не вказано
+    @elseif($animal->sex==1)
+    Cамець
+    @else
+    Самка
+    @endif </p>
+	<p class="card-text"> Статус: @if(is_null($animal->status))
+      Не вказано
+      @elseif($animal->status==1)
+      Прихищений
+      @else
+      Вільний
+      @endif </p>
+</div> -->
+@if(session("showNotification"))
+	<x-contact.messageStatus/>
+@endif
+<div class="card-group">
+  <div class="card">
+    <img class="card-img-top" src="{{asset("storage/" .$animal->photo) }}" alt="Card image cap">
+      <div class="card-body text-center">
+        <form action="/notifications/create" method="get">
+          <input type="hidden" name="animal_id" value='{{$animal->id}}'>
+          <button type="submit" class="w-75 btn btn-dark mb-1">Хочу собі <i class="fas fa-hands"></i></button>
+        </form>
       </div>
-      <!-- Top bar End -->
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h2 class="margin"> {{ $animal->name }}</h2>
+      <p class="card-text"> Тип:
+        @if(is_null($animal->type))
+        Не вказано
+        @else {{ $animal->type}}
+      @endif</p>
+      <p class="card-text"> Порода:
+        @if(is_null($animal->breed))
+        Не вказано
+        @else {{ $animal->breed}}
+      @endif</p>
+      <p class="card-text">Вік:
+        @if(is_null($animal->age))
+        Не вказано
+        @else {{ $animal->age}}
+        @endif
+      </p>
+      <p class="card-text">Стать: @if(is_null($animal->sex))
+      Не вказано
+      @elseif($animal->sex==1)
+      Cамець
+      @else
+      Самка
+      @endif </p>
+      <p class="card-text"> Статус: @if(is_null($animal->status))
+      Не вказано
+      @elseif($animal->status==1)
+      Прихищений
+      @else
+      Вільний
+      @endif </p>
+      <p class="card-text">Моя історія:
+        @if(is_null($animal->description))
+        Не вказано
+        @else {{ $animal->description}}
+        @endif
 
-      <!-- Nav Bar Start -->
-      <div class="nav">
-          <div class="container-fluid">
-              <nav class="navbarNew navbar-expand-md bg-dark navbar-dark">
-                  <a href="#" class="navbar-brand">MENU</a>
-                  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                      <span class="navbar-toggler-icon"></span>
-                  </button>
-
-                  <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                      <div class="navbar-nav mr-auto">
-                      </div>
-                      <div class="navbar-nav ml-auto">
-                          <div class="nav-item dropdown">
-                              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
-                              <div class="dropdown-menu">
-                                  <a href="#" class="dropdown-item">Login</a>
-                                  <a href="#" class="dropdown-item">Register</a>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </nav>
-          </div>
-      </div>
-        <!-- Nav Bar End -->
-
-        <!-- Bottom Bar Start -->
-        <div class="bottom-bar">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-md-4">
-                        <div class="logo">
-                          <!-- <form action="/">
-                    				<button  class="fas fa-paw"><span>Animal-shelter</span></button>
-                    			</form> -->
-                            <!-- <a href="index.html">
-                                <img src="images/logo 1.png" alt="Logo">
-                                                            </a> -->
-                            <!-- <h3 class="display-4,text-body">  Animal-shelter </h3> -->
-                            <div class="menuHome">
-                                <h1 class="display-4,text-body">
-                                  <a href="{{route('animals.main')}}">
-                                  <div class="fas"> <img src="{{asset('images/logo 1.png')}}" alt="Logo"><span>Animal-shelter</span></div>
-                                                                  </a>
-                                    <!-- <div  class="fas fa-paw"><span>Animal-shelter</span></div> -->
-                                </h1>
-                              </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-
-                    </div>
-                </div>
-            </div>
+        <div class="input-group">
+        <form action="/animals/{{ $animal->id }}/edit" method="get">
+              @csrf
+              <!-- <input type="submit" class="btn-success" value=" Редагувати "> -->
+              <button type="submit" class="btn btn-dark">Редагувати </i></button>
+              @method('GET')
+            </form>
         </div>
         <!-- Bottom Bar End -->
 
@@ -259,6 +266,11 @@
                              </div>
                              <!-- Side Bar End -->
 
+       </p>
+    </div>
+  </div>
+</div>
+<x-contact.contactAnimal :animalId="$animal->id" :shelterId="$animal->shelter_id" />
 
                         </div>
                     </div>

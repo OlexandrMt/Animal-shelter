@@ -4,7 +4,7 @@
 
     <body>
         <!-- Top bar Start -->
-        <div class="top-bar">
+        <!-- <div class="top-bar">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-6">
@@ -17,11 +17,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Top bar End -->
 
         <!-- Nav Bar Start -->
-        <div class="nav">
+        <!-- <div class="nav">
             <div class="container-fluid">
                 <nav class="navbarNew navbar-expand-md bg-dark navbar-dark">
                     <a href="#" class="navbar-brand">MENU</a>
@@ -44,7 +44,7 @@
                     </div>
                 </nav>
             </div>
-        </div>
+        </div> -->
         <!-- Nav Bar End -->
 
         <!-- Bottom Bar Start -->

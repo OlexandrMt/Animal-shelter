@@ -12,7 +12,7 @@
 			<input type="text" name="username" autocomplete="off">
 		</div>
 		<div class="formInput">
-			<label for="username">Password*</label>
+			<label for="password">Password*</label>
 			<input type="password" name="password">
 		</div>
 		<div class="formInput submit">

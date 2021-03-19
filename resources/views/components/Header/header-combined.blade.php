@@ -18,6 +18,9 @@ if(Auth::user()){
   <x-slot name="menuBtn">
     <x-header.menuBtn/>
   </x-slot>
+  <x-slot name="logo">
+    <x-header.logo/>
+  </x-slot>
   <x-slot name="menuItems">
     <x-header.menuItems/>
   </x-slot>
