@@ -39,4 +39,7 @@ Route::get('/main', 'AnimalController@main');
 
 Route::get('/team', 'TeamController@index');
 Route::resource('/animals', AnimalController::class);
+Route::post("/contact/animal", "ContactController@contactAnimal");
+Route::get("/contact/developers", "ContactController@show");
+Route::post("/contact/developers", "ContactController@contactDevelopers");
 require __DIR__.'/auth.php';

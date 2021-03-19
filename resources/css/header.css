@@ -1,0 +1,204 @@
+/*Header styles*/
+.navbar {
+	display: block;
+	padding: 0;
+	height: 3em;
+	color: #fff;
+	font-size: 1.5em;
+	user-select: none;
+	position: relative;
+	background: green;
+	z-index: 2;
+}
+
+.navbar * {
+	margin: 0;
+	padding: 0;
+}
+
+.navbar a {
+	display: inline-block;
+	padding: 0 1em;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	text-decoration: none;
+}
+
+.navbar a:hover,
+.navbar a:active,
+.navbar a:visited,
+.navbar a:focus {
+	color: #fff;
+}
+
+.navbar ul {
+	list-style: none;
+}
+
+.navbar .hidden {
+	display: none;
+}
+
+.navbar .bi {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	padding: 0.6em 1em 1em 1em;
+}
+
+.navbar .logo{
+	position: absolute;
+	text-align: center;
+	height: 3em;
+	line-height: 3em;
+	top: 0;
+	left: 0;
+	transition: background-color 0.3s;
+}
+
+.navbar .logo.centered{
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.navbar .logo i {
+	font-size: 130%;
+}
+
+.navbar .menuBtn{
+	display: none;
+}
+
+.navbar .optionsBtn {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 3em;
+	height: 3em;
+}
+
+.navbar .menuItems {
+	position: absolute;
+	top: 0;
+	left: 3em;
+	right: 3em;
+	height: 100%;
+	text-align:right;
+	line-height: 3em;
+	white-space: nowrap;
+}
+
+.navbar .menuItems>li {
+	display: inline-block;
+	height: 100%;
+	text-align: center;
+	white-space: nowrap;
+	transition: background-color 0.3s;
+}
+
+.navbar .menuItems .menuCloseBtn {
+	display: none;
+}
+
+.navbar .optionsBtn:hover,
+.navbar .menuBtn:hover,
+.navbar .menuItems li:hover,
+.navbar .logo:hover {
+	cursor:pointer;
+	background: #139c38;
+}
+
+/*Header menu options*/
+.navbar .userOptions{
+	position: absolute;
+	right: 0;
+	top: 3em;
+	color: #fff;
+	background: green;
+	height: 0;
+	overflow: hidden;
+	z-index: 1;
+	transition: 0.3s;
+}
+
+.navbar .userOptions.open {
+	height: 7.5em;
+	box-shadow: 0 5px 5px rgba(72, 72, 72, 0.7);
+}
+
+.navbar .userOptions li{
+	padding: 0.5em 1em;
+	transition: background-color 0.3s;
+}
+
+.navbar .userOptions li:hover{
+	background: #139c38;
+	cursor: pointer;
+}
+
+
+.navbar .userOptions a{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/*design for mobile devices*/
+@media (max-width: 768px) {
+
+	.navbar .menuBtn{
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 3em;
+		height: 3em;
+	}
+
+	.navbar .menuItems{
+		background: green;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: auto;
+		width: 0;
+		height: 100%;
+		overflow:hidden;
+		overflow-x: hidden;
+		transition: 0.2s;
+		box-shadow: 5px 0 5px rgba(72, 72, 72, 0.7);
+		z-index: 1;
+	}
+
+	.navbar .menuItems.open{
+		width: 7em;
+	}
+
+	.navbar .menuItems .menuCloseBtn{
+		display: block;
+	}
+
+	.navbar .menuItems>li {
+		display: block;
+		width: 100%;
+		height: auto;
+		white-space: normal;
+		line-height: 1;
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+	
+	.navbar .menuItems>li:lastChild {
+		margin-bottom: 0;
+	}
+
+	.navbar .menuItems .bi {
+		width: 100%;
+		padding: 0;
+	}
+
+	.navbar .logo{
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}

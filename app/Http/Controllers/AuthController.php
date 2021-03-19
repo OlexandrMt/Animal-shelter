@@ -33,9 +33,9 @@ class AuthController extends Controller
 		  ]);
 	 }
 
-	 public function showLogin(){
+	 public function showLogin(Request $request){
 		 if(!Auth::user()){
-			return(view("authPage"));
+			return(view("components/auth/authPage"));
 		 }
 		 return redirect("/");
 	 }
@@ -50,7 +50,6 @@ class AuthController extends Controller
 				throw ValidationException::withMessages([
 				"general" => "User not found"
 				]);
-
 		  };
 		  
 		 /* If you want a user to be redirected to a specific page after he logs in,

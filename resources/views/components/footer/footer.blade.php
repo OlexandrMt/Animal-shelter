@@ -9,9 +9,10 @@
 											<h2 class="display-4"><i class="fas fa-paw">Animal-shelter</i></h2>
 											<div class="contact-info">
 													<p><i class="fa fa-map-marker"></i>IT Academy by Vinnitsya</p>
-													<p><i class="fa fa-envelope"></i>intitavn@gmail.com</p>
+													<p><i class="fa fa-envelope"></i><a class="contactLink" href="/contact/developers">Написати розробникам</a></p>
 													<p><i class="fa fa-phone"></i>тел. моб: +38 067 431 74 24</p>
 	<p><i class="fa fa-phone"></i>тел. моб: +38 073 209 97 43</p>
+
 											</div>
 									</div>
 							</div>

@@ -52,7 +52,7 @@
   </x-head.head>
 
      <body>
-
+		 <x-header.topBar/>
        <x-header.header-combined />
 
 @if(!Auth::check())
@@ -75,10 +75,7 @@
     <x-footer.footer>
     </x-footer.footer>
 
-      <x-scripts.scripts/>
-    @if(@isset($scripts))
-        {{$scripts}}
-      @endif
+    <x-scripts.scripts/>
 
 
   	  </body>
