@@ -5,104 +5,89 @@
     </x-slot>
 
     <x-slot name="head">
-      <link rel="stylesheet" href="/css/animal.css">
+      <link rel="stylesheet" href="/css/style.css">
     </x-slot>
 
 
-    <div class="main-container mb-4">
-    <div class="body-container">
-
-    <div class='signup-container'>
-    <div class='left-container'>
-    <h1>
-      <i class='fas fa-paw'></i>
-      ANIMAL-SHELTER
-    </h1>
-    <div class='puppy'>
-      <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-542207-jpeg.png'>
-    </div>
-    </div>
-    <form action="/animals" method="post" enctype="multipart/form-data">
-    <div class='right-container'>
-    <header>
-      <div class='set'>
-        <div class='pets-name'>
-          <label for='name'>Кличка</label>
-          <input id='name' placeholder="Кличка тваринки" type='text' name='name'>
+    <div class="checkout">
+        <div class="container-fluid">
+          <form action="/animals" method="post" enctype="multipart/form-data">
+            <div class="row">
+                    <div class="checkout-inner">
+                        <div class="billing-address">
+                            <h2>Додавання домашніх тварин</h2>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for='name'>Кличка</label>
+                                    <input id='name' name='name' class="form-control" type="text" placeholder="Кличка тваринки">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for='type'>Тип</label>
+                                    <select class="form-select" aria-label="type" name="type" id="type">
+                                      <option selected value="3">Оберіть тип тваринки</option>
+                                      <option value="Кіт">Кіт</option>
+                                      <option value="Пес">Пес</option>
+                                      <option value="3">Інше</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="breed">Порода</label>
+                                  <input id='breed' name='breed' class="form-control" type="text" placeholder="Порода тваринки">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for='age'>Вік</label>
+                                    <input id='age' name='age' class="form-control" type="text" placeholder="Вік тваринки">
+                                </div>
+                                <div class="col-md-6">
+                                  <label>Стать</label><br>
+                                  <input type="radio" class="btn-check" name="sex" id="female" autocomplete="off" value="0" checked>
+                                  <label class="btn btn-outline-success" for="female">Самка</label>
+                                  <input type="radio" class="btn-check" name="sex" id="male" autocomplete="off" value="1">
+                                  <label class="btn btn-outline-success" for="male">Самець</label>
+                                </div>
+                                <div class="col-md-6">
+                                  <label>Статус</label><br>
+                                  <input type="radio" class="btn-check" name="status" id="free" autocomplete="off" value="0" checked>
+                                  <label class="btn btn-outline-success" for="free">Вільний</label>
+                                  <input type="radio" class="btn-check" name="status" id="sheltered" autocomplete="off" value="1">
+                                  <label class="btn btn-outline-success" for="sheltered">Прихищений</label>
+                                </div>
+                                  <div class="col-md-12">
+                                    <div class="mb-3">
+                                    <label for="photo" class="form-label">Фото</label>
+                                    <input class="form-control" type="file" id="photo" name="photo" accept="image/*">
+                                  </div>
+                                </div>
+                                <div class="col-md-12">
+                                  <div class="mb-3">
+                                    <div style="margin-top:5px;" class="img-round">
+                                      <img id="photo-preview" src={{ asset("storage/animal_photo/defaultimg.jpg") }} />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-12">
+                                  <label>Історія тваринки</label>
+                                  <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="description"></textarea>
+                                  </div>
+                                  <br>
+                                </div>
+                                <div class="col-md-12">
+                                  <div class="mb-3">
+                                    <input type="submit" class="btn btn-success" id='next' value="Добавити">
+                                    <input type="hidden" name="shelter_id" value='{{$shelter_id}}'>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            @csrf
+          </form>
         </div>
-        <div class='pets-type'>
-          <label for='type'>Тип</label>
-          <input id='type' placeholder="Тип тваринки" type='text' name='type'>
-        </div>
-      </div>
-      <div class='set'>
-        <div class='pets-breed'>
-          <label for='breed'>Порода</label>
-          <input id='breed' placeholder="Порода тваринки" type='text' name='breed'>
-        </div>
-        <div class='pets-birthday'>
-          <label for='age'>Вік</label>
-          <input id='age' placeholder="Вік тваринки" type='text' name='age'>
-        </div>
-      </div>
-      <div class='set'>
-        <div class='pets-gender'>
-          <label for='pet-gender-female'>Стать</label>
-          <div class='radio-container'>
-            <input checked='' id='pet-gender-female' name='sex' type='radio' value='0'>
-            <label for='pet-gender-female'>Самка</label>
-            <input id='pet-gender-male' name='sex' type='radio' value='1'>
-            <label for='pet-gender-male'>Самець</label>
-          </div>
-        </div>
-        <div class='pets-spayed-neutered'>
-          <label for='pet-spayed'>Статус</label>
-          <div class='radio-container'>
-            <input checked='' id='pet-spayed' name='status' type='radio' value='0'>
-            <label for='pet-spayed'>Вільний</label>
-            <input id='pet-neutered' name='status' type='radio' value='1'>
-            <label for='pet-neutered'>Прихищений</label>
-          </div>
-        </div>
-      </div>
-      <br>
-
-      <div class='pets-photo'>
-
-        <label for="photo">Фото:</label>
-        <div class="pets-photo-input">
-          <input type="file" id="photo" name="photo">
-        </div>
-      </div>
-      <label for="description">Моя історія:</label>
-      <div class="set">
-        <textarea style="width: 720px;" name="description" rows="4" cols="80"></textarea>
-      </div>
-    </header>
-    <footer>
-      <div class='set'>
-        <!--
-          <form action="/animals" method="get" >
-                @csrf
-                <input type="submit" id="back" value="Back">
-                @method('GET')
-              </form>
-            -->
-          <input type="submit" id='next' value="Добавити">
-          <input type="hidden" name="shelter_id" value='{{$shelter_id}}'>
-
-
-      </div>
-    </footer>
     </div>
 
-    @csrf
-    </form>
-    </div>
-  </div>
-</div>
 
-
-      <x-scripts.img-preview img="logo" imgPreview="logo-preview" />
+      <x-scripts.img-preview img="photo" imgPreview="photo-preview" />
 
 </x-fullapp-layout>

@@ -65,7 +65,7 @@ class AnimalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AnimalRequest $request)
     {
       $animals= new Animal();
       $animals->fill($request->all());
@@ -125,7 +125,7 @@ class AnimalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AnimalRequest $request, $id)
     {
      $animals = Animal::find($id);
      $animals->name = $request->input('name');
@@ -152,12 +152,9 @@ class AnimalController extends Controller
      */
     public function destroy($id, Request $request)
     {
-      $shelter_id = Animal::find($id);
-      $shelter_id = $shelter_id->shelter_id;
+      $animal=Animal::find($id);
+      $shelter_id=$animal->shelter_id;
       Animal::find($id)->delete();
-
-   // return redirect()->route('animals.index');
-   return redirect()->route('shelters.show', [$shelter_id]);
-   // return redirect()->route('animals.show', $id);
+   return redirect()->route('shelters.show', $shelter_id);
     }
 }
