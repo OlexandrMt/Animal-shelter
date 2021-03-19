@@ -35,6 +35,7 @@
         </form>
       </div>
   </div>
+
 <div class="card">
     <div class="card-body">
       <h2 class="margin"> {{ $animal->name }}</h2>
@@ -92,16 +93,9 @@
             </form>
 
         </div>
-
-
-
-
-
-
-
-
        </p>
     </div>
+
   </div>
 </div>
 

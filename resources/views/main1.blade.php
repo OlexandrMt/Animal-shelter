@@ -93,7 +93,6 @@
 
 
         <!-- Brand Start -->
-
                 <div class="brand">
                     <div class="container-fluid">
                         <div class="brand-slider">
