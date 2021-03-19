@@ -11,7 +11,12 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.postCss('resources/css/styles.css', 'public/css', [
+mix.postCss('resources/css/app.css', 'public/css', [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('autoprefixer'),
+	])
+	.postCss('resources/css/styles.css', 'public/css', [
 		 require('postcss-import'),
 		 require('tailwindcss'),
 		 require('autoprefixer'),
