@@ -29,16 +29,20 @@ class AnimalController extends Controller
     }
     public function all()
     {
-
         $animals = Animal::all();
         return view('welcome',['animals'=>$animals]);
     }
 
-    public function main()
+    public function main(Request $request)
     {
-
-        $animals = Animal::paginate(6);
-        return view('main1',['animals'=>$animals]);
+        if($request->type){
+            $animals = Animal::where('type', '=', $request->type)->paginate(6)->fragment('our-animals-anchor');
+            return view('main1',['animals'=>$animals])."#our-animals-anchor";
+        }
+        else{
+          $animals = Animal::paginate(6)->fragment('our-animals-anchor');;
+          return view('main1',['animals'=>$animals]);
+        }
     }
 
     /**
@@ -101,7 +105,7 @@ class AnimalController extends Controller
     {
       //dd("show");
       $animals = Animal::find($id);
-        return view('animals.shownew', ['animal'=>$animals]);  //
+        return view('animals.show', ['animal'=>$animals]);  //
     }
 
     /**

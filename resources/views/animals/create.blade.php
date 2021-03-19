@@ -25,9 +25,9 @@
                                     <label for='type'>Тип</label>
                                     <select class="form-select" aria-label="type" name="type" id="type">
                                       <option selected value="3">Оберіть тип тваринки</option>
-                                      <option value="Кіт">Кіт</option>
-                                      <option value="Пес">Пес</option>
-                                      <option value="3">Інше</option>
+                                      <option value="кіт">Кіт</option>
+                                      <option value="пес">Пес</option>
+                                      <option value="інше">Інше</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6">

@@ -146,16 +146,16 @@ class ShelterController extends Controller
     public function my()
     {
       if(!Auth::check()){
-        return redirect()->back()->withErrors(['Потрібно авторизуватися для перегляду своїх приьулків']);
+        return redirect()->back()->withErrors(['Потрібно авторизуватися для перегляду своїх притулків']);
         }
 
       $shelterinfo = User::find(Auth::user()->id);
-      $shelterinfo = $shelterinfo->shelter()->get();
-
+      $shelterinfo = $shelterinfo->shelter()->paginate(6);
+      $animals = Animal::all();
       if($shelterinfo->isEmpty()){
         return redirect()->back()->withErrors(['У Вас поки що немає притулків']);
         }
-      return view('shelters/index', ['shelters' => $shelterinfo]);
+      return view('shelters/index', ['shelters' => $shelterinfo, 'animals' => $animals]);
     }
 
     public function animals($id)
