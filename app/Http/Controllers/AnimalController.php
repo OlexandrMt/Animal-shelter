@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use App\Http\Requests\AnimalRequest;
 use App\Http\Controllers\ShelterController;
-
+use App\Http\Controllers\TeamController;
 
 class AnimalController extends Controller
 {
@@ -23,13 +23,6 @@ class AnimalController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function home()
-    {
-        $animals = Animal::all();
-
-        // return view('welcome',['animals'=>$animals]);
-        return view('home',['animals'=>$animals]);
-    }
 
     public function index(Request $request)
     {
@@ -156,4 +149,65 @@ class AnimalController extends Controller
       Animal::find($id)->delete();
    return redirect()->route('shelters.show', $shelter_id);
     }
+    public function home()
+    {
+        $animals = Animal::all();
+        $teams=[
+            [
+              "id"=>1,
+              "name"=>'Олександр Зарицький',
+              "ava"=> "images/unnamed.jpg"
+            ],
+            [
+              "id"=>2,
+              "name"=>'Сергій Кривенький',
+              "ava"=> "images/unnamed.jpg"
+            ],
+            [
+              "id"=>3,
+              "name"=>'Дмитро Базалицький',
+              "ava"=> "images/Bazalytskyi.png"
+            ],
+            [
+              "id"=>4,
+              "name"=>'Наталія Макодай',
+              "ava"=> "images/Nata1.jpg"
+            ],
+            [
+              "id"=>5,
+              "name"=>'Олександр Метельний',
+              "ava"=> "images/Metelnyi.png"
+            ],
+            [
+              "id"=>6,
+              "name"=>'Маргарита Грінченко',
+              "ava"=> "images/unnamed.jpg"
+            ],
+            [
+              "id"=>7,
+              "name"=>'Марія Терлецька',
+              "ava"=> "images/unnamed.jpg"
+            ],
+            [
+              "id"=>8,
+              "name"=>'Олександр Панченко',
+              "ava"=> "images/unnamed.jpg"
+            ],
+            [
+              "id"=>9,
+              "name"=>'Олег Ростов',
+              "ava"=> "images/unnamed.jpg"
+            ],
+            [
+              "id"=>10,
+              "name"=>'Віталій Богданюк',
+              "ava"=> "images/unnamed.jpg"
+            ],
+
+          ];
+        $teams= collect($teams);
+        // return view('welcome',['animals'=>$animals]);
+        return view('home',['animals'=>$animals], ["teams"=>$teams]);
+    }
+
 }

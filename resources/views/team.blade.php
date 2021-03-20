@@ -8,7 +8,42 @@
 		<x-scripts.scripts/>
 	</x-slot>
 
-<h1 class="text"><i> Наша команда </i></h1>
+
+	<div class="featured-product product">
+			<div class="container-fluid">
+					<div class="section-header">
+							<h1>Наша команда</h1>
+					</div>
+					<div class="row align-items-center product-slider product-slider-4">
+
+					@foreach($teams as $team)
+													<div class="col-lg-3">
+															<div class="product-item">
+																	<div class="product-title">
+																			<a > {{ ($team["name"]) }}</a>
+																			<div class="ratting">
+
+																			</div>
+																	</div>
+																	<div class="product-image">
+																		<a >
+																				<img src="{{ ($team["ava"]) }}" class="" alt="...">
+																		</a>
+																	</div>
+																	<div class="product-price">
+																			<h3><span></span></h3>
+
+																	</div>
+															</div>
+													</div>
+													@endforeach
+					</div>
+			</div>
+	</div>
+
+
+
+<!-- <h1 class="text"><i> Наша команда </i></h1>
 
 
 
@@ -30,13 +65,8 @@
 @endforeach
 </div>
 </div>
+ -->
 
 
-<!-- <div class="card" style="width: 18rem;">
-  <img src="images/unnamed.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-text"> Моє імя</h5>
-  </div>
-</div> -->
 
 </x-fullapp-layout>
