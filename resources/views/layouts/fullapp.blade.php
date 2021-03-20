@@ -45,6 +45,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/animal.css">
     <link rel="stylesheet" href="/css/stylegreen.css">
+    <link rel="stylesheet" href="/css/authPage.css">
 
     @if(@isset($head))
       {{$head}}
@@ -52,7 +53,7 @@
   </x-head.head>
 
      <body>
-
+		 <x-header.topBar/>
        <x-header.header-combined />
 
 @if(!Auth::check())
@@ -75,11 +76,10 @@
     <x-footer.footer>
     </x-footer.footer>
 
-      <x-scripts.scripts/>
+    <x-scripts.scripts/>
     @if(@isset($scripts))
         {{$scripts}}
       @endif
-
 
   	  </body>
 </html>

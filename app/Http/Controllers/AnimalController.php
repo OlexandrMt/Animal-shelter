@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Animal;
+use App\Models\Shelter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use App\Http\Requests\AnimalRequest;
-
+use App\Http\Controllers\ShelterController;
 
 
 class AnimalController extends Controller
@@ -29,10 +30,22 @@ class AnimalController extends Controller
     }
     public function all()
     {
-
         $animals = Animal::all();
         return view('welcome',['animals'=>$animals]);
     }
+
+    public function main(Request $request)
+    {
+        if($request->type){
+            $animals = Animal::where('type', '=', $request->type)->paginate(6)->fragment('our-animals-anchor');
+            return view('main1',['animals'=>$animals])."#our-animals-anchor";
+        }
+        else{
+          $animals = Animal::paginate(6)->fragment('our-animals-anchor');;
+          return view('main1',['animals'=>$animals]);
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -40,7 +53,12 @@ class AnimalController extends Controller
      */
     public function create(Request $request)
     {
-// dd($request->shelter_id);
+        if(!Auth::check()){
+          return redirect()->back()->withErrors(['Потрібно авторизуватися, щоб додати тварину']);
+        }
+        elseif(!$request->shelter_id){
+          return redirect()->back()->withErrors(['Потрібно увійти до притулку, та мати права адміністраторв щоб додати тварину']);
+        }
         return view('animals/create', ['shelter_id' => $request->shelter_id]);
 
 
@@ -57,13 +75,6 @@ class AnimalController extends Controller
       $animals= new Animal();
       $animals->fill($request->all());
 
-/*
-      $animals->nickname = $request->input('name');
-      $animals->breed = $request->input('breed');
-      $animals->age = $request->input('age');
-      $animals->type = $request->input('type');
-      $animals->photo = $request->fphoto->store('avatars','public');
-*/
       $animals->sex = $request->input('sex');
       $animals->status = $request->input('status');
 
@@ -74,7 +85,7 @@ class AnimalController extends Controller
       $animals->shelter_id = $request->input('shelter_id');
       $animals->save();
 
-      return redirect()->route('animals.index');
+      return redirect()->route('shelters.show', $animals->shelter_id);
     }
 
     /**
@@ -87,7 +98,14 @@ class AnimalController extends Controller
     {
       //dd("show");
       $animals = Animal::find($id);
-        return view('animals.show', ['animal'=>$animals]);  //
+      $shelters = Shelter::find($animals->shelter_id);
+      $user=NULL;
+      if(Auth::check()){
+        $user = Auth::user()->id;
+      }
+
+
+        return view('animals.show', ['animal'=>$animals,'shelter'=>$shelters,'user'=>$user]);  //
     }
 
     /**
@@ -100,7 +118,7 @@ class AnimalController extends Controller
     {
       $animals = Animal::find($id);
 
-      return view('animals/edit',['animal'=>$animals]);
+      return view('animals/edit',['animal'=>$animals], ['shelter_id' => $request->shelter_id]);
 
     }
 
@@ -127,7 +145,7 @@ class AnimalController extends Controller
 
      $animals->save();
 
-    return redirect()->route('animals.index');
+    return redirect()->route('animals.show', $id);
     }
 
     /**
@@ -136,7 +154,7 @@ class AnimalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
       $animal=Animal::find($id);
       $shelter_id=$animal->shelter_id;

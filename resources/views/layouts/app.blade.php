@@ -3,14 +3,14 @@
 	 {{$head}}
     <body>
 		{{$header}}
+			@if(@isset($auth))
+				<div class="shim"></div>
+				{{$auth}}
+			@endif
 
-		@if(@isset($auth))
-			<div class="shim"></div>
-			{{$auth}}
-		@endif
-
-		{{$slot}}
-
+			{{$slot}}
+		  
+			{{$footer}}
 		@if(@isset($scripts))
 	 	{{$scripts}}
 	  @endif

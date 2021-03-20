@@ -104,15 +104,25 @@ h2 {
     box-shadow: none;
 }
 
+<<<<<<< HEAD
 .btn {
+=======
+.btn-new {
+>>>>>>> dev
     color: #009900;
     background: #ffffff;
     border: 1px solid #009900;
 }
 
+<<<<<<< HEAD
 .btn:hover,
 .btn:active,
 .btn:focus {
+=======
+.btn-new:hover,
+.btn-new:active,
+.btn-new:focus {
+>>>>>>> dev
     color: #ffffff;
     background: #009900;
     box-shadow: none;
@@ -488,11 +498,19 @@ h2 {
     font-weight: 700;
 }
 
+<<<<<<< HEAD
 .header-slider .header-slider-caption .btn {
     border-color: #ffffff;
 }
 
 .header-slider .header-slider-caption .btn i {
+=======
+.header-slider .header-slider-caption .btn-new {
+    border-color: #ffffff;
+}
+
+.header-slider .header-slider-caption .btn-new i {
+>>>>>>> dev
     margin-right: 5px;
 }
 
@@ -827,20 +845,33 @@ h2 {
     font-size: 16px;
 }
 
+<<<<<<< HEAD
 .product-item .product-price .btn {
+=======
+.product-item .product-price .btn-new {
+>>>>>>> dev
     float: right;
     border: none;
     color: #000000;
     background: #009900;
 }
 
+<<<<<<< HEAD
 .product-item:hover .product-price .btn,
 .product-item .product-price .btn:hover {
+=======
+.product-item:hover .product-price .btn-new,
+.product-item .product-price .btn-new:hover {
+>>>>>>> dev
     color: #009900;
     background: #ffffff;
 }
 
+<<<<<<< HEAD
 .product-item .product-price .btn i {
+=======
+.product-item .product-price .btn-new i {
+>>>>>>> dev
     margin-right: 5px;
 }
 
@@ -1167,11 +1198,19 @@ h2 {
     border: none;
 }
 
+<<<<<<< HEAD
 .product-detail .product-content .quantity button.btn-minus {
     border-radius: 4px 0 0 4px;
 }
 
 .product-detail .product-content .quantity button.btn-plus {
+=======
+.product-detail .product-content .quantity button.btn-new-minus {
+    border-radius: 4px 0 0 4px;
+}
+
+.product-detail .product-content .quantity button.btn-new-plus {
+>>>>>>> dev
     border-radius: 0 4px 4px 0;
 }
 
@@ -1514,6 +1553,7 @@ h2 {
     border-radius: 4px;
 }
 
+<<<<<<< HEAD
 .cart-page .table button.btn-minus {
     border-radius: 4px 0 0 4px;
 }
@@ -1523,6 +1563,17 @@ h2 {
 }
 
 .cart-page .table button.btn-cart {
+=======
+.cart-page .table button.btn-new-minus {
+    border-radius: 4px 0 0 4px;
+}
+
+.cart-page .table button.btn-new-plus {
+    border-radius: 0 4px 4px 0;
+}
+
+.cart-page .table button.btn-new-cart {
+>>>>>>> dev
     width: auto;
 }
 
@@ -1605,7 +1656,11 @@ h2 {
     margin: 0;
 }
 
+<<<<<<< HEAD
 .cart-page .cart-summary .cart-btn button {
+=======
+.cart-page .cart-summary .cart-btn-new button {
+>>>>>>> dev
     margin-top: 15px;
     width: calc(50% - 15px);
     height: 50px;
@@ -1617,19 +1672,31 @@ h2 {
     border-radius: 4px;
 }
 
+<<<<<<< HEAD
 .cart-page .cart-summary .cart-btn button:hover {
+=======
+.cart-page .cart-summary .cart-btn-new button:hover {
+>>>>>>> dev
     color: #009900;
     background: #000000;
 }
 
+<<<<<<< HEAD
 .cart-page .cart-summary .cart-btn button:first-child {
+=======
+.cart-page .cart-summary .cart-btn-new button:first-child {
+>>>>>>> dev
     margin-right: 25px;
     color: #009900;
     background: #ffffff;
     border: 1px solid #009900;
 }
 
+<<<<<<< HEAD
 .cart-page .cart-summary .cart-btn button:first-child:hover {
+=======
+.cart-page .cart-summary .cart-btn-new button:first-child:hover {
+>>>>>>> dev
     color: #ffffff;
     background: #009900;
 }
@@ -1705,6 +1772,7 @@ h2 {
     border-radius: 4px;
 }
 
+<<<<<<< HEAD
 .wishlist-page .table button.btn-minus {
     border-radius: 4px 0 0 4px;
 }
@@ -1714,6 +1782,17 @@ h2 {
 }
 
 .wishlist-page .table button.btn-cart {
+=======
+.wishlist-page .table button.btn-new-minus {
+    border-radius: 4px 0 0 4px;
+}
+
+.wishlist-page .table button.btn-new-plus {
+    border-radius: 0 4px 4px 0;
+}
+
+.wishlist-page .table button.btn-new-cart {
+>>>>>>> dev
     width: auto;
 }
 
@@ -1800,7 +1879,11 @@ h2 {
     display: none;
 }
 
+<<<<<<< HEAD
 .checkout .checkout-payment .checkout-btn button {
+=======
+.checkout .checkout-payment .checkout-btn-new button {
+>>>>>>> dev
     width: 100%;
     height: 50px;
     padding: 2px 10px;
@@ -1815,7 +1898,11 @@ h2 {
     transition: all .3s;
 }
 
+<<<<<<< HEAD
 .checkout .checkout-payment .checkout-btn button:hover {
+=======
+.checkout .checkout-payment .checkout- button:hover {
+>>>>>>> dev
     color: #009900;
     background: #000000;
 }

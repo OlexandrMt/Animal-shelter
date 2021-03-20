@@ -62,7 +62,7 @@
                       <br>
                       <form action="/shelters/ {{$shelter->id}}" method="post">
 
-                          <input type="submit" class="btn btn-success" value="Видилити">
+                          <input type="submit" class="btn btn-success" value="Видалити">
 
                         @csrf
                         @method('DELETE')

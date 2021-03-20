@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {createValidator, clearServerMsg} from "./validator.js";
 
 let showAuthForm = function(e){
@@ -114,9 +115,12 @@ let attachEventListeners = function(){
 		}
 	});
 }
+=======
+import {turnOnAuth} from "./auth.js";
+import {turnOnContact} from "./contact.js";
+>>>>>>> dev
 
 $(document).ready(function(){
-	createValidator("login");
-	createValidator("register");
-	attachEventListeners();
+	turnOnAuth();
+	turnOnContact();
 });

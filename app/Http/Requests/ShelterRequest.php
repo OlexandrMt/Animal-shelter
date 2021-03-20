@@ -46,7 +46,7 @@ class ShelterRequest extends FormRequest
     public function attributes()
     {
         return [
-            'name' => '"Имя"',
+            'name' => '"Ім`я"',
             'address' => '"Адрес"',
             'mail' => '"Email"',
             'phone' => '"Телефон"',
