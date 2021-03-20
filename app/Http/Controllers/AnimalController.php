@@ -31,7 +31,9 @@ class AnimalController extends Controller
     {
 
         $animals = Animal::all();
-        return view('welcome',['animals'=>$animals]);
+
+        // return view('welcome',['animals'=>$animals]);
+        return view('home',['animals'=>$animals]);
     }
 
     public function main()
@@ -88,7 +90,8 @@ class AnimalController extends Controller
       $animals->save();
 
       $animals = Animal::all();
-      return view('welcome',['animals'=>$animals]);
+      // return view('welcome',['animals'=>$animals]);
+      return view('home',['animals'=>$animals]);
     }
 
     /**

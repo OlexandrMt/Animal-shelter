@@ -526,7 +526,7 @@ samp {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
-/* img, */
+img,
 svg,
 video,
 canvas,
@@ -184568,3 +184568,4 @@ select {
             animation: bounce 1s infinite;
   }
 }
+

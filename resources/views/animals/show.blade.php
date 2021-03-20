@@ -24,7 +24,9 @@
       Вільний
       @endif </p>
 </div> -->
-
+@if(session("showNotification"))
+	<x-contact.messageStatus/>
+@endif
 <div class="card-group">
   <div class="card">
     <img class="card-img-top" src="{{asset("storage/" .$animal->photo) }}" alt="Card image cap">
@@ -35,8 +37,12 @@
         </form>
       </div>
   </div>
+<<<<<<< HEAD
 
 <div class="card">
+=======
+  <div class="card">
+>>>>>>> dev
     <div class="card-body">
       <h2 class="margin"> {{ $animal->name }}</h2>
       <p class="card-text"> Тип:
@@ -98,5 +104,6 @@
 
   </div>
 </div>
+<x-contact.contactAnimal :animalId="$animal->id" :shelterId="$animal->shelter_id" />
 
 </x-fullapp-layout>

@@ -1,30 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Animal-shelter</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="eCommerce HTML Template Free Download" name="keywords">
-        <meta content="eCommerce HTML Template Free Download" name="description">
+<x-fullapp-layout>
 
-        <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
 
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
-
-        <!-- CSS Libraries -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-        <link href="{{asset('scripts/libs/slick/slick.css')}}" rel="stylesheet">
-        <link href="{{asset('scripts/libs/slick/slick-theme.css')}}" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-
-        <!-- Template Stylesheet -->
-        <link href="/css/stylegreen.css" rel="stylesheet">
-    </head>
 
     <body>
         <!-- Top bar Start -->
@@ -47,7 +23,7 @@
         <!-- Nav Bar Start -->
         <div class="nav">
             <div class="container-fluid">
-                <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                <nav class="navbarNew navbar-expand-md bg-dark navbar-dark">
                     <a href="#" class="navbar-brand">MENU</a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
@@ -55,6 +31,12 @@
 
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto">
+                          <a href="/" class="nav-item nav-link">Home</a>
+                            <a href="/main" class="nav-item nav-link">Тварини</a>
+                            <a href="/shelters" class="nav-item nav-link active">Притулки</a>
+                            <a href="/team" class="nav-item nav-link">Наша команда</a>
+                            <!-- <a href="checkout.html" class="nav-item nav-link">Checkout</a>
+                            <a href="my-account.html" class="nav-item nav-link">My Account</a> -->
                         </div>
                         <div class="navbar-nav ml-auto">
                             <div class="nav-item dropdown">
@@ -91,15 +73,15 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
 
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
         <!-- Bottom Bar End -->
 
-        <!-- Breadcrumb Start -->
+        <!-- Breadcrumb Start  -->
         <div class="breadcrumb-wrap">
             <div class="container-fluid">
                 <ul class="breadcrumb">
@@ -113,11 +95,11 @@
                 </ul>
             </div>
         </div>
-        <!-- Breadcrumb End -->
+        <!-- Breadcrumb End-->
 
 
         <!-- Brand Start -->
-                <div class="brand">
+                <!-- <div class="brand">
                     <div class="container-fluid">
                         <div class="brand-slider">
                             <div class="brand-item"><img src="images/1.png" alt="Logo"></div>
@@ -128,7 +110,7 @@
                             <div class="brand-item"><img src="images/3.png" alt="Logo"></div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- Brand End -->
 
         <!-- Product List Start -->
@@ -162,7 +144,7 @@
                                         </a>
                                     </div>
                                   <div class="product-price">
-                                    <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-dark">Детальна інформація</a>
+                                    <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-dark">Детальніше</a>
                                         <!-- <a class="btn" href="">Детальна інформація</a> -->
                                      </div>
                                 </div>
@@ -187,7 +169,7 @@
                 <div class="col-xl-4 sidebar">
                     <div class="sidebar-widget category">
                         <h2 class="title">Category</h2>
-                        <nav class="navbar bg-light">
+                        <nav class="navbarNew bg-light">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
                                     <a class="nav-link" href="#"><i class="fac fa-cat"></i>Котики</a>
@@ -205,46 +187,21 @@
                     <div class="sidebar-widget widget-slider">
                         <div class="sidebar-slider normal-slider">
                           @foreach($animals as $animal)
-                            <div class="product-item">
+                            <div class="product-item pt-5">
                                 <div class="product-title">
-                                    <a href="#">{{ $animal->name }} </a>
+                                    <a href="{{route('animals.show',[$animal->id])}}">{{$animal->name}}</a>
                                 </div>
                                 <div class="product-image">
-                                    <a href="product-detail.html">
+                                    <a href="{{route('animals.show',[$animal->id])}}">
                                         <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
                                     </a>
-                                </div>
-                            </div>
-                            @endforeach
-
-                            <!-- <div class="product-item">
-                                <div class="product-title">
-                                    <a href="#">Animal name 2</a>
-                                </div>
-                                <div class="product-image">
-                                    <a href="product-detail.html">
-                                        <img src="images/unnamed.jpg" alt="Product Image">
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="product-item">
-                                <div class="product-title">
-                                    <a href="#">Product Name</a>
-                                </div>
-                                <div class="product-image">
-                                    <a href="product-detail.html">
-                                        <img src="images/unnamed.jpg" alt="Product Image">
-                                    </a>
                                     <div class="product-action">
-                                        <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                        <a href="#"><i class="fa fa-heart"></i></a>
-                                        <a href="#"><i class="fa fa-search"></i></a>
+                                        <a href="{{route('animals.show',[$animal->id])}}"><i class="fa fa-search"></i></a>
                                     </div>
                                 </div>
-                            </div> -->
-
-
+                            </div>
+                          @endforeach
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -255,82 +212,5 @@
         <!-- Product List End -->
 
 
-        <!-- Brand Start -->
-                <div class="brand">
-                    <div class="container-fluid">
-                        <div class="brand-slider">
-                            <div class="brand-item"><img src="images/1.png" alt="Logo"></div>
-                            <div class="brand-item"><img src="images/2.png" alt="Logo"></div>
-                            <div class="brand-item"><img src="images/3.png" alt="Logo"></div>
-                            <div class="brand-item"><img src="images/1.png" alt="Logo"></div>
-                            <div class="brand-item"><img src="images/2.png" alt="Logo"></div>
-                            <div class="brand-item"><img src="images/3.png" alt="Logo"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Brand End -->
-
-
-
-
-        <!-- Footer Start -->
-        <div class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-widget">
-                            <h2> Студентський проект</h2>
-
-                            <h2 class="display-4"><i class="fas fa-paw">Animal-shelter</i></h2>
-                            <div class="contact-info">
-                              <!-- <p><i> </i>Студентський проект</p> -->
-                                <p><i class="fa fa-map-marker"></i>IT Academy by Vinnitsya</p>
-                                <p><i class="fa fa-envelope"></i>intitavn@gmail.com</p>
-                                <p><i class="fa fa-phone"></i>тел. моб: +38 067 431 74 24</p>
-				<p><i class="fa fa-phone"></i>тел. моб: +38 073 209 97 43</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-widget">
-                            <h2>Follow Us</h2>
-                            <div class="contact-info">
-                                <div class="social">
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                    <a href=""><i class="fab fa-youtube"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
-
-        <!-- Footer Bottom Start -->
-        <div class="footer-bottom">
-        </div>
-        <!-- Footer Bottom End -->
-
-        <!-- Back to Top -->
-        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
-        <!-- JavaScript Libraries -->
-
-
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="{{asset('scripts/libs/easing/easing.min.js')}}"></script>
-        <script src="{{asset('scripts/libs/slick/slick.min.js')}}"></script>
-
-        <!-- Template Javascript -->
-        <script src="{{asset('js/main.js')}}"></script>
     </body>
-</html>
+</x-fullapp-layout>
