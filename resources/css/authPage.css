@@ -1,36 +1,14 @@
-<<<<<<< HEAD:public/css/authPageStyles.css
-/*Header styles*/
-.navbarOld {
-	height: 3em;
-	color: #fff;
-	font-size: 1.5em;
-	user-select: none;
-	margin:0;
-	padding:0;
-	position: relative;
-	background: green;
-	z-index: 2;
-}
-
-.navbarOld ul {
-	list-style:none;
-}
-
-.navbarOld .hidden {
-	display: none;
-}
-=======
 @import "./bootstrap.css";
 @import "./fontawsomeall.css";
 @import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 @import "./header.css";
 @import "./footer.css";
 @import "./stylegreen.css";
->>>>>>> dev:resources/css/authPage.css
+dev:resources/css/authPage.css
 
 /*Auth form*/
 .authContainer {
-	font-family: 'Nunito', sans-serif !important; 
+	font-family: 'Nunito', sans-serif !important;
 	margin:0 auto;
 	margin-top: 2em;
 	margin-bottom: 2em;

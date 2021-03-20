@@ -5,7 +5,7 @@
     </x-slot>
 
     <x-slot name="head">
-      <link rel="stylesheet" href="/css/stylegreen.css">
+      <!-- <link rel="stylesheet" href="/css/style.css"> -->
     </x-slot>
 
 
