@@ -4,24 +4,11 @@
 
     <body>
         <!-- Top bar Start -->
-        <div class="top-bar">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <i class="fa fa-envelope"></i>
-                        intitavn@gmail.com
-                    </div>
-                    <div class="col-sm-6">
-                        <i class="fa fa-phone-alt"></i>
-                        +38 067 431 74 24
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <!-- Top bar End -->
 
         <!-- Nav Bar Start -->
-        <div class="nav">
+        <!-- <div class="nav">
             <div class="container-fluid">
                 <nav class="navbarNew navbar-expand-md bg-dark navbar-dark">
                     <a href="#" class="navbar-brand">MENU</a>
@@ -32,12 +19,10 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto">
                           <a href="/" class="nav-item nav-link">Home</a>
-                            <a href="/main" class="nav-item nav-link">Тварини</a>
+                            <a href="/animals" class="nav-item nav-link">Тварини</a>
                             <a href="/shelters" class="nav-item nav-link active">Притулки</a>
                             <a href="/team" class="nav-item nav-link">Наша команда</a>
-                            <!-- <a href="checkout.html" class="nav-item nav-link">Checkout</a>
-                            <a href="my-account.html" class="nav-item nav-link">My Account</a> -->
-                        </div>
+                          </div>
                         <div class="navbar-nav ml-auto">
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
@@ -50,11 +35,11 @@
                     </div>
                 </nav>
             </div>
-        </div>
+        </div> -->
         <!-- Nav Bar End -->
 
         <!-- Bottom Bar Start -->
-        <div class="bottom-bar">
+        <!-- <div class="bottom-bar">
             <div class="container-fluid">
                 <div class="row ">
                     <div class="col-md-5">
@@ -66,35 +51,17 @@
                                       <div class="fas float-left"><img src="images/logo 1.png">Animal-shelter</div>
                                     </div>
                                   </a>
-                                    <!-- <div  class="fas fa-paw"><span>Animal-shelter</span></div> -->
                                 </h1>
                               </div>
-
                         </div>
                     </div>
-
-                    <!-- <div class="col-md-3">
-
-                    </div> -->
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Bottom Bar End -->
 
         <!-- Breadcrumb Start  -->
-        <div class="breadcrumb-wrap">
-            <div class="container-fluid">
-                <ul class="breadcrumb">
 
-
-
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="/shelters">Притулки</a></li>
-                    <li class="breadcrumb-item"><a href="/team">Наша команда</a></li>
-                    <!-- <li class="breadcrumb-item active">Product List</li> -->
-                </ul>
-            </div>
-        </div>
         <!-- Breadcrumb End-->
 
 
@@ -144,10 +111,10 @@
                                         </a>
                                     </div>
                                   <div class="product-price">
-                                    <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-dark">Детальніше</a>
+                                    <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-new">Детальніше</a>
                                     <form action="/notifications/create" method="get">
                                       <input type="hidden" name="animal_id" value='{{$animal->id}}'>
-                                      <button type="submit" class="w-25 btn btn-dark mb-1"><i class="fas fa-hands"></i></button>
+                                      <button type="submit" class="w-25 btn btn-new mb-1"><i class="fas fa-hands"></i></button>
                                     </form>
                                         <!-- <a class="btn" href="">Детальна інформація</a> -->
                                      </div>
@@ -175,14 +142,29 @@
                         <h2 class="title">Category</h2>
                         <nav class="navbarNew bg-light">
                             <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fac fa-cat"></i>Котики</a>
+                              <li class="nav-item">
+                                    <form action="{{ route('animals.index').'#our-animals-anchor' }}">
+                                      <input type="hidden" name="type" value='кіт'>
+                                      <button type="submit"><a><i class="fas fa-cat"></i>Котики</a></button>
+                                    </form>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fal fa-dog"></i>Собачки</a>
+                                  <form action="{{ route('animals.index').'#our-animals-anchor' }}">
+                                    <input type="hidden" name="type" value='пес'>
+                                    <button type="submit"><a><i class="fas fa-dog"></i>Собачки</a></button>
+                                  </form>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fac fa-dragon"></i>Інші тварини</a>
+                                  <form action="{{ route('animals.index').'#our-animals-anchor' }}">
+                                    <input type="hidden" name="type" value='інше'>
+                                    <button type="submit"><a><i class="fas fa-dragon"></i>Інші тварини</a></button>
+                                  </form>
+                                </li>
+                                <li class="nav-item">
+                                  <form action="{{ route('animals.index').'#our-animals-anchor' }}">
+                                    <input type="hidden" name="type" value=''>
+                                    <button type="submit"><a><i class="fas fa-paw"></i>Усі</a></button>
+                                  </form>
                                 </li>
                             </ul>
                         </nav>
