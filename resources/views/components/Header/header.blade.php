@@ -19,4 +19,7 @@
 			{{$userOptions}}
 		@endif
 	</nav>
+	@if(@isset($breadcrumb))
+		{{$breadcrumb}}
+	@endif
 </header>

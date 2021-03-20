@@ -10,54 +10,10 @@
   </x-slot>
 
   <body>
-      <!-- Bottom Bar Start -->
-      <div class="bottom-bar">
-          <div class="container-fluid">
-              <div class="row ">
-                  <div class="col-md-5">
-                      <div class="logo">
-                          <div class="menuHome" >
-                              <h1 class="display-4 text-body" >
-                                <a href="index.html" >
-                                  <div class="inline-block">
-                                    <div class="fas float-left"><img src="images/logo 1.png">Animal-shelter</div>
-                                  </div>
-                                </a>
-                                  <!-- <div  class="fas fa-paw"><span>Animal-shelter</span></div> -->
-                              </h1>
-                            </div>
-
-                      </div>
-                  </div>
-
-                  <div class="col-md-3">
-
-                  </div>
-              </div>
-          </div>
-      </div>
-      <!-- Bottom Bar End -->
-
-      <!-- Breadcrumb Start -->
-      <div class="breadcrumb-wrap">
-          <div class="container-fluid">
-              <ul class="breadcrumb">
-
-
-
-                  <li class="breadcrumb-item"><a href="#">Головна</a></li>
-                  <li class="breadcrumb-item"><a href="/shelters">Притулки</a></li>
-                  <li class="breadcrumb-item"><a href="/team">Наша команда</a></li>
-                  <!-- <li class="breadcrumb-item active">Product List</li> -->
-              </ul>
-          </div>
-      </div>
-      <!-- Breadcrumb End -->
-
 
       <!-- Brand Start -->
 
-              <div class="brand">
+              <!-- <div class="brand">
                   <div class="container-fluid">
                       <div class="brand-slider">
                           <div class="brand-item"><img src="images/1.png" alt="Logo"></div>
@@ -68,7 +24,7 @@
                           <div class="brand-item"><img src="images/3.png" alt="Logo"></div>
                       </div>
                   </div>
-              </div>
+              </div> -->
               <!-- Brand End -->
 
       <!-- Product List Start -->
@@ -149,7 +105,7 @@
               <div class="col-xl-4 sidebar">
                 <div class="col-md-12 text-center">
                     <div class="product-view-top">
-                        <div class="row">
+                        <div id="our-shelters-anchor" class="row">
                             <div class="col-md-12">
                               <h2> Наші тварини </h2>
                   <!-- <div class="sidebar-widget widget-slider"> -->
