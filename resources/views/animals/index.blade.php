@@ -86,7 +86,7 @@
                 <div class="row">
 
                     <div class="col-xl-8">
-                        <div class="row">
+                        <div id="our-animals-anchor" class="row">
                             <div class="col-md-12 text-center">
                                 <div class="product-view-top">
                                     <div class="row">
