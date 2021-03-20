@@ -1,7 +1,7 @@
 <ul class="userOptions">
 	<li><a href="/shelters/create">Створити Притулок</a></li>
 	<li><a href="/shelters/my">Мої Притулки</a></li>
-	<li><a href="/notififcations">Мої Повідомлення</a></li>
+	<li><a href="/notifications">Мої Повідомлення</a></li>
 	@if(Auth::check())
 		<li class="logout"><a href="#">Вихід</a></li>
 	@else
