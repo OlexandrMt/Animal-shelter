@@ -34,7 +34,7 @@ Route::resource('shelters', ShelterController::class);
 // Route::get('/main', function () {
 //     return view('main1');
 // });
-Route::get('/main', 'AnimalController@main');
+Route::get('/main', 'AnimalController@main')->name('animals.main');
 
 
 Route::get('/team', 'TeamController@index');

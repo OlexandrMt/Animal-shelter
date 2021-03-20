@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ShelterRequest extends FormRequest
+class WantRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,10 @@ class ShelterRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required | between: 3,30',
-            'address' => 'required | between: 5,50',
-            'mail' => 'required | email',
-            'phone' => 'required | numeric',
-            'logo' => 'image'
+          'name' => 'between: 3,30',
+          'email' => ' email',
+          'phone' => 'required | numeric',
+          'note' => 'max: 1000'
         ];
     }
     public function messages()
@@ -36,21 +35,18 @@ class ShelterRequest extends FormRequest
     return [
         'required' => 'Поле :attribute должно быть заполнено',
         'name.between' => 'Поле :attribute должно быть от :min до :max символов',
-        'address.between' => 'Поле :attribute должно быть от :min до :max символов',
         'numeric' => 'Поле :attribute должно содержать только цифры',
-        'image' => 'Поле :attribute должно содержать изображение',
-        'email' => 'Поле :attribute должно содержать email адрес'
-
+        'email' => 'Поле :attribute должно содержать email адрес',
+        'max' => 'Поле :attribute повинно мати не більше :max символів'
     ];
 }
     public function attributes()
     {
         return [
             'name' => '"Ім`я"',
-            'address' => '"Адрес"',
             'mail' => '"Email"',
             'phone' => '"Телефон"',
-            'logo' => '"Логотип"',
+            'note' => '"Повідомлення"',
         ];
     }
 }

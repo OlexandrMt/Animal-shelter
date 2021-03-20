@@ -30,4 +30,7 @@ if(Auth::user()){
   <x-slot name="userOptions">
     <x-header.userOptions loginClass={{$loginClass}} loginBtnText={{$loginBtnText}}/>
   </x-slot>
+  <x-slot name="breadcrumb">
+    <x-header.breadcrumb/>
+  </x-slot>
 </x-header.header>

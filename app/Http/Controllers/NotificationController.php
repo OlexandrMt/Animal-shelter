@@ -10,6 +10,7 @@ use App\Models\Shelter;
 use App\Notifications\WantToTake;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Database\Eloquent\Collection;
+use App\Http\Requests\WantRequest;
 
 
 class NotificationController extends Controller
@@ -38,9 +39,10 @@ class NotificationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('notifications/create');
+        $animal_id = $request->input('animal_id');
+        return view('notifications/create',['animal_id' => $animal_id]);
     }
 
     /**
@@ -49,7 +51,7 @@ class NotificationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function storeNotification(Request $request)
+    public function storeNotification(WantRequest $request)
     {
       $user = Animal::find($request->animal_id);
       $user = Shelter::find($user->shelter_id);
@@ -59,7 +61,7 @@ class NotificationController extends Controller
 
       Notification::send($user, new WantToTake($request));
 
-      return redirect()->route('notifications.index');
+      return redirect()->route('animals.show', $request->animal_id);
     }
 
     public function deleteNotification(Request $request)
