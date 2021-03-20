@@ -19,11 +19,11 @@
 			</style>
 		</x-head.head>
 	</x-slot>
-	
+
 	<x-slot name="topBar">
 		<x-header.topBar/>
 	</x-slot>
-	
+
 	<x-slot name="header">
 		<x-header.header>
 			<x-slot name="logo">
@@ -31,7 +31,7 @@
 			</x-slot>
 		</x-header.header>
 	</x-slot>
-	
+
 	<div class="contactContainer contactDevelopers">
 		<form method="POST" name="contact" action="/contact/developers">
 			{{ csrf_field() }}
@@ -55,13 +55,12 @@
 			</div>
 		</form>
 	</div>
-	
+
 	<x-slot name="footer">
 		<x-footer.footer />
 	</x-slot>
-	
+
 	<x-slot name="scripts">
 		<x-scripts.scripts/>
 	</x-slot>
 </x-appflex-layout>
-

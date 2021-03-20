@@ -24,7 +24,6 @@ class AnimalController extends Controller
 
     public function home()
     {
-
         $animals = Animal::all();
 
         // return view('welcome',['animals'=>$animals]);
@@ -62,18 +61,11 @@ class AnimalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AnimalRequest $request)
     {
       $animals= new Animal();
       $animals->fill($request->all());
 
-/*
-      $animals->nickname = $request->input('name');
-      $animals->breed = $request->input('breed');
-      $animals->age = $request->input('age');
-      $animals->type = $request->input('type');
-      $animals->photo = $request->fphoto->store('avatars','public');
-*/
       $animals->sex = $request->input('sex');
       $animals->status = $request->input('status');
 
@@ -84,9 +76,7 @@ class AnimalController extends Controller
       $animals->shelter_id = $request->input('shelter_id');
       $animals->save();
 
-      $animals = Animal::all();
-      // return view('welcome',['animals'=>$animals]);
-      return view('home',['animals'=>$animals]);
+      return redirect()->route('shelters.show', $animals->shelter_id);
     }
 
     /**
@@ -99,7 +89,7 @@ class AnimalController extends Controller
     {
       //dd("show");
       $animals = Animal::find($id);
-        return view('animals.shownew', ['animal'=>$animals]);  //
+        return view('animals.show', ['animal'=>$animals]);  //
     }
 
     /**
@@ -123,7 +113,7 @@ class AnimalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AnimalRequest $request, $id)
     {
      $animals = Animal::find($id);
      $animals->name = $request->input('name');
@@ -150,12 +140,9 @@ class AnimalController extends Controller
      */
     public function destroy($id, Request $request)
     {
-      $shelter_id = Animal::find($id);
-      $shelter_id = $shelter_id->shelter_id;
+      $animal=Animal::find($id);
+      $shelter_id=$animal->shelter_id;
       Animal::find($id)->delete();
-
-   // return redirect()->route('animals.index');
-   return redirect()->route('shelters.show', [$shelter_id]);
-   // return redirect()->route('animals.show', $id);
+   return redirect()->route('shelters.show', $shelter_id);
     }
 }

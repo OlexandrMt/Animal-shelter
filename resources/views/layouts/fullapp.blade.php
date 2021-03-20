@@ -45,6 +45,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/animal.css">
     <link rel="stylesheet" href="/css/stylegreen.css">
+    <link rel="stylesheet" href="/css/authPage.css">
 
     @if(@isset($head))
       {{$head}}
@@ -76,7 +77,9 @@
     </x-footer.footer>
 
     <x-scripts.scripts/>
-
+    @if(@isset($scripts))
+        {{$scripts}}
+      @endif
 
   	  </body>
 </html>
