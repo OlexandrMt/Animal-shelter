@@ -104,8 +104,11 @@
           <input type="text" name="phone" value={{$shelter->phone}} id="phone">
         </div>
         <div class="img-round">
-          @if($shelter->logo==NULL) @php $shelter->logo = "images/shalter_logos/defaultimg.jpg" @endphp  @endif
-          <img src="{{ asset("storage/".$shelter->logo) }}" id="logo-preview">
+          @isset($shelter->logo)
+            <img src="{{ asset("storage/".$shelter->logo) }}" alt="" title="">
+          @else
+            <img src="{{asset('images/default_logo.jpg')}}" alt="" title="">
+          @endisset
         </div>
         <div class="formInput">
           <label for="img">Добавьте логотип</label>

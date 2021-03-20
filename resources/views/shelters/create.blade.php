@@ -77,7 +77,7 @@
         </div>
         <div class="formInput">
           <label for="phone">Phone<label>
-          <input type="text" name="phone" placeholder="Input phone" id="phone">
+          <input type="text" name="phone" placeholder="Input phone" id="phone" >
         </div>
 
         <div class="formInput">
@@ -93,11 +93,11 @@
     			<input type="submit" value="Create">
     		</div>
 
-
         @csrf
       </form>
     </div>
 -->
       <x-scripts.img-preview img="logo" imgPreview="logo-preview" />
+
 
 </x-fullapp-layout>

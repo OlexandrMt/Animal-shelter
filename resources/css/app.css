@@ -81,3 +81,9 @@
 	font-size: inherit;
 	color: inherit;
 }
+@media (max-width: 768px) {
+
+	.create-form{
+		width: 70%;
+	}
+}

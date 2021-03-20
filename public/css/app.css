@@ -526,7 +526,7 @@ samp {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
-img,
+/* img, */
 svg,
 video,
 canvas,
@@ -31521,6 +31521,12 @@ select {
   letter-spacing: 0.05em;
   font-size: inherit;
   color: inherit;
+}
+
+@media (max-width: 768px) {
+  .create-form{
+    width: 70%;
+  }
 }
 
 @media (min-width: 640px) {
@@ -184562,4 +184568,3 @@ select {
             animation: bounce 1s infinite;
   }
 }
-
