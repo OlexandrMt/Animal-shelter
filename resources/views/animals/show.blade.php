@@ -67,7 +67,7 @@
                                                     Не вказано
                                                     @else {{ $animal->description}}
                                                     @endif</p> -->
-
+                                                  @if($user == $shelter->user_id)
                                                     <div class="input-group">
                                                         <form action="/animals/{{ $animal->id }}/edit" method="get">
                                                           @csrf
@@ -76,7 +76,7 @@
                                                           @method('GET')
                                                         </form>
                                                     </div>
-                                            <br>
+                                                      <br>
                                                     <div class="input-group">
 
                                                         <form action="/animals/{{ $animal->id }}" method="post">
@@ -88,8 +88,8 @@
 
                                                     </div>
                                                    </p>
-                                                </div>
-
+                                                 </div>
+                                                @endif
                                                 <!-- <div class="action">
                                                   @csrf
                                                     <a class="btn" href="/animals/{{ $animal->id }}" method="post">Редагувати</a>

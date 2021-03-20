@@ -159,6 +159,10 @@
                                             <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn"><i class="fas fa-hands" style="color: white"></i></a>
 
                                             <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn" style="color: white">Детальніше</a>
+
+                                            <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-new"><i class="fas fa-hands"></i></a>
+                                            <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-new">Детальніше</a>
+
                                         </div>
                                     </div>
                                 </div>
