@@ -22,28 +22,25 @@ class AnimalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function home()
     {
         $animals = Animal::all();
-        return view('animals/index',['animal'=>$animals]);
+
         // return view('welcome',['animals'=>$animals]);
-    }
-    public function all()
-    {
-        $animals = Animal::all();
-        return view('welcome',['animals'=>$animals]);
+        return view('home',['animals'=>$animals]);
     }
 
-    public function main(Request $request)
+    public function index(Request $request)
     {
-        if($request->type){
-            $animals = Animal::where('type', '=', $request->type)->paginate(6)->fragment('our-animals-anchor');
-            return view('main1',['animals'=>$animals])."#our-animals-anchor";
-        }
-        else{
-          $animals = Animal::paginate(6)->fragment('our-animals-anchor');;
-          return view('main1',['animals'=>$animals]);
-        }
+      if($request->type){
+        $animals = Animal::where('type', '=', $request->type)->paginate(6)->fragment('our-animals-anchor');
+        return view('animals/index',['animals'=>$animals])."#our-animals-anchor";
+              }
+      else{
+        $animals = Animal::paginate(6)->fragment('our-animals-anchor');
+        return view('animals/index',['animals'=>$animals]);
+      }
     }
 
     /**
