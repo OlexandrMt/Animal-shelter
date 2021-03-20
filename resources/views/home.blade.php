@@ -154,9 +154,8 @@
                                         </div>
                                         <div class="product-price">
                                             <h3><span></span></h3>
-                                            <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn"><i class="fas fa-hands"></i></a>
-                                            <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn">Детальніше</a>
->>>>>>> dev
+                                            <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-new"><i class="fas fa-hands"></i></a>
+                                            <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-new">Детальніше</a>
                                         </div>
                                     </div>
                                 </div>
