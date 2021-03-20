@@ -1,6 +1,9 @@
 <x-fullapp-layout>
 
-  <body>
+  <x-slot name="title">
+    Kitty
+  </x-slot>
+
 
         <!-- Product Detail Start -->
                 <div class="product-detail">
@@ -14,17 +17,11 @@
 
                                                 <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
 
-                                                <!-- <img src="img/product-3.jpg" alt="Product Image">
-                                                <img src="img/product-5.jpg" alt="Product Image">
-                                                <img src="img/product-7.jpg" alt="Product Image">
-                                                <img src="img/product-9.jpg" alt="Product Image">
-                                                <img src="img/product-10.jpg" alt="Product Image"> -->
-
                                             </div>
                                             <div class="card-body text-center">
                                               <form action="/notifications/create">
                                                 <input type="hidden" name="animal_id" value='{{$animal->id}}'>
-                                                <button type="submit" class="w-75 btn btn-dark mb-1">Хочу собі <i class="fas fa-hands"></i></button>
+                                                <button type="submit" class="w-75 btn btn-new mb-1">Хочу собі <i class="fas fa-hands"></i></button>
                                               </form>
                                             </div>
                                         </div>
@@ -70,29 +67,29 @@
                                                     Не вказано
                                                     @else {{ $animal->description}}
                                                     @endif</p> -->
-
+                                                  @if($user == $shelter->user_id)
                                                     <div class="input-group">
                                                         <form action="/animals/{{ $animal->id }}/edit" method="get">
                                                           @csrf
                                                           <!-- <input type="submit" class="btn-success" value=" Редагувати "> -->
-                                                          <button type="submit" class="btn btn-dark">Редагувати </i></button>
+                                                          <button type="submit" class="btn btn-new">Редагувати </i></button>
                                                           @method('GET')
                                                         </form>
                                                     </div>
-                                            <br>
+                                                      <br>
                                                     <div class="input-group">
 
                                                         <form action="/animals/{{ $animal->id }}" method="post">
                                                           @csrf
                                                           <!-- <input type="submit" class="btn-success" value=" Видалити "> -->
-                                                          <button type="submit" class="btn btn-dark">Видалити </i></button>
+                                                          <button type="submit" class="btn btn-new">Видалити </i></button>
                                                           @method('DELETE')
                                                         </form>
 
                                                     </div>
                                                    </p>
-                                                </div>
-
+                                                 </div>
+                                                @endif
                                                 <!-- <div class="action">
                                                   @csrf
                                                     <a class="btn" href="/animals/{{ $animal->id }}" method="post">Редагувати</a>
@@ -142,19 +139,19 @@
                                    <nav class="navbarNew bg-light">
                                        <ul class="navbar-nav">
                                            <li class="nav-item">
-                                               <form action="{{route('animals.main')}}">
+                                               <form action="{{route('animals.index')}}">
                                                  <input type="hidden" name="type" value='кіт'>
                                                  <button type="submit"><a><i class="fas fa-cat"></i>Котики</a></button>
                                                </form>
                                            </li>
                                            <li class="nav-item">
-                                             <form action="{{route('animals.main')}}">
+                                             <form action="{{route('animals.index')}}">
                                                <input type="hidden" name="type" value='пес'>
                                                <button type="submit"><a><i class="fas fa-dog"></i>Собачки</a></button>
                                              </form>
                                            </li>
                                            <li class="nav-item">
-                                             <form action="{{route('animals.main')}}">
+                                             <form action="{{route('animals.index')}}">
                                                <input type="hidden" name="type" value='інше'>
                                                <button type="submit"><a><i class="fas fa-dragon"></i>Інші тварини</a></button>
                                              </form>
@@ -166,7 +163,6 @@
 
                              </div>
                              <!-- Side Bar End -->
-
 
                         </div>
                     </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Animal;
+use App\Models\Shelter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use App\Http\Requests\AnimalRequest;
 use App\Http\Controllers\ShelterController;
-
+use App\Http\Controllers\TeamController;
 
 class AnimalController extends Controller
 {
@@ -21,28 +22,18 @@ class AnimalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $animals = Animal::all();
-        return view('animals/index',['animal'=>$animals]);
-        // return view('welcome',['animals'=>$animals]);
-    }
-    public function all()
-    {
-        $animals = Animal::all();
-        return view('welcome',['animals'=>$animals]);
-    }
 
-    public function main(Request $request)
+
+    public function index(Request $request)
     {
-        if($request->type){
-            $animals = Animal::where('type', '=', $request->type)->paginate(6)->fragment('our-animals-anchor');
-            return view('main1',['animals'=>$animals])."#our-animals-anchor";
-        }
-        else{
-          $animals = Animal::paginate(6)->fragment('our-animals-anchor');;
-          return view('main1',['animals'=>$animals]);
-        }
+      if($request->type){
+        $animals = Animal::where('type', '=', $request->type)->paginate(6)->fragment('our-animals-anchor');
+        return view('animals/index',['animals'=>$animals])."#our-animals-anchor";
+              }
+      else{
+        $animals = Animal::paginate(6)->fragment('our-animals-anchor');
+        return view('animals/index',['animals'=>$animals]);
+      }
     }
 
     /**
@@ -97,7 +88,12 @@ class AnimalController extends Controller
     {
       //dd("show");
       $animals = Animal::find($id);
-        return view('animals.show', ['animal'=>$animals]);  //
+      $shelters = Shelter::find($animals->shelter_id);
+      $user=NULL;
+      if(Auth::check()){
+        $user = Auth::user()->id;
+      }
+      return view('animals.show', ['animal'=>$animals,'shelter'=>$shelters,'user'=>$user]); //
     }
 
     /**
@@ -153,4 +149,65 @@ class AnimalController extends Controller
       Animal::find($id)->delete();
    return redirect()->route('shelters.show', $shelter_id);
     }
+    public function home()
+    {
+        $animals = Animal::all();
+        $teams=[
+            [
+              "id"=>1,
+              "name"=>'Олександр Зарицький',
+              "ava"=> "images/unnamed.jpg"
+            ],
+            [
+              "id"=>2,
+              "name"=>'Сергій Кривенький',
+              "ava"=> "images/unnamed.jpg"
+            ],
+            [
+              "id"=>3,
+              "name"=>'Дмитро Базалицький',
+              "ava"=> "images/Bazalytskyi.png"
+            ],
+            [
+              "id"=>4,
+              "name"=>'Наталія Макодай',
+              "ava"=> "images/Nata1.jpg"
+            ],
+            [
+              "id"=>5,
+              "name"=>'Олександр Метельний',
+              "ava"=> "images/Metelnyi.png"
+            ],
+            [
+              "id"=>6,
+              "name"=>'Маргарита Грінченко',
+              "ava"=> "images/unnamed.jpg"
+            ],
+            [
+              "id"=>7,
+              "name"=>'Марія Терлецька',
+              "ava"=> "images/unnamed.jpg"
+            ],
+            [
+              "id"=>8,
+              "name"=>'Олександр Панченко',
+              "ava"=> "images/unnamed.jpg"
+            ],
+            [
+              "id"=>9,
+              "name"=>'Олег Ростов',
+              "ava"=> "images/unnamed.jpg"
+            ],
+            [
+              "id"=>10,
+              "name"=>'Віталій Богданюк',
+              "ava"=> "images/unnamed.jpg"
+            ],
+
+          ];
+        $teams= collect($teams);
+        // return view('welcome',['animals'=>$animals]);
+        return view('home',['animals'=>$animals], ["teams"=>$teams]);
+    }
+
 }

@@ -21782,6 +21782,10 @@ h2 {
   padding: 15px 0;
 }
 
+.navbar-nav .nav-link {
+  color: black !important;
+}
+
 .header .navbarNew li {
   padding: 0 30px;
   border-bottom: 1px solid #f3f6ff;
@@ -22052,7 +22056,8 @@ h2 {
 .product-item .product-title {
   padding: 15px;
   text-align: center;
-  background: #000000;
+  background: #006600 !important;
+  /* background: #006600; */
   transition: all .3s;
 }
 
@@ -22174,7 +22179,7 @@ h2 {
 
 .product-item .product-price {
   padding: 20px;
-  background: #000000;
+  background: #006600 !important;
   transition: all .3s;
 }
 
@@ -22197,6 +22202,7 @@ h2 {
   border: none;
   color: #000000;
   background: #009900;
+  margin-right: 1em !important;
 }
 
 .product-item:hover .product-price .btn-new,
@@ -23341,13 +23347,13 @@ h2 {
 
 .newsletter .form button {
   position: absolute;
-  width: 80px;
-  height: 40px;
+  width: 140px;
+  height: 60px;
   top: 0;
   right: 0;
   padding: 0 15px;
   border: none;
-  background: #009900;
+  background: #ffffff;
   color: #ffffff;
   border: 1px solid #ffffff;
   border-radius: 0 4px 4px 0;
@@ -23355,7 +23361,7 @@ h2 {
 
 .newsletter .form button:hover {
   color: #009900;
-  background: #000000;
+  background: #009900;
 }
 
 @media (max-width: 767.98px) {
