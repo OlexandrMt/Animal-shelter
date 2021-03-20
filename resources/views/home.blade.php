@@ -33,7 +33,7 @@
                         <div class="navbar-nav mr-auto">
 
                           <a href="/" class="nav-item nav-link">Home</a>
-                            <a href="/main" class="nav-item nav-link">Тварини</a>
+                            <a href="/animals" class="nav-item nav-link">Тварини</a>
                             <a href="/shelters" class="nav-item nav-link active">Притулки</a>
                             <a href="/team" class="nav-item nav-link">Наша команда</a>
                         </div>
@@ -112,13 +112,13 @@
                                     <a class="nav-link" href="#"> </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-shopping-bag"></i>Котики</a>
+                                    <a class="nav-link" href="#">Котики</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-plus-square"></i>Собачки</a>
+                                    <a class="nav-link" href="#">Собачки</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"><i class="fa fa-female"></i>Інші тварини</a>
+                                    <a class="nav-link" href="#">Інші тварини</a>
                                 </li>
 
                             </ul>
@@ -162,7 +162,7 @@
                             </div>
                             <div class="img-item">
                                 <img src="{{asset("images/logo 1.png")}}" />
-                                <a class="img-text" href="/shelters">
+                                <a class="img-text" href="/animals">
                                     <p>Притулки</p>
                                 </a>
                             </div>
@@ -349,7 +349,7 @@
                                             <h3><span></span></h3>
                                             <!-- <a class="btn" href="">Детально</a> -->
                                             <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn"><i class="fas fa-hands"></i></a>
-                                            
+
 
                                             <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn">Детальніше</a>
                                         </div>

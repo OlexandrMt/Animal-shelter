@@ -21,13 +21,8 @@ class AnimalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $animals = Animal::all();
-        return view('animals/index',['animal'=>$animals]);
-        // return view('welcome',['animals'=>$animals]);
-    }
-    public function all()
+
+    public function home()
     {
 
         $animals = Animal::all();
@@ -36,11 +31,11 @@ class AnimalController extends Controller
         return view('home',['animals'=>$animals]);
     }
 
-    public function main()
+    public function index()
     {
 
         $animals = Animal::paginate(6);
-        return view('main1',['animals'=>$animals]);
+        return view('animals/index',['animals'=>$animals]);
     }
 
     /**
