@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Animal;
+use App\Models\Shelter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -87,7 +88,12 @@ class AnimalController extends Controller
     {
       //dd("show");
       $animals = Animal::find($id);
-        return view('animals.show', ['animal'=>$animals]);  //
+      $shelters = Shelter::find($animals->shelter_id);
+      $user=NULL;
+      if(Auth::check()){
+        $user = Auth::user()->id;
+      }
+      return view('animals.show', ['animal'=>$animals,'shelter'=>$shelters,'user'=>$user]); //
     }
 
     /**

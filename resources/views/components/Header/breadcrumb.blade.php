@@ -8,7 +8,7 @@
 													<a href="/" >
 														<div class="inline-block">
 															<div class="fas float-left" style="display: flex;">
-																<div><img src="images/logo 1.png"></div>
+																<div><img src="/images/logo 1.png"></div>
 																<div>Animal-shelter</div>
 															</div>
 														</div>
