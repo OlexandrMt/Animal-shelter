@@ -342,17 +342,10 @@
                                         <div class="product-price">
                                             <h3><span></span></h3>
                                             <!-- <a class="btn" href="">Детально</a> -->
-<<<<<<< HEAD
+
                                             <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn"><i class="fas fa-hands" style="color: white"></i></a>
 
-
                                             <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn" style="color: white">Детальніше</a>
-=======
-                                            <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-new"><i class="fas fa-hands"></i></a>
-
-
-                                            <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-new">Детальніше</a>
->>>>>>> 2be628f4ccecdb8e5f26b1470a991ce1afbebb56
                                         </div>
                                     </div>
                                 </div>
