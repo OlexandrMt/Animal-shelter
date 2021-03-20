@@ -15,7 +15,7 @@ use App\Models\Animal;
 |
 */
 
-Route::get('/', 'AnimalController@all');
+Route::get('/', 'AnimalController@home');
 
 Route::get('shelters/my', 'ShelterController@my')->name('shelters.my');
 Route::get('shelters/{shelter}/animals', 'ShelterController@animals')->name('shelters.animals');
@@ -34,7 +34,7 @@ Route::resource('shelters', ShelterController::class);
 // Route::get('/main', function () {
 //     return view('main1');
 // });
-Route::get('/main', 'AnimalController@main')->name('animals.main');
+// Route::get('/main', 'AnimalController@main');
 
 
 Route::get('/team', 'TeamController@index');

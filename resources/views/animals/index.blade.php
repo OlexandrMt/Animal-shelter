@@ -1,92 +1,221 @@
 <x-fullapp-layout>
 
-    <x-slot name="title">
-      Animal list
-    </x-slot>
 
-    <x-slot name="head">
-      <link rel="stylesheet" href="/css/animal.css">
-    </x-slot>
 
-    <div style="border: 2px solid black">
-    <table class="table table-striped">
-      <div style="float:right">
-        <div class="input-group">
-          <form action="/animals/create" method="get" >
-                @csrf
-                <input type="submit" class="btn-success" value=" Добавити ">
-                @method('GET')
-              </form>
+    <body>
+        <!-- Top bar Start -->
+        <div class="top-bar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <i class="fa fa-envelope"></i>
+                        intitavn@gmail.com
+                    </div>
+                    <div class="col-sm-6">
+                        <i class="fa fa-phone-alt"></i>
+                        +38 067 431 74 24
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <br>
-    <thead>
-    <tr>
-    <th>Id</th>
-    <th>Кличка</th>
-    <th>Порода</th>
-    <th>Вік</th>
-    <th>Тип</th>
-    <th>Фото</th>
-    <th>Стать</th>
-    <th>Статус</th>
-    <th>Керування</th>
-    </tr>
-    </thead>
-    @foreach ($animal as $animal)
+        <!-- Top bar End -->
 
-    <tr>
-    <td>{{ $animal->id }}</td>
-    <td>{{ $animal->name }}</td>
-    <td>{{ $animal->breed }}</td>
-    <td>{{ $animal->age }}</td>
-    <td>{{ $animal->type }}</td>
-    <td><img src="{{asset("storage/" .$animal->photo) }}"></td>
+        <!-- Nav Bar Start -->
+        <div class="nav">
+            <div class="container-fluid">
+                <nav class="navbarNew navbar-expand-md bg-dark navbar-dark">
+                    <a href="#" class="navbar-brand">MENU</a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-    <td>
-    @if(is_null($animal->sex))
-    Не вказано
-    @elseif($animal->sex==1)
-    Самець
-    @else
-    Самка
-    @endif
-    </td>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav mr-auto">
+                          <a href="/" class="nav-item nav-link">Home</a>
+                            <a href="/main" class="nav-item nav-link">Тварини</a>
+                            <a href="/shelters" class="nav-item nav-link active">Притулки</a>
+                            <a href="/team" class="nav-item nav-link">Наша команда</a>
+                            <!-- <a href="checkout.html" class="nav-item nav-link">Checkout</a>
+                            <a href="my-account.html" class="nav-item nav-link">My Account</a> -->
+                        </div>
+                        <div class="navbar-nav ml-auto">
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">User Account</a>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">Login</a>
+                                    <a href="#" class="dropdown-item">Register</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
 
-    <td>
-      @if(is_null($animal->status))
-      Не вказано
-      @elseif($animal->status==1)
-      Прихищений
-      @else
-      Вільний
-      @endif
-    </td>
-    <td>
-      <div class="input-group">
-      <form action="/animals/{{ $animal->id }}/edit" method="get">
-            @csrf
-            <input type="submit" class="btn-success" value=" Редагувати ">
-            @method('GET')
-          </form>
-      </div>
-      <br>
-      <div class="input-group">
-          <form action="/animals/{{ $animal->id }}" method="post">
-            @csrf
-            <input type="submit" class="btn-success" value=" Видалити ">
-            @method('DELETE')
-          </form>
+        <!-- Bottom Bar Start -->
+        <div class="bottom-bar">
+            <div class="container-fluid">
+                <div class="row ">
+                    <div class="col-md-5">
+                        <div class="logo">
+                            <div class="menuHome" >
+                                <h1 class="display-4 text-body" >
+                                  <a href="index.html" >
+                                    <div class="inline-block">
+                                      <div class="fas float-left"><img src="images/logo 1.png">Animal-shelter</div>
+                                    </div>
+                                  </a>
+                                    <!-- <div  class="fas fa-paw"><span>Animal-shelter</span></div> -->
+                                </h1>
+                              </div>
 
-     </div>
-      </td>
-    </tr>
-    @endforeach
+                        </div>
+                    </div>
 
-    </table>
-  </div>
+                    <!-- <div class="col-md-3">
+
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Bar End -->
+
+        <!-- Breadcrumb Start  -->
+        <div class="breadcrumb-wrap">
+            <div class="container-fluid">
+                <ul class="breadcrumb">
 
 
-      <x-scripts.img-preview img="logo" imgPreview="logo-preview" />
 
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/shelters">Притулки</a></li>
+                    <li class="breadcrumb-item"><a href="/team">Наша команда</a></li>
+                    <!-- <li class="breadcrumb-item active">Product List</li> -->
+                </ul>
+            </div>
+        </div>
+        <!-- Breadcrumb End-->
+
+
+        <!-- Brand Start -->
+                <!-- <div class="brand">
+                    <div class="container-fluid">
+                        <div class="brand-slider">
+                            <div class="brand-item"><img src="images/1.png" alt="Logo"></div>
+                            <div class="brand-item"><img src="images/2.png" alt="Logo"></div>
+                            <div class="brand-item"><img src="images/3.png" alt="Logo"></div>
+                            <div class="brand-item"><img src="images/1.png" alt="Logo"></div>
+                            <div class="brand-item"><img src="images/2.png" alt="Logo"></div>
+                            <div class="brand-item"><img src="images/3.png" alt="Logo"></div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- Brand End -->
+
+        <!-- Product List Start -->
+        <div class="product-view">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-xl-8">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <div class="product-view-top">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                          <h2> Наші тварини </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- <div class="content">
+                          <div class="row row-cols-1 row-cols-md-3 mb-3 text-center"> -->
+                              @foreach($animals as $animal)
+                              <!-- <div class="card-group"> -->
+                            <div class="col-md-4 col-sm-6">
+                                <div class="product-item">
+                                    <div class="product-title">
+                                      <a href="{{action('AnimalController@show',['animal'=>$animal])}}">{{ $animal->name }}</a>
+                                    </div>
+                                    <div class="product-image">
+                                        <a href="{{action('AnimalController@show',['animal'=>$animal])}}"> <!--// can be redirected on image itself"{{asset("storage/" .$animal->photo) }}"-->
+                                            <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
+                                        </a>
+                                    </div>
+                                  <div class="product-price">
+                                    <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-dark">Детальніше</a>
+                                    <form action="/notifications/create" method="get">
+                                      <input type="hidden" name="animal_id" value='{{$animal->id}}'>
+                                      <button type="submit" class="w-25 btn btn-dark mb-1"><i class="fas fa-hands"></i></button>
+                                    </form>
+                                        <!-- <a class="btn" href="">Детальна інформація</a> -->
+                                     </div>
+                                </div>
+                            </div>
+                            <!-- </div> -->
+                            @endforeach
+
+
+                        <!-- Pagination Start -->
+                        <div class="col-sm-12">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center">
+                                      {{ $animals->links() }}
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Pagination Start -->
+                    </div>
+                </div>
+
+                <!-- Side Bar Start -->
+                <div class="col-xl-4 sidebar">
+                    <div class="sidebar-widget category">
+                        <h2 class="title">Category</h2>
+                        <nav class="navbarNew bg-light">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fac fa-cat"></i>Котики</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fal fa-dog"></i>Собачки</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fac fa-dragon"></i>Інші тварини</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="sidebar-widget widget-slider">
+                        <div class="sidebar-slider normal-slider">
+                          @foreach($animals as $animal)
+                            <div class="product-item pt-5">
+                                <div class="product-title">
+                                    <a href="{{route('animals.show',[$animal->id])}}">{{$animal->name}}</a>
+                                </div>
+                                <div class="product-image">
+                                    <a href="{{route('animals.show',[$animal->id])}}">
+                                        <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
+                                    </a>
+                                    <div class="product-action">
+                                        <a href="{{route('animals.show',[$animal->id])}}"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                          @endforeach
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Side Bar End -->
+            </div>
+        </div>
+        </div>
+        <!-- Product List End -->
+
+
+    </body>
 </x-fullapp-layout>
