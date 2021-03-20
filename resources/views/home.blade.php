@@ -156,7 +156,7 @@
                                             <h3><span></span></h3>
                                             <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn"><i class="fas fa-hands"></i></a>
                                             <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn">Детальніше</a>
->>>>>>> dev
+
                                         </div>
                                     </div>
                                 </div>
