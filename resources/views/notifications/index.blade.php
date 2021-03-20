@@ -1,9 +1,10 @@
 <x-fullapp-layout>
 
-  <h1 class="text-center btn-new">Повідомлення</h1>
+
 <div class="container">
+  <h1 class="text-center btn-new">Повідомлення</h1>
   <div id="notificationGroup">
-    <p>
+    <p class="text-center">
       <button href="#" class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#unread" data-parent="#notificationGroup" aria-expanded="true" aria-controls="unread">
         Нові повідомлення
       </button>
@@ -56,16 +57,16 @@
         </div>
   </div>
 </div>
-
-<x-slot name="scripts">
+<!-- <x-slot name="scripts"> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
   <script>
-
       $('#notificationGroup').on('show.bs.collapse','.collapse', function() {
         $('#notificationGroup').find('.collapse.show').collapse('hide');
         });
 
     function sendMarkRequest(id = null) {
         return $.ajax("{{ route('notifications.mark') }}", {
+
             method: 'POST',
             data: {
               "_token": "{{ csrf_token() }}",
@@ -101,7 +102,6 @@
         });
     });
     </script>
-
-  </x-slot>
+  <!-- </x-slot> -->
 
 </x-fullap-layout>

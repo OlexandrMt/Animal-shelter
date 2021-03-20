@@ -5,8 +5,6 @@
 				<x-head.headCommon title="Contact Us"/>
 			</x-slot>
 			<link rel="stylesheet" href="/css/styles.css">
-			<link rel="stylesheet" href="/css/authPage.css">
-			<link rel="stylesheet" href="/css/app.css">
 			<style type="text/css">
 				html, body {height: 100%;}
 				.content {flex: 1 0 auto;}

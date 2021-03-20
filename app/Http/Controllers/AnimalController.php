@@ -74,13 +74,6 @@ class AnimalController extends Controller
       $animals= new Animal();
       $animals->fill($request->all());
 
-/*
-      $animals->nickname = $request->input('name');
-      $animals->breed = $request->input('breed');
-      $animals->age = $request->input('age');
-      $animals->type = $request->input('type');
-      $animals->photo = $request->fphoto->store('avatars','public');
-*/
       $animals->sex = $request->input('sex');
       $animals->status = $request->input('status');
 
@@ -91,8 +84,7 @@ class AnimalController extends Controller
       $animals->shelter_id = $request->input('shelter_id');
       $animals->save();
 
-      $animals = Animal::all();
-      return view('welcome',['animals'=>$animals]);
+      return redirect()->route('shelters.show', $animals->shelter_id);
     }
 
     /**
