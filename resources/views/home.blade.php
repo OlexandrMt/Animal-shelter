@@ -12,21 +12,32 @@
 
 
 
-                        <nav class="navbar bg-light">
-                            <ul class="navbar-nav" style="text-success">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"> </a>
+                        <nav class="navbarNew bg-light">
+                            <ul class="navbar-nav text-success">
+                              <li class="nav-item">
+                                    <form action="{{ route('animals.index').'#our-animals-anchor' }}">
+                                      <input type="hidden" name="type" value='кіт'>
+                                      <button type="submit"><a><i class="fas fa-cat"></i>Котики</a></button>
+                                    </form>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Котики</a>
+                                  <form action="{{ route('animals.index').'#our-animals-anchor' }}">
+                                    <input type="hidden" name="type" value='пес'>
+                                    <button type="submit"><a><i class="fas fa-dog"></i>Собачки</a></button>
+                                  </form>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Собачки</a>
+                                  <form action="{{ route('animals.index').'#our-animals-anchor' }}">
+                                    <input type="hidden" name="type" value='інше'>
+                                    <button type="submit"><a><i class="fas fa-dragon"></i>Інші тварини</a></button>
+                                  </form>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Інші тварини</a>
+                                  <form action="{{ route('animals.index').'#our-animals-anchor' }}">
+                                    <input type="hidden" name="type" value=''>
+                                    <button type="submit"><a><i class="fas fa-paw"></i>Усі</a></button>
+                                  </form>
                                 </li>
-
                             </ul>
                         </nav>
                     </div>
@@ -145,6 +156,7 @@
                                             <h3><span></span></h3>
                                             <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn"><i class="fas fa-hands"></i></a>
                                             <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn">Детальніше</a>
+>>>>>>> dev
                                         </div>
                                     </div>
                                 </div>

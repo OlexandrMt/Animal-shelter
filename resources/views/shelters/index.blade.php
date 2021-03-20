@@ -48,9 +48,9 @@
                             @foreach($shelters as $shelter)
                             <!-- <div class="card-group"> -->
                           <div class="col-md-4 col-sm-6">
-                            <div class="card-group text-center">
+                            <div class="card-group text-center product-item">
                               <div class="card mb-4 shadow-sm">
-                              <div class="card-header text-white bg-dark">
+                              <div class="card-header text-white bg-dark product-title">
                                 <h4 class="my-0 fw-normal">{{$shelter->name}}</h4>
                               </div>
                               <div class="card-body d-flex flex-column">
@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="mt-auto">
                                 <form  action="/shelters/{{$shelter->id}}" method="get">
-                                      <button type="submit" class="w-75 btn btn-dark">Детальніше</button>
+                                      <button type="submit" class="w-75 btn btn-new">Детальніше</button>
                                 </form>
                               </div>
                               </div>

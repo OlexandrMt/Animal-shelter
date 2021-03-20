@@ -23,11 +23,16 @@ class AnimalController extends Controller
      */
 
 
-    public function index()
+    public function index(Request $request)
     {
-
-        $animals = Animal::paginate(6);
+      if($request->type){
+        $animals = Animal::where('type', '=', $request->type)->paginate(6)->fragment('our-animals-anchor');
+        return view('animals/index',['animals'=>$animals])."#our-animals-anchor";
+              }
+      else{
+        $animals = Animal::paginate(6)->fragment('our-animals-anchor');
         return view('animals/index',['animals'=>$animals]);
+      }
     }
 
     /**

@@ -12,9 +12,9 @@
 
   @if(!empty ($shelter))
   <div class="row mb-3 ">
-    <div class="col-md-4 text-center ">
+    <div class="col-md-4 text-center product-item">
       <div class="card mb-4 shadow-sm">
-      <div class="card-header">
+      <div class="card-header product-title">
         <h4 class="my-0 fw-normal">{{$shelter->name}}</h4>
       </div>
       <div class="card-body">
@@ -28,11 +28,11 @@
 
         @if($shelter->user_id == $user)
           <form action="{{route('shelters.edit', $shelter->id)}}" method="get">
-                <button type="submit" class="w-75 btn btn-dark mb-1">Редагувати <i class="fa fa-wrench"></i></button>
+                <button type="submit" class="w-75 btn btn-new mb-1">Редагувати <i class="fa fa-wrench"></i></button>
           </form>
           <form action="{{route('animals.create')}}" method="get">
                 <input type="hidden" name="shelter_id" value='{{$shelter->id}}' >
-                <button type="submit" class="w-75 btn btn-dark">Додати тварину <i class="fa fa-paw"></i></button>
+                <button type="submit" class="w-75 btn btn-new">Додати тварину <i class="fa fa-paw"></i></button>
           </form>
         @endif
       </div>
@@ -57,10 +57,19 @@
 
   <div class="card-group text-center">
     <div class="card mb-4 shadow-sm">
-      <div class="card-header ">
-        <h4 id="our-animals-anchor" class="my-0 fw-normal"><b>Наші тварини</b></h4>
-      </div>
+      <!--
+        <h4  class="my-0 fw-normal"><b>Наші тварини</b></h4>
+      -->
         <div class="row mb-3 ">
+          <div class="col-md-12 text-center">
+            <div class="card-header ">
+                <div id="our-animals-anchor" class="row">
+                      <div class="col-md-12">
+                        <h2> Наші тварини </h2>
+                      </div>
+                  </div>
+          </div>
+          </div>
             @foreach($animals as $animal)
               <div class="col-sm-6 col-md-4">
                 <div class="card-group">
