@@ -1,5 +1,8 @@
 <div {{$attributes->merge(["class" => "logo "])}}>
 	<a href="/">
-		<i class="fas fa-paw"></i>
+	<div><img src="/images/logo.png" ></div>
+	<!-- <div>Animal-shelter</div> -->
+		<!-- <i class="fas fa-paw"></i> -->
 	</a>
+
 </div>
