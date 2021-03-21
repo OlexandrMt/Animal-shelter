@@ -78,7 +78,7 @@
                                 </a>
                             </div>
                             <div class="img-item">
-                                <img src="{{asset("images/logo 1.png")}}" />
+                                <img src="{{asset("images/LOG.png")}}" />
                                 <a class="img-text" href="/shelters">
                                     <p>Притулки</p>
                                 </a>
@@ -95,7 +95,6 @@
             <div class="container-fluid">
                 <div class="brand-slider">
                     <!-- <div class="brand-item"><img src="img/brand-1.png" alt=""></div> -->
-                    <!-- <h2>Наша головна ціль - допомогти тварині знайти турботливу та люблячу сім'ю</h2> -->
                     <div class="brand-item"><h2>Наша </h2></div>
                     <div class="brand-item"><h2>головна </h2></div>
                     <div class="brand-item"><h2>ціль </h2></div>
@@ -152,12 +151,21 @@
                                               <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
                                           </a>
                                         </div>
-                                        <div class="product-price">
+                                        <!-- <div class="product-price">
                                             <h3><span></span></h3>
                                             <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn"><i class="fas fa-hands"></i></a>
                                             <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn">Детальніше</a>
 
-                                        </div>
+                                        </div> -->
+                                        <div class="product-price">
+                                          <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-new">Детальніше</a>
+                                          <form action="/notifications/create" method="get">
+                                            <input type="hidden" name="animal_id" value='{{$animal->id}}'>
+                                            <button type="submit" class="w-25 btn btn-new mb-1"><i class="fas fa-hands"></i></button>
+                                          </form>
+                                              <!-- <a class="btn" href="">Детальна інформація</a> -->
+                                           </div>
+
                                     </div>
                                 </div>
                                 @endforeach
