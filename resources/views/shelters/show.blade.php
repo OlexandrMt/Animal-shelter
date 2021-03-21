@@ -82,7 +82,7 @@
                       <ul class="list-unstyled mt-3 mb-4">
                       <!-- <p class="card-text"> Вік: {{ $animal->age }}</p> -->
                         <div class="mt-auto">
-                          <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-dark">Детальна інформація</a>
+                          <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-new">Детальна інформація</a>
                         </div>
                       </ul>
                     </div>
