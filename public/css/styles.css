@@ -21880,7 +21880,8 @@ h2 {
      object-fit: cover;
 }
 
-.header .img-text {
+.header .
+ {
   position: absolute;
   top: 0;
   left: 0;
@@ -22200,7 +22201,8 @@ h2 {
 .product-item .product-price .btn-new {
   float: right;
   border: none;
-  color: #000000;
+  /* color: #000000; */
+  color: #ffffff;
   background: #009900;
   margin-right: 1em !important;
 }

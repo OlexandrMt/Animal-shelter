@@ -1,6 +1,7 @@
 import {createValidator, clearServerMsg} from "./validator.js";
 
 let showAuthForm = function(e){
+	e.preventDefault();
 	$(".authContainer").removeAttr("hidden");
 	const reflow = $(".authContainer").outerHeight();
 	$(".authContainer").addClass("open");
@@ -91,7 +92,8 @@ let transitionedListener = function(){
 let attachEventListeners = function(){
 	$(".navbar .login").on("click", showAuthForm);
 
-	$(".navbar .logout").on("click", function(){
+	$(".navbar .logout").on("click", function(e){
+		e.preventDefault();
 		window.location.replace("/logout");
 	});
 

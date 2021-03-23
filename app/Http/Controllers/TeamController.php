@@ -42,12 +42,27 @@ class TeamController extends Controller
 
           [
             "id"=>6,
+            "name"=>'Маргарита Грінченко',
+            "ava"=> "images/unnamed.jpg"
+          ],
+          [
+            "id"=>7,
+            "name"=>'Марія Терлецька',
+            "ava"=> "images/unnamed.jpg"
+          ],
+          [
+            "id"=>8,
             "name"=>'Олександр Панченко',
             "ava"=> "images/unnamed.jpg"
           ],
           [
-            "id"=>5,
+            "id"=>9,
             "name"=>'Олег Ростов',
+            "ava"=> "images/unnamed.jpg"
+          ],
+          [
+            "id"=>10,
+            "name"=>'Віталій Богданюк',
             "ava"=> "images/unnamed.jpg"
           ],
 
