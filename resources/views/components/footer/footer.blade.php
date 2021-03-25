@@ -43,10 +43,10 @@
 										<h2>Follow Us</h2>
 										<div class="contact-info">
 												<div class="social">
-														<a href=""><i class="fab fa-facebook-f"></i></a>
-														<a href=""><i class="fab fa-linkedin-in"></i></a>
-														<a href=""><i class="fab fa-instagram"></i></a>
-														<a href=""><i class="fab fa-youtube"></i></a>
+														<a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+														<a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+														<a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+														<a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
 												</div>
 										</div>
 								</div>
