@@ -84,6 +84,7 @@
                                                       Вільний
                                                       </td>
                                                       @endif </tr>
+                                                  </table>
                                                       <!-- <p class="card-text">Моя історія:
                                                         @if(is_null($animal->description))
                                                         Не вказано
@@ -122,7 +123,7 @@
                                                       @method('DELETE')
                                                     </div> -->
                                               </div>
-                                            </table>
+                                          
                                             
                                         </div>
                                     </div>
