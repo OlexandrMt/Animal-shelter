@@ -69,23 +69,7 @@
                               </div>
                             </div>
                             </div>
-                              <!-- <div class="product-item">
-                                  <div class="product-title">
-                                    <a href="{{route('shelters.show',[$shelter->id])}}">{{ $shelter->name }}</a>
-                                  </div>
-                                  <div class="img-round mt-0 mb-3" >
-                                    @isset($shelter->logo)
-                                      <img src="{{ asset("storage/".$shelter->logo) }}" alt="" title="">
-                                    @else
-                                      <img src="{{asset('images/default_logo.jpg')}}" alt="" title="">
-                                    @endisset
-                                  </div>
-                                <div class="product-price">
-                                  <a href="{{route('shelters.show',[$shelter->id])}}" class="btn btn-dark">Детальна інформація</a>
-                                   </div>
-                              </div> -->
                           </div>
-                          <!-- </div> -->
                           @endforeach
 
 
@@ -117,7 +101,12 @@
                                         </div>
                                         <div class="product-image">
                                             <a href="{{route('animals.show',[$animal->id])}}">
-                                                <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
+                                              @if(is_null($animal->photo))
+                                              <img src="{{ asset('images/default_img.jpg') }}" alt="Product Image">
+                                              @else
+                                              <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
+                                              @endif
+                                                <!-- <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image"> -->
                                             </a>
                                             <div class="product-action">
                                                 <a href="{{route('animals.show',[$animal->id])}}"><i class="fa fa-search"></i></a>

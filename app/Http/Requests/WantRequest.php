@@ -26,7 +26,8 @@ class WantRequest extends FormRequest
         return [
           'name' => 'between: 3,30',
           'email' => ' email',
-          'phone' => 'required | numeric',
+          // 'phone' => 'required | numeric',
+          'phone' => 'between: 19,20',
           'note' => 'max: 1000'
         ];
     }
@@ -35,7 +36,8 @@ class WantRequest extends FormRequest
     return [
         'required' => 'Поле :attribute должно быть заполнено',
         'name.between' => 'Поле :attribute должно быть от :min до :max символов',
-        'numeric' => 'Поле :attribute должно содержать только цифры',
+        // 'numeric' => 'Поле :attribute должно содержать только цифры',
+        'phone.between' => 'Поле :attribute должно быть заполнено',
         'email' => 'Поле :attribute должно содержать email адрес',
         'max' => 'Поле :attribute повинно мати не більше :max символів'
     ];

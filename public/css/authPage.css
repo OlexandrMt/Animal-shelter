@@ -23385,8 +23385,9 @@ h2 {
   }
 }
 
-/*Auth form*/
+dev:resources/css/authPage.css
 
+/*Auth form*/
 .authContainer {
   font-family: 'Nunito', sans-serif !important;
   margin:0 auto;

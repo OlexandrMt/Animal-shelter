@@ -17,9 +17,9 @@
 
 
                                                 @if(is_null($animal->photo))
-                                                <img src="{{ asset("storage/animal_photo/defaultimg.jpg") }}" alt="Product Image">
+                                                <img src="{{ asset("images/default_img.jpg") }}" alt="Product Image">
                                                 @else
-                                                <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
+                                                <img src="{{asset("storage/".$animal->photo) }}" alt="Product Image">
                                                 @endif
 
 

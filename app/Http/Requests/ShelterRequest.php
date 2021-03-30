@@ -27,7 +27,8 @@ class ShelterRequest extends FormRequest
             'name' => 'required | between: 3,30',
             'address' => 'required | between: 5,50',
             'mail' => 'required | email',
-            'phone' => 'required | numeric',
+            // 'phone' => 'required | numeric',
+            'phone' => 'between: 19,20',
             'logo' => 'image'
         ];
     }
@@ -37,7 +38,8 @@ class ShelterRequest extends FormRequest
         'required' => 'Поле :attribute должно быть заполнено',
         'name.between' => 'Поле :attribute должно быть от :min до :max символов',
         'address.between' => 'Поле :attribute должно быть от :min до :max символов',
-        'numeric' => 'Поле :attribute должно содержать только цифры',
+        // 'numeric' => 'Поле :attribute должно содержать только цифры',
+        'phone.between' => 'Поле :attribute должно быть заполнено',
         'image' => 'Поле :attribute должно содержать изображение',
         'email' => 'Поле :attribute должно содержать email адрес'
 

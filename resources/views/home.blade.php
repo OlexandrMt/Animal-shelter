@@ -148,15 +148,15 @@
                                         </div>
                                         <div class="product-image">
                                           <a href="{{action('AnimalController@show',['animal'=>$animal])}}"> <!--// can be redirected on image itself"{{asset("storage/" .$animal->photo) }}"-->
-                                              <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
+                                            @if(is_null($animal->photo))
+                                            <img src="{{ asset('images/default_img.jpg') }}" alt="Product Image">
+                                            @else
+                                            <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
+                                            @endif
+                                              <!-- <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image"> -->
                                           </a>
                                         </div>
-                                        <!-- <div class="product-price">
-                                            <h3><span></span></h3>
-                                            <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn"><i class="fas fa-hands"></i></a>
-                                            <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn">Детальніше</a>
 
-                                        </div> -->
                                         <div class="product-price">
                                           <a href="{{action('AnimalController@show',['animal'=>$animal])}}" class="btn btn-new">Детальніше</a>
                                           <form action="/notifications/create" method="get">

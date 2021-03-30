@@ -107,7 +107,11 @@
                                     </div>
                                     <div class="product-image">
                                         <a href="{{action('AnimalController@show',['animal'=>$animal])}}"> <!--// can be redirected on image itself"{{asset("storage/" .$animal->photo) }}"-->
-                                            <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
+                                          @if(is_null($animal->photo))
+                                          <img src="{{ asset("images/default_img.jpg") }}" alt="Product Image">
+                                          @else
+                                          <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
+                                          @endif
                                         </a>
                                     </div>
                                   <div class="product-price">
@@ -179,7 +183,12 @@
                                 </div>
                                 <div class="product-image">
                                     <a href="{{route('animals.show',[$animal->id])}}">
-                                        <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
+                                      @if(is_null($animal->photo))
+                                      <img src="{{ asset("images/default_img.jpg") }}" alt="Product Image">
+                                      @else
+                                      <img src="{{asset("storage/" .$animal->photo) }}" alt="Product Image">
+                                      @endif
+
                                     </a>
                                     <div class="product-action">
                                         <a href="{{route('animals.show',[$animal->id])}}"><i class="fa fa-search"></i></a>
