@@ -30,84 +30,108 @@
 
 
 
-                                                <div class="card-body">
-                                                  <h2 class="margin"> {{ $animal->name }}</h2>
-                                                  <p class="card-text"> Тип:
-                                                    @if(is_null($animal->type))
-                                                    Не вказано
-                                                    @else {{ $animal->type}}
-                                                  @endif</p>
-                                                  <p class="card-text"> Порода:
-                                                    @if(is_null($animal->breed))
-                                                    Не вказано
-                                                    @else {{ $animal->breed}}
-                                                  @endif</p>
-                                                  <p class="card-text">Вік:
-                                                    @if(is_null($animal->age))
-                                                    Не вказано
-                                                    @else {{ $animal->age}}
-                                                    @endif
-                                                  </p>
-                                                  <p class="card-text">Стать: @if(is_null($animal->sex))
-                                                  Не вказано
-                                                  @elseif($animal->sex==1)
-                                                  Cамець
-                                                  @else
-                                                  Самка
-                                                  @endif </p>
-                                                  <p class="card-text"> Статус: @if(is_null($animal->status))
-                                                  Не вказано
-                                                  @elseif($animal->status==1)
-                                                  Прихищений
-                                                  @else
-                                                  Вільний
-                                                  @endif </p>
-                                                  <!-- <p class="card-text">Моя історія:
-                                                    @if(is_null($animal->description))
-                                                    Не вказано
-                                                    @else {{ $animal->description}}
-                                                    @endif</p> -->
-                                                  @if($user == $shelter->user_id)
-                                                    <div class="input-group">
-                                                        <form action="/animals/{{ $animal->id }}/edit" method="get">
+                                                <div class="card-body table">
+                                  
+                                                <div class="col-md-7">
+                                            <table class="table">
+                                              <div class="product-content">
+                                                    <thead>
+                                                      <tr>
+                                                        <th class="margin" scope="col"> {{ $animal->name }}</th>
+                                                      </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                      <tr class="card-text"> 
+                                                        <th scope="row">Тип:</th>
+                                                        <td>
+                                                        @if(is_null($animal->type))
+                                                        Не вказано
+                                                        @else {{ $animal->type}}
+                                                        </td>
+                                                      @endif
+                                                      </tr>
+                                                      <tr class="card-text"> 
+                                                      <th scope="row">Порода:</th>
+                                                        <td>@if(is_null($animal->breed))
+                                                        Не вказано
+                                                        @else {{ $animal->breed}}
+                                                        </td>
+                                                      @endif
+                                                      </tr>
+                                                      <tr class="card-text"><th scope="row">Вік:</th>
+                                                      <td>
+                                                        @if(is_null($animal->age))
+                                                        Не вказано
+                                                        @else {{ $animal->age}}
+                                                        </td>
+                                                        @endif
+                                                      </tr>
+                                                      <tr class="card-text"><th scope="row">Стать:</th> 
+                                                      <td>@if(is_null($animal->sex))
+                                                      Не вказано
+                                                      @elseif($animal->sex==1)
+                                                      Cамець
+                                                      @else
+                                                      Самка
+                                                      </td>
+                                                      @endif </tr>
+                                                      <tr class="card-text"><th scope="row">Статус:</th>
+                                                      <td>@if(is_null($animal->status))
+                                                      Не вказано
+                                                      @elseif($animal->status==1)
+                                                      Прихищений
+                                                      @else
+                                                      Вільний
+                                                      </td>
+                                                      @endif </tr>
+                                                      <!-- <p class="card-text">Моя історія:
+                                                        @if(is_null($animal->description))
+                                                        Не вказано
+                                                        @else {{ $animal->description}}
+                                                        @endif</p> -->
+                                                      @if($user == $shelter->user_id)
+                                                        <div class="input-group">
+                                                            <form action="/animals/{{ $animal->id }}/edit" method="get">
+                                                              @csrf
+                                                              <!-- <input type="submit" class="btn-success" value=" Редагувати "> -->
+                                                              <button type="submit" class="btn btn-new">Редагувати </i></button>
+                                                              @method('GET')
+                                                            </form>
+                                                        </div>
+                                                          <br>
+                                                        <div class="input-group">
+
+                                                            <form action="/animals/{{ $animal->id }}" method="post">
+                                                              @csrf
+                                                              <!-- <input type="submit" class="btn-success" value=" Видалити "> -->
+                                                              <button type="submit" class="btn btn-new">Видалити </i></button>
+                                                              @method('DELETE')
+                                                            </form>
+
+                                                        </div>
+                                                      </p>
+                                                    </tbody>
+                                              
+                                                  @endif
+                                                  <!-- <div class="action">
+                                                    @csrf
+                                                      <a class="btn" href="/animals/{{ $animal->id }}" method="post">Редагувати</a>
+                                                        @method('GET')
                                                           @csrf
-                                                          <!-- <input type="submit" class="btn-success" value=" Редагувати "> -->
-                                                          <button type="submit" class="btn btn-new">Редагувати </i></button>
-                                                          @method('GET')
-                                                        </form>
-                                                    </div>
-                                                      <br>
-                                                    <div class="input-group">
-
-                                                        <form action="/animals/{{ $animal->id }}" method="post">
-                                                          @csrf
-                                                          <!-- <input type="submit" class="btn-success" value=" Видалити "> -->
-                                                          <button type="submit" class="btn btn-new">Видалити </i></button>
-                                                          @method('DELETE')
-                                                        </form>
-
-                                                    </div>
-                                                   </p>
-                                                 </div>
-                                                @endif
-                                                <!-- <div class="action">
-                                                  @csrf
-                                                    <a class="btn" href="/animals/{{ $animal->id }}" method="post">Редагувати</a>
-                                                      @method('GET')
-                                                        @csrf
-                                                    <a class="btn" href="/animals/{{ $animal->id }}"method="get">Видалити</a>
-                                                    @method('DELETE')
-                                                  </div> -->
-
-
-
-
-                                            </div>
+                                                      <a class="btn" href="/animals/{{ $animal->id }}"method="get">Видалити</a>
+                                                      @method('DELETE')
+                                                    </div> -->
+                                              </div>
+                                            </table>
+                                            
                                         </div>
                                     </div>
                                 </div>
 
+
+
                                 <div class="row product-detail-bottom">
+                               
                                     <div class="col-lg-12">
                                         <ul class="nav nav-pills nav-justified">
                                             <li class="nav-item">

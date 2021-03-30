@@ -26,6 +26,7 @@
         "tailwindcss": "^2.0.2"
     },
     "dependencies": {
-        "bootstrap-icons": "^1.4.0"
+        "bootstrap-icons": "^1.4.0",
+        "react-share": "^4.4.0"
     }
 }
