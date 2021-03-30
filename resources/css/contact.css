@@ -1,0 +1,182 @@
+.contactContainer {
+	font-family: 'Nunito', sans-serif !important;
+	margin: 1em 0;
+	padding: 1em;
+	box-sizing: border-box;
+	background: #e9ecef;
+	border-radius: 0.5em;
+	display: block;
+	max-width: 30em;
+	font-size: 1.2em;
+	letter-spacing: 0.05em;
+	line-height: 1.5em;
+	font-weight: bolder;
+	color: #525151;
+}
+
+.contactContainer .hidden {
+	display: none;
+}
+
+.contactContainer .centerText {
+	text-align: center;
+}
+
+.contactContainer .textRight {
+	text-align: right;
+}
+
+.contactContainer .textBold {
+	font-weight: bold;
+}
+
+.contactContainer textarea {
+	display: block;
+	resize: none;
+	width: 100%;
+	border: 1px solid #c2c2c2;
+	border: 1px solid #52515163;
+	outline: none;
+	box-shadow: none;
+	border-radius: 0.5em;
+	font-family: inherit;
+	font-weight: bold;
+	color: #7a7a7a;
+	line-height: 1.1;
+	padding: 0.5em;
+}
+
+.contactContainer .formInput input,
+.contactContainer .formInput textarea {
+	font-size: 80%;
+}
+
+.contactContainer .formInput:not(:last-child) {
+	margin-bottom: 1.2em;
+}
+
+.contactContainer .formInput label {
+	display:block;
+	margin-bottom: 0.5em;
+	user-select: none;
+}
+
+.contactContainer .formInput input {
+	display: block;
+	height: 3em;
+	width: 100%;
+	border: 1px solid #c2c2c2;
+	border: 1px solid #52515163;
+	border-radius: 0.4em;
+	padding: 0.5em 1em;
+}
+
+.contactContainer .formInput.submit {
+	text-align: right;
+}
+
+.contactContainer .formInput input:focus,
+.contactContainer .formInput textarea:focus{
+	outline: none;
+	box-shadow: 0 0 5px rgba(82, 81, 81, 0.5);
+}
+
+.contactContainer .formInput input[type="submit"] {
+	display: inline-block;
+	width: auto;
+	padding: 0.5em;
+	height: auto;
+	background: #e0bd3a;
+	background: #d09b1cb8;
+	font-weight: bold;
+	border: none;
+	letter-spacing: 0.05em;
+	font-size: inherit;
+	color: inherit;
+}
+
+.contactContainer .formInput input[type="submit"]:hover {
+	cursor: pointer;
+	background: #f0cd48;
+	background: #f2b523e8;
+	box-shadow: 0 0 5px rgba(82, 81, 81, 0.5);
+}
+
+.contactContainer .formInput input[type="submit"]:disabled {
+	cursor: default;
+	background: #cbcbcb;
+	box-shadow: none;
+}
+
+.contactContainer .formInput textarea.disabled {
+	cursor: default;
+	border: none;
+}
+
+.contactContainer .formInput input[type="text"],
+.contactContainer .formInput input[type="email"],
+.contactContainer .formInput input[type="password"]
+{
+	font-weight: bold;
+	color: #7a7a7a;
+}
+
+.contactContainer .error {
+	font-size: 0.6em;
+	color: #ed3d15;
+}
+
+.contactContainer .serverError{
+	font-size: 0.6em;
+	color: #ed3d15;
+}
+
+.contactContainer .serverError.general{
+	margin-top: -2em;
+}
+
+.contactDevelopers{
+	margin: 2em auto;
+	box-shadow: 0 0 20px rgba(82, 81, 81, 0.7);
+}
+
+.messageStatus{
+	position: relative;
+	margin: 0 auto;
+	height: 3em;
+	line-height: 3em;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.5em;
+	color: #525151;
+	background: #d09b1cb8;
+	margin-bottom: 1em;
+}
+
+.messageStatus .closeBtn {
+  position: absolute;
+  width: 1.5em;
+  top: 0.6em;
+  right: 0.8em;
+  font-size: 1em;
+  line-height: 1.5em;
+  text-align: center;
+  color: #969592;
+  color: #797777d1;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.messageStatus .closeBtn:hover {
+  font-weight:bold;
+  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.25);
+  color: #bb6439;
+}
+
+/*design for mobile devices*/
+@media (max-width: 768px) {
+	
+	.contactDevelopers form {
+		margin: 0 0.1em;
+	}
+}

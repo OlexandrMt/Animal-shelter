@@ -1,0 +1,4 @@
+<head>
+	{{$headCommon}}
+	{{$slot}}
+</head>
